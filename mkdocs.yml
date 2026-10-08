@@ -5,7 +5,6 @@ site_author: Departamento de Informática · IES Fernando Wirtz Suárez
 site_url: https://rafafl-wirtz.github.io/mp5074-sistemas-big-data/
 repo_url: https://github.com/rafafl-wirtz/mp5074-sistemas-big-data
 repo_name: mp5074-sistemas-big-data
-edit_uri: edit/main/docs/
 copyright: Curso 2026-27 · IES Fernando Wirtz Suárez
 
 theme:
