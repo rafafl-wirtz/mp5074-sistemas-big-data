@@ -39,7 +39,6 @@ theme:
     - search.highlight
     - search.suggest
     - content.code.copy
-    - content.action.edit
     - toc.follow
 
 extra_css:
@@ -86,7 +85,7 @@ validation:
     anchors: warn
 
 nav:
-  - : index.md
+  - Inicio: index.md
   - UD1 · Introdución:
       - Manuales:
           - ud1/manuales/index.md
