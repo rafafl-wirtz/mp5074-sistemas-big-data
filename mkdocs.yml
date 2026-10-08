@@ -86,7 +86,7 @@ validation:
     anchors: warn
 
 nav:
-  - Inicio: index.md
+  - : index.md
   - UD1 · Introdución:
       - Manuales:
           - ud1/manuales/index.md
