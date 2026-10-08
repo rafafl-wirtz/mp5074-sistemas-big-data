@@ -88,7 +88,6 @@ validation:
 nav:
   - Inicio: index.md
   - UD1 · Introdución:
-      - ud1/index.md
       - Manuales:
           - ud1/manuales/index.md
           - WSL: ud1/manuales/wsl/manual_wsl.md

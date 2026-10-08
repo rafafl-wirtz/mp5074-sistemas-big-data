@@ -10,10 +10,9 @@ Web de materiales del módulo **MP5074 Sistemas de Big Data** (IES Fernando Wirt
 ├── requirements.txt               ← dependencias (mkdocs + material)
 ├── .github/workflows/deploy.yml   ← publicación automática en GitHub Pages
 └── docs/
-    ├── index.md                   ← portada: unidades, organización y evaluación
+    ├── index.md                   ← portada: índice de contenidos
     ├── assets/stylesheets/extra.css
     ├── ud1/
-    │   ├── index.md               ← RA, contenidos y checklist del entorno
     │   └── manuales/
     │       ├── index.md
     │       ├── wsl/manual_wsl.md
