@@ -1,0 +1,100 @@
+site_name: MP5074 · Sistemas de Big Data
+site_description: Materiales del módulo MP5074 Sistemas de Big Data (curso de especialización en IA y Big Data) · IES Fernando Wirtz Suárez
+site_author: Departamento de Informática · IES Fernando Wirtz Suárez
+# Cambia USUARIO por tu usuario u organización de GitHub (y el nombre del repositorio si es otro)
+site_url: https://rafafl-wirtz.github.io/mp5074-sistemas-big-data/
+repo_url: https://github.com/rafafl-wirtz/mp5074-sistemas-big-data
+repo_name: mp5074-sistemas-big-data
+edit_uri: edit/main/docs/
+copyright: Curso 2026-27 · IES Fernando Wirtz Suárez
+
+theme:
+  name: material
+  language: es
+  icon:
+    logo: material/database-outline
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+    - toc.follow
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - toc:
+      permalink: true
+      # Anclas al estilo de GitHub (conservan tildes): así funcionan los índices de los manuales
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search:
+      lang: es
+
+validation:
+  links:
+    anchors: warn
+
+nav:
+  - Inicio: index.md
+  - UD1 · Introdución:
+      - ud1/index.md
+      - Manuales:
+          - ud1/manuales/index.md
+          - WSL: ud1/manuales/wsl/manual_wsl.md
+          - Miniconda: ud1/manuales/miniconda/manual_miniconda.md
+          - JupyterLab: ud1/manuales/jupyterlab/manual_jupyterlab.md
+          - Git: ud1/manuales/git/manual_git.md
+          - Docker: ud1/manuales/docker/manual_docker.md
+  - UD2 · Orixes de datos:
+      - ud2/index.md

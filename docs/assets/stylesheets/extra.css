@@ -1,0 +1,20 @@
+/* Colores de las unidades didácticas (los mismos que la hoja de temporalización) */
+:root {
+  --ud1: #dceaf7; --ud1-ink: #1f4e79;
+  --ud2: #ddf2e3; --ud2-ink: #2c6b3f;
+  --ud3: #fce8d5; --ud3-ink: #9a4f12;
+  --ud4: #e9e1f5; --ud4-ink: #5b3a8c;
+}
+[data-md-color-scheme="slate"] {
+  --ud1: #1d3346; --ud1-ink: #a9cdf0;
+  --ud2: #1e3a28; --ud2-ink: #9fd9b0;
+  --ud3: #3d2a19; --ud3-ink: #f2b98a;
+  --ud4: #2f2642; --ud4-ink: #c9b3ef;
+}
+.ud { display: inline-block; padding: .1em .55em; border-radius: .25em; font-weight: 600; font-size: .85em; }
+.ud1 { background: var(--ud1); color: var(--ud1-ink); }
+.ud2 { background: var(--ud2); color: var(--ud2-ink); }
+.ud3 { background: var(--ud3); color: var(--ud3-ink); }
+.ud4 { background: var(--ud4); color: var(--ud4-ink); }
+.md-typeset table:not([class]) { font-size: .72rem; }
+.md-typeset .grid.cards > ul > li { border-radius: .4rem; }
