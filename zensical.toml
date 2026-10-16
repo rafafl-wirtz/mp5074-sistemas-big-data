@@ -1,0 +1,108 @@
+# Configuración del sitio con Zensical (sucesor de Material for MkDocs).
+# Comandos:  zensical serve  (vista previa en http://localhost:8000)
+#            zensical build  (genera la web en site/)
+# La configuración anterior de MkDocs está guardada en back/.
+
+[project]
+site_name = "MP5074 · Sistemas de Big Data"
+site_description = "Materiales del módulo MP5074 Sistemas de Big Data (curso de especialización en IA y Big Data) · IES Fernando Wirtz Suárez"
+site_author = "Departamento de Informática · IES Fernando Wirtz Suárez"
+site_url = "https://rafafl-wirtz.github.io/mp5074-sistemas-big-data/"
+repo_url = "https://github.com/rafafl-wirtz/mp5074-sistemas-big-data"
+repo_name = "mp5074-sistemas-big-data"
+copyright = "Curso 2026-27 · IES Fernando Wirtz Suárez"
+
+extra_css = ["assets/stylesheets/extra.css"]
+
+# Menú lateral. Para añadir un manual nuevo, añade una línea en su sitio.
+nav = [
+  { "Inicio" = "index.md" },
+  { "UD1 · Introdución" = [
+    { "Manuales" = [
+      "ud1/manuales/index.md",
+      { "Big Data" = "ud1/manuales/big_data/manual_big_data.md" },
+      { "Conocimientos previos" = "ud1/manuales/conocimientos_previos/manual_conocimientos_previos.md" },
+      { "WSL" = "ud1/manuales/wsl/manual_wsl.md" },
+      { "Miniconda" = "ud1/manuales/miniconda/manual_miniconda.md" },
+      { "JupyterLab" = "ud1/manuales/jupyterlab/manual_jupyterlab.md" },
+      { "Git" = "ud1/manuales/git/manual_git.md" },
+      { "Docker" = "ud1/manuales/docker/manual_docker.md" },
+    ] },
+  ] },
+  { "UD2 · Orixes de datos" = [
+    "ud2/index.md",
+  ] },
+]
+
+# Avisa de enlaces rotos y de anclas (#apartado) que no existen.
+[project.validation]
+invalid_links = true
+invalid_link_anchors = true
+
+[project.theme]
+language = "es"
+features = [
+  "content.code.annotate",
+  "content.code.copy",
+  "content.footnote.tooltips",
+  "content.tabs.link",
+  "content.tooltips",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.path",
+  "navigation.sections",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  "toc.follow",
+]
+
+[project.theme.icon]
+logo = "lucide/database"
+repo = "fontawesome/brands/github"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "blue grey"
+accent = "teal"
+toggle.icon = "lucide/moon"
+toggle.name = "Modo oscuro"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "blue grey"
+accent = "teal"
+toggle.icon = "lucide/sun"
+toggle.name = "Modo claro"
+
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+tables = {}
+# Anclas al estilo de GitHub (conservan tildes): así funcionan los índices de los manuales
+toc.permalink = true
+toc.slugify = { object = "pymdownx.slugs.slugify", kwds = { case = "lower" } }
+pymdownx.betterem = {}
+pymdownx.details = {}
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.mark = {}
+pymdownx.superfences.custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+pymdownx.tabbed.alternate_style = true
+pymdownx.tabbed.combine_header_slug = true
+pymdownx.tasklist.custom_checkbox = true
