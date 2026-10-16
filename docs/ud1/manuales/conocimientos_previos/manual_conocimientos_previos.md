@@ -2,7 +2,7 @@
 
 **Módulo:** MP5074 – Sistemas de Big Data · Curso 2026-27
 
-> Casi todos los errores de las primeras semanas no son de Python ni de pandas: son del tipo «no encuentra el fichero» o «no reconoce el comando». Los dos tienen la misma raíz: no saber **dónde** está algo ni **cómo** lo busca el sistema. Este manual repasa el sistema de ficheros, las rutas, las extensiones y las variables de entorno para que las herramientas que vienen después (WSL, bash, conda, Jupyter) no parezcan magia. Corresponde a la sesión 4 de la UD1 (RA3: CE e).
+> Casi todos los errores de las primeras semanas no son de Python ni de pandas: son del tipo «no encuentra el fichero» o «no reconoce el comando». Los dos tienen la misma raíz: no saber **dónde** está algo ni **cómo** lo busca el sistema. Este manual repasa el sistema de ficheros, las rutas, las extensiones y las variables de entorno para que las herramientas que vienen después (WSL, bash, conda, Jupyter) no parezcan magia.
 
 ---
 
@@ -107,7 +107,7 @@ Una **ruta** es la dirección de un fichero dentro del árbol.
 
 > Truco: pulsa `Tab` mientras escribes una ruta y la terminal la completa. Si no completa, es que esa ruta no existe desde donde estás.
 
-El manejo de bash se trata a fondo en la sesión de Bash.
+El manejo de bash se trata a fondo más adelante.
 
 ---
 

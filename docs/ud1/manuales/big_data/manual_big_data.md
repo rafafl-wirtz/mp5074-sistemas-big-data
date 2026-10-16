@@ -2,7 +2,7 @@
 
 **Módulo:** MP5074 – Sistemas de Big Data · Curso 2026-27
 
-> Este manual recoge las ideas de base que se usan en todo el módulo: qué convierte un problema en «de Big Data», cómo se organizan sus herramientas, qué arquitecturas existen, por qué la complejidad de un algoritmo obliga a repartir el trabajo y cómo se valoran el coste y la calidad de un sistema. Corresponde a las sesiones 1–3 de la UD1 (RA1: CE a, e, g · RA3: CE b, c, e).
+> Este manual recoge las ideas de base que se usan en todo el módulo: qué convierte un problema en «de Big Data», cómo se organizan sus herramientas, qué arquitecturas existen, por qué la complejidad de un algoritmo obliga a repartir el trabajo y cómo se valoran el coste y la calidad de un sistema.
 
 ---
 
@@ -66,7 +66,7 @@ Algunos autores añaden más V (variabilidad, visualización…), pero estas cin
 | **Semiestructurados** | Tienen etiquetas o claves, pero no un esquema rígido | JSON, XML |
 | **No estructurados** | Sin organización interna predefinida | Texto libre, imágenes, audio, vídeo |
 
-Los datos no estructurados son la mayor parte de los que se generan hoy. Lo veremos en detalle en la UD2.
+Los datos no estructurados son la mayor parte de los que se generan hoy. Lo veremos en detalle más adelante.
 
 ---
 
@@ -99,14 +99,7 @@ Las herramientas se entienden mejor si se agrupan por la función que cumplen de
 | **Análisis** | Extraer conocimiento | SQL, Python, aprendizaje automático |
 | **Visualización** | Comunicar los resultados | Matplotlib, Power BI, Grafana, cuadros de mando |
 
-Este módulo recorre ese mismo camino:
-
-| Unidad | Fase del recorrido |
-|---|---|
-| UD2 | Obtener datos (ingesta) |
-| UD3 | Almacenarlos y analizarlos |
-| UD4 | Integrarlos |
-| UD5 | Visualizarlos |
+Este módulo recorre ese mismo camino: primero obtener los datos (ingesta), después almacenarlos y analizarlos, integrarlos y, por último, visualizarlos.
 
 ---
 

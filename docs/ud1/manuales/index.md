@@ -9,7 +9,7 @@
 | 4 | [Miniconda](miniconda/manual_miniconda.md) | Crear entornos de Python aislados y reproducibles (`bigdata`) |
 | 5 | [JupyterLab](jupyterlab/manual_jupyterlab.md) | Notebooks para explorar y analizar datos |
 | 6 | [Git](git/manual_git.md) | Control de versiones y entrega de prácticas con GitHub |
-| 7 | [Docker](docker/manual_docker.md) | Levantar bases de datos, Spark o Jupyter en contenedores (lo usaremos en la UD3) |
+| 7 | [Docker](docker/manual_docker.md) | Levantar bases de datos, Spark o Jupyter en contenedores (lo usaremos más adelante) |
 
 ## Documentación oficial
 
