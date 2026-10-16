@@ -1,6 +1,5 @@
 # <span class="ud ud1">UD1</span> Manuales del entorno de trabajo
 
-Síguelos **en este orden**: cada manual da por hecho que has completado los anteriores.
 
 | Orden | Manual | Para qué sirve |
 |---|---|---|

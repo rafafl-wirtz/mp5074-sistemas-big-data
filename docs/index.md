@@ -6,7 +6,7 @@
 
 ### <span class="ud ud1">UD1</span> Introdución ao Big Data
 
-**[Manuales del entorno de trabajo](ud1/manuales/index.md)**: síguelos en este orden.
+**[Manuales del entorno de trabajo](ud1/manuales/index.md)**:
 
 1. [Big Data](ud1/manuales/big_data/manual_big_data.md): conceptos fundamentales del módulo.
 2. [Conocimientos previos](ud1/manuales/conocimientos_previos/manual_conocimientos_previos.md): sistema de ficheros, rutas y variables de entorno.
