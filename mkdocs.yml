@@ -29,7 +29,6 @@ theme:
         icon: material/weather-sunny
         name: Modo claro
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.indexes
     - navigation.top
