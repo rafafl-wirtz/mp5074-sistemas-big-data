@@ -88,6 +88,8 @@ nav:
   - UD1 · Introdución:
       - Manuales:
           - ud1/manuales/index.md
+          - Big Data: ud1/manuales/big_data/manual_big_data.md
+          - Conocimientos previos: ud1/manuales/conocimientos_previos/manual_conocimientos_previos.md
           - WSL: ud1/manuales/wsl/manual_wsl.md
           - Miniconda: ud1/manuales/miniconda/manual_miniconda.md
           - JupyterLab: ud1/manuales/jupyterlab/manual_jupyterlab.md
