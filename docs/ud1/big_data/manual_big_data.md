@@ -18,12 +18,14 @@
 8. [Fundamentos: matemática discreta y lógica algorítmica](#8-fundamentos-matemática-discreta-y-lógica-algorítmica)
 9. [Complejidad computacional y notación O](#9-complejidad-computacional-y-notación-o)
 10. [Costes y calidad de un sistema Big Data](#10-costes-y-calidad-de-un-sistema-big-data)
-11. [Planificar un proyecto de datos](#11-planificar-un-proyecto-de-datos)
-12. [Conceptos clave](#12-conceptos-clave)
-13. [Errores de concepto frecuentes](#13-errores-de-concepto-frecuentes)
-14. [Chuleta rápida](#14-chuleta-rápida)
-15. [Referencias](#15-referencias)
-16. [Ejemplo resuelto: tiques duplicados](#16-ejemplo-resuelto-tiques-duplicados)
+11. [Transferencia de datos por la red](#11-transferencia-de-datos-por-la-red)
+12. [Planificar un proyecto de datos](#12-planificar-un-proyecto-de-datos)
+13. [Conceptos clave](#13-conceptos-clave)
+14. [Errores de concepto frecuentes](#14-errores-de-concepto-frecuentes)
+15. [Chuleta rápida](#15-chuleta-rápida)
+16. [Referencias](#16-referencias)
+17. [Ejemplo resuelto: tiques duplicados](#17-ejemplo-resuelto-tiques-duplicados)
+18. [Ejemplo resuelto: subir el histórico de tiques a la nube](#18-ejemplo-resuelto-subir-el-histórico-de-tiques-a-la-nube)
 
 ---
 
@@ -220,7 +222,89 @@ Con pocos datos, todas parecen rápidas. Con miles de millones, solo las lineale
 
 ---
 
-## 11. Planificar un proyecto de datos
+## 11. Transferencia de datos por la red
+
+### 11.1 Por qué hay que saber calcularlo
+
+En la sección 4 vimos que **mover datos por la red es lo más lento de todo**. Antes de diseñar un sistema hay que saber cuánto se tarda en llevar los datos hasta donde se procesan. Pasa al migrar a la nube, al copiar entre centros de datos, al replicar o al hacer copias de seguridad. Un cálculo de dos minutos puede revelar que el plan pide semanas de transferencia.
+
+### 11.2 Bits y bytes: la trampa de las unidades
+
+- La **velocidad** de una red se mide en **bits por segundo**: Mbps, Gbps.
+- El **tamaño** de un fichero se mide en **bytes**: MB, GB, TB.
+- **1 byte = 8 bits.** Una «fibra de 300 megas» son 300 Mbps = 300 / 8 = **37,5 MB/s**.
+
+Además, hay dos formas de contar los múltiplos:
+
+- **Decimal (SI):** cada escalón multiplica por 1 000. La usan los fabricantes de discos, las redes y la nube.
+- **Binaria (IEC):** cada escalón multiplica por 1 024. La usa a menudo el sistema operativo, sobre todo Windows, aunque escriba «GB» cuando en realidad son GiB.
+
+**Tabla de conversión**
+
+| Decimal | Bytes | Binaria | Bytes | 1 unidad decimal = | 1 unidad binaria = | Diferencia |
+|---|---|---|---|---|---|---|
+| 1 kB (kilobyte) | 10³ | 1 KiB (kibibyte) | 2¹⁰ = 1 024 | 0,977 KiB | 1,024 kB | 2,4 % |
+| 1 MB (megabyte) | 10⁶ | 1 MiB (mebibyte) | 2²⁰ = 1 048 576 | 0,954 MiB | 1,049 MB | 4,9 % |
+| 1 GB (gigabyte) | 10⁹ | 1 GiB (gibibyte) | 2³⁰ ≈ 1,074·10⁹ | 0,931 GiB | 1,074 GB | 7,4 % |
+| 1 TB (terabyte) | 10¹² | 1 TiB (tebibyte) | 2⁴⁰ ≈ 1,100·10¹² | 0,909 TiB | 1,100 TB | 10,0 % |
+| 1 PB (petabyte) | 10¹⁵ | 1 PiB (pebibyte) | 2⁵⁰ ≈ 1,126·10¹⁵ | 0,888 PiB | 1,126 PB | 12,6 % |
+| 1 EB (exabyte) | 10¹⁸ | 1 EiB (exbibyte) | 2⁶⁰ ≈ 1,153·10¹⁸ | 0,867 EiB | 1,153 EB | 15,3 % |
+
+**Cómo se convierte**
+
+- De decimal a binaria: se divide entre 1 024ⁿ, donde *n* es el escalón (kilo = 1, mega = 2, giga = 3…).
+  - Ejemplo: 500 GB = 500·10⁹ / 1 024³ ≈ **465,7 GiB**.
+- De binaria a decimal: se multiplica por 1 024ⁿ.
+  - Ejemplo: 2 TiB = 2 × 1 024⁴ ≈ **2,2 TB**.
+
+> **Por qué «falta» espacio en el disco:** compras un disco de 1 TB y Windows muestra unos **931 GB**. No falta nada: son 931 GiB, que es lo mismo que 1 TB. Cuanto más grande es la unidad, mayor es la diferencia: con petabytes ya supera el 12 %.
+
+> Para estimar tiempos de transferencia basta con las unidades decimales, porque las velocidades de red siempre van en decimal. Lo que nunca se puede olvidar es **multiplicar por 8** al pasar de bytes a bits.
+
+### 11.3 La fórmula
+
+```text
+            tamaño (bytes) × 8
+tiempo = ─────────────────────────────────
+         velocidad (bits/s) × eficiencia
+```
+
+La **eficiencia** suele estar entre **0,7 y 0,8**. Nunca se alcanza la velocidad contratada porque parte se pierde en cabeceras TCP/IP, retransmisiones, cifrado, otros usuarios que comparten la línea o un disco más lento que la red.
+
+### 11.4 Factores que cambian el resultado
+
+| Factor | Qué hay que tener en cuenta |
+|---|---|
+| **Subida y bajada** | Muchas conexiones (4G, cable, algunas fibras) suben más despacio de lo que bajan. Para enviar datos a la nube cuenta la **subida**. |
+| **Ancho de banda y latencia** | El ancho de banda es *cuánto cabe* por segundo (lo ancha que es la tubería). La latencia es *cuánto tarda* en llegar el primer bit (lo larga que es). |
+| **Muchos ficheros pequeños** | Cada fichero paga su latencia, su apertura y su confirmación. Un millón de ficheros de 1 MB tarda mucho más que un único fichero de 1 TB → conviene **empaquetar** (tar, zip). |
+| **Cuello de botella** | Manda el eslabón más lento: el disco, el wifi o el servidor de destino. |
+| **Compresión** | El texto (CSV, JSON, logs) se comprime de 4 a 10 veces. JPG, MP4, ZIP o Parquet ya van comprimidos y apenas se reducen. |
+| **Horario** | Si la línea se comparte con el resto de la empresa, quizá solo pueda usarse por la noche. |
+
+### 11.5 Tabla de referencia
+
+Tiempos teóricos (eficiencia 100 %). En la práctica hay que sumar entre un 25 % y un 40 %.
+
+| Tipo de fichero | Tamaño | 4G (20 Mbps) | Fibra doméstica (300 Mbps) | Fibra 1 Gbps | Red de CPD (10 Gbps) |
+|---|---|---|---|---|---|
+| Foto de móvil (JPG) | 4 MB | 1,6 s | 0,1 s | < 0,1 s | < 0,1 s |
+| CSV de ventas mensual | 50 MB | 20 s | 1,3 s | 0,4 s | < 0,1 s |
+| Película HD (MP4) | 4 GB | 27 min | 1,8 min | 32 s | 3,2 s |
+| Logs de un día de una web grande | 50 GB | 5,6 h | 22 min | 6,7 min | 40 s |
+| Copia de seguridad de una base de datos | 500 GB | 2,3 días | 3,7 h | 1,1 h | 6,7 min |
+| Data lake de una empresa mediana | 10 TB | 46 días | 3,1 días | 22 h | 2,2 h |
+| Datos de una gran plataforma | 1 PB | 12,7 años | 309 días | 93 días | 9,3 días |
+
+> Hasta los gigabytes la red no preocupa. A partir de los **terabytes**, la transferencia pasa a ser una parte importante del diseño.
+
+### 11.6 Cuando la red no basta: mover discos
+
+Andrew Tanenbaum lo resumió así: *«nunca subestimes el ancho de banda de una furgoneta llena de cintas circulando por la autopista»*. Una furgoneta con 100 discos de 20 TB (2 PB) que tarda 10 horas en llegar equivale a una red de 2·10¹⁵ × 8 / 36 000 s ≈ **444 Gbps**. Por eso los grandes proveedores de nube ofrecen dispositivos físicos que se llenan en las instalaciones del cliente y se envían por mensajería.
+
+---
+
+## 12. Planificar un proyecto de datos
 
 Un proyecto de datos sigue unas fases parecidas a las de cualquier proyecto, y conviene fijar objetivos y prioridades desde el principio:
 
@@ -242,7 +326,7 @@ Es lo que haremos en el proyecto integrador.
 
 ---
 
-## 12. Conceptos clave
+## 13. Conceptos clave
 
 | Concepto | Explicación breve |
 |---|---|
@@ -256,10 +340,14 @@ Es lo que haremos en el proyecto integrador.
 | Arquitectura Kappa | Lo procesa todo como flujo y recalcula reproduciendo el registro de eventos. |
 | Notación O | Forma de expresar cómo crece el coste de un algoritmo con el tamaño de los datos. |
 | Calidad del dato | Grado en que los datos son exactos, completos, actuales y coherentes. |
+| Ancho de banda | Cantidad de datos que una red puede transmitir por segundo; se mide en bits por segundo (Mbps, Gbps). |
+| Latencia | Tiempo que tarda en llegar el primer bit de un mensaje; pesa mucho cuando hay muchos ficheros pequeños. |
+| Eficiencia de la red | Fracción de la velocidad contratada que se aprovecha de verdad; suele estar entre 0,7 y 0,8. |
+| Unidades binarias | Múltiplos de 1 024 (KiB, MiB, GiB, TiB) frente a los decimales de 1 000 (kB, MB, GB, TB). |
 
 ---
 
-## 13. Errores de concepto frecuentes
+## 14. Errores de concepto frecuentes
 
 | Idea equivocada | Por qué no es así |
 |---|---|
@@ -269,10 +357,14 @@ Es lo que haremos en el proyecto integrador.
 | «La notación O mide el tiempo en segundos» | Mide cómo **crece** el coste con *n*; las constantes y el hardware se ignoran. |
 | «Lambda y Kappa son herramientas» | Son **arquitecturas** (formas de organizar el sistema), que se implementan con herramientas como Spark o Kafka. |
 | «Lo difícil es analizar» | La limpieza y transformación suelen llevarse más de la mitad del tiempo del proyecto. |
+| «Mi fibra de 300 megas descarga a 300 MB/s» | Son 300 **Mbps** (megabits): 300 / 8 = **37,5 MB/s**. |
+| «Da igual un fichero grande que muchos pequeños» | Cada fichero paga su sobrecarga (latencia, apertura, confirmación); conviene empaquetarlos. |
+| «Si contrato más velocidad, iré a esa velocidad» | Manda el eslabón más lento y la eficiencia real ronda el 70–80 %. |
+| «Mi disco de 1 TB solo tiene 931 GB» | Son 931 **GiB**, que equivalen exactamente a 1 TB; el sistema operativo cuenta en binario. |
 
 ---
 
-## 14. Chuleta rápida
+## 15. Chuleta rápida
 
 ```text
 # ---------- Las cinco V ----------
@@ -294,11 +386,21 @@ Kappa  → todo es flujo + registro de eventos (una sola lógica)
 # ---------- Complejidad (de mejor a peor) ----------
 O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ)
 Repartir un O(n) entre k máquinas → n/k por máquina
+
+# ---------- Transferencia ----------
+t = tamaño(B) × 8 / (velocidad(bps) × 0,8)
+1 byte = 8 bits   ·   300 Mbps = 37,5 MB/s
+Comprimir texto · empaquetar ficheros pequeños · ojo a la subida
+
+# ---------- Unidades ----------
+Decimal ×1 000 (kB, MB, GB, TB)  ·  Binaria ×1 024 (KiB, MiB, GiB, TiB)
+1 TB = 0,909 TiB   ·   1 TiB = 1,1 TB
+Disco de 1 TB → Windows muestra 931 «GB» (en realidad GiB)
 ```
 
 ---
 
-## 15. Referencias
+## 16. Referencias
 
 - Apache Hadoop: <https://hadoop.apache.org/>
 - Apache Spark: <https://spark.apache.org/>
@@ -309,7 +411,7 @@ Repartir un O(n) entre k máquinas → n/k por máquina
 
 ---
 
-## 16. Ejemplo resuelto: tiques duplicados
+## 17. Ejemplo resuelto: tiques duplicados
 
 **Situación.** Una cadena de supermercados tiene **1 000 millones** (10⁹) de tiques de compra y quiere encontrar los tiques duplicados (el mismo tique registrado dos veces por un error de la caja). Un ordenador hace unos **10⁸ operaciones sencillas por segundo**. Se plantean dos algoritmos.
 
@@ -340,3 +442,38 @@ Complejidad O(n): el algoritmo es viable. Pero aparece otro límite: si cada ent
 - Una única máquina con 128 GB podría costar 1,50 €/h; con 0,25 h saldrían **0,375 €**, más barato en este caso, pero con techo: si mañana hay 10 veces más tiques, no existe una máquina 10 veces mayor a un precio razonable, mientras que el clúster solo necesita 100 máquinas.
 
 **Conclusión.** El ejemplo junta las ideas del manual: la **complejidad** descarta el algoritmo A; el **volumen** hace que el algoritmo B no quepa en una máquina; el **escalado horizontal** lo resuelve repartiendo los datos; y el **análisis de costes** muestra que la decisión depende del tamaño actual y del crecimiento esperado.
+
+---
+
+## 18. Ejemplo resuelto: subir el histórico de tiques a la nube
+
+**Situación.** La cadena de supermercados de la sección 17 quiere subir a la nube su histórico de tiques para procesarlo con Spark: **2 TB en CSV**. Tiene **fibra simétrica de 300 Mbps**, pero de día la usan las cajas, así que solo puede dedicarla a la subida de **22:00 a 06:00 (8 h por noche)**.
+
+**Paso 1: velocidad efectiva.** 300 Mbps × 0,8 = 240 Mbps = 240 / 8 = **30 MB/s**.
+
+**Paso 2: tiempo de transferencia.**
+
+- t = 2·10¹² B × 8 / 240·10⁶ bit/s = 66 667 s ≈ **18,5 horas**.
+- En noches: 18,5 / 8 ≈ 2,3 → hacen falta **3 noches**.
+
+**Paso 3: ¿y si se comprime?** Un CSV se comprime al menos 4:1, así que 2 TB pasan a 500 GB:
+
+- t = 500·10⁹ × 8 / 240·10⁶ ≈ 16 667 s ≈ **4,6 horas** → cabe en **una noche**. Comprimir cuesta algo de CPU, pero ahorra dos noches.
+
+**Paso 4: ¿y si se contrata 1 Gbps?** Eficiencia 0,8 → 800 Mbps:
+
+- Sin comprimir: 2·10¹² × 8 / 800·10⁶ = 20 000 s ≈ **5,6 h**.
+- Comprimido: 500·10⁹ × 8 / 800·10⁶ = 5 000 s ≈ **1,4 h**.
+
+Comprimir mejora más que contratar una línea tres veces más rápida, y además es gratis.
+
+**Paso 5: la trampa de los ficheros pequeños.** El histórico no es un único fichero: son **20 millones de ficheros de 100 KB** (uno por tique). Si cada fichero añade 50 ms de sobrecarga (abrirlo, negociar, confirmar) y se envían uno a uno:
+
+- Sobrecarga: 20·10⁶ × 0,05 s = 10⁶ s ≈ **11,6 días**, más que toda la transferencia de datos.
+- Solución: **empaquetar** (por ejemplo, un `.tar.gz` por día de ventas) o enviar muchos ficheros en paralelo.
+
+**Paso 6: la carga diaria.** Una vez subido el histórico, cada día se generan unos 5 GB nuevos:
+
+- t = 5·10⁹ × 8 / 240·10⁶ ≈ 167 s ≈ **3 minutos** por noche. Sin problema.
+
+**Conclusión.** Lo que parecía «subir unos ficheros» son en realidad **3 noches**, o **12 días** si nadie se fija en el número de ficheros. Con **comprimir y empaquetar** se queda en **una noche** sin gastar nada en una línea mejor. Calcular antes de empezar evita sorpresas y permite comparar opciones con números.
