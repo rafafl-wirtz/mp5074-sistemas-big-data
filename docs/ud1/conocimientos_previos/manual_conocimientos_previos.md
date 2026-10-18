@@ -65,7 +65,7 @@ Un **sistema de ficheros** organiza los datos del disco en **carpetas** (directo
 | Mayúsculas | No las distingue (`Datos.csv` = `datos.csv`) | Sí las distingue: son dos ficheros distintos |
 | Otros discos | Otra letra (`D:\`) | Se «montan» dentro del árbol (`/mnt/d`) |
 
-> **Con WSL:** el disco `C:` de Windows aparece dentro de Linux como `/mnt/c`, y el disco de Linux se ve desde Windows como `\\wsl$\Ubuntu\...`. Consulta el [manual de WSL](../wsl/manual_wsl.md) para más detalle.
+> **Con WSL:** el disco `C:` de Windows aparece dentro de Linux como `/mnt/c`, y el disco de Linux se ve desde Windows como `\\wsl$\Ubuntu\...`. Consulta el [manual de WSL](../manuales/wsl/manual_wsl.md) para más detalle.
 
 ---
 
@@ -198,7 +198,7 @@ Cuando escribes `python` en la terminal, el sistema no busca en todo el disco. R
 **Consecuencias prácticas**
 
 1. Instalar un programa no basta: su carpeta tiene que estar en `PATH`.
-2. Si hay dos versiones instaladas, gana la que esté **antes** en `PATH`. Eso es exactamente lo que hace `conda activate`: pone delante la carpeta del entorno (ver el [manual de Miniconda](../miniconda/manual_miniconda.md)).
+2. Si hay dos versiones instaladas, gana la que esté **antes** en `PATH`. Eso es exactamente lo que hace `conda activate`: pone delante la carpeta del entorno (ver el [manual de Miniconda](../manuales/miniconda/manual_miniconda.md)).
 
 Añadir una carpeta al principio del `PATH` en Linux:
 
