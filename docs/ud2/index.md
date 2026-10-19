@@ -4,14 +4,6 @@
 
 Aprendemos a **obtener datos de cualquier origen** y a dejarlos en un DataFrame de pandas listo para analizar. Vamos de lo más sencillo a lo más complejo: fichero local → muchos ficheros → API → página web estática → página web dinámica → combinar fuentes.
 
-## Resultados de aprendizaje
-
-| RA | Criterios de evaluación |
-|---|---|
-| **RA3.** Gestiona y almacena datos facilitando la búsqueda de respuestas en grandes conjuntos de datos. | a) extraer y almacenar datos de diversas fuentes · d) gestión y almacenamiento eficiente y seguro, teniendo en cuenta la normativa |
-| **RA1.** Aplica técnicas de análisis de datos que integran, procesan y analizan la información. | c) combinar diferentes fuentes y tipos de datos · d) construir conjuntos de datos complejos y relacionarlos |
-| **RA4.** Aplica herramientas para la visualización de datos utilizadas en las soluciones Big Data. | a) escenarios y tipologías de datos no estructurados |
-
 ## Contenidos
 
 1. **Tipos de datos:** estructurados, semiestructurados y no estructurados. Formatos CSV, JSON, XML y Excel.
