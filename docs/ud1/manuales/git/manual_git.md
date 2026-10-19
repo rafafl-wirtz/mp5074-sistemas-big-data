@@ -525,31 +525,374 @@ La primera vez que hagas `git push` por HTTPS se abrirá una ventana de inicio d
 
 ## 13. Trabajo en equipo: *pull requests* y *forks*
 
-### 13.1 Flujo con ramas y *pull requests* (*GitHub Flow*)
+Cuando varias personas trabajan sobre el mismo proyecto, **nadie debería subir directamente a `main`**. Los cambios se proponen, se revisan y solo entonces se integran. En GitHub esto se hace con dos herramientas que conviene no confundir:
 
-1. Actualiza `main`: `git switch main && git pull`.
-2. Crea una rama para la tarea: `git switch -c analisis-ventas`.
-3. Haz commits pequeños y súbelos: `git push -u origin analisis-ventas`.
-4. En GitHub, abre un **Pull Request (PR)** de `analisis-ventas` hacia `main`.
-5. El equipo (o el profesorado) **revisa** el código y comenta.
-6. Cuando está aprobado, se hace **Merge** en GitHub.
-7. En local: `git switch main && git pull && git branch -d analisis-ventas`.
+| | **Pull request (PR)** | **Fork** |
+|---|---|---|
+| ¿Qué es? | Una **petición** para fusionar una rama en otra, con revisión y comentarios | Una **copia** de un repositorio ajeno dentro de tu cuenta de GitHub |
+| ¿Dónde vive? | En GitHub, asociado a un repositorio | En tu cuenta (`github.com/MI_USUARIO/proyecto`) |
+| ¿Cuándo se usa? | Siempre que quieras integrar cambios revisados | Cuando **no tienes permiso de escritura** en el repositorio original |
+| ¿Se combinan? | Sí: desde un fork se abre un PR hacia el repositorio original | — |
 
-### 13.2 *Forks*
+Hay, por tanto, dos formas habituales de colaborar:
 
-Un **fork** es una copia de un repositorio ajeno en tu cuenta de GitHub. Se usa para contribuir a proyectos en los que no tienes permiso de escritura (o para partir de una plantilla de prácticas):
+- **Modelo de ramas compartidas** (13.1–13.4): todo el equipo es colaborador del mismo repositorio, cada uno trabaja en su rama y abre PR hacia `main`. Es el que usaremos en los proyectos de grupo.
+- **Modelo de *forks*** (13.5–13.8): cada persona trabaja en su propia copia y propone cambios al original mediante PR. Es el modelo de los proyectos de software libre y el que se usa para contribuir al repositorio del profesorado.
 
-```bash
-git clone git@github.com:MI_USUARIO/proyecto.git
-cd proyecto
-git remote add upstream https://github.com/ORIGINAL/proyecto.git   # Repositorio original
-git fetch upstream
-git merge upstream/main          # Traer novedades del original
+---
+
+### 13.1 ¿Qué es un *pull request*?
+
+Un **pull request** (en GitLab se llama *merge request*) es una página de GitHub que dice: *«tengo estos commits en la rama `X`; por favor, revisadlos y fusionadlos en la rama `Y`»*. En esa página se puede:
+
+- Ver **qué cambia** (pestaña *Files changed*), línea a línea.
+- **Comentar** líneas concretas y hacer una revisión: *Comment*, *Approve* o *Request changes*.
+- Seguir **añadiendo commits**: todo lo que subas a la rama `X` aparece automáticamente en el PR.
+- Ver si hay **conflictos** con la rama destino y si pasan las comprobaciones automáticas.
+- **Fusionar** cuando esté aprobado.
+
+Vocabulario que verás en GitHub:
+
+| Término | Significado |
+|---|---|
+| **base** | Rama que **recibe** los cambios (normalmente `main`) |
+| **compare** / **head** | Rama que **contiene** los cambios (tu rama de trabajo) |
+| **Draft pull request** | PR en borrador: visible para el equipo, pero no se puede fusionar hasta marcarlo *Ready for review* |
+| **Reviewer** | Persona a la que se pide revisar el PR |
+| **Assignee** | Persona responsable del PR |
+
+---
+
+### 13.2 Configurar el repositorio para trabajar con PR
+
+Lo hace **una sola vez** la persona propietaria del repositorio (en un proyecto de grupo, quien lo crea).
+
+**1. Añadir colaboradores** (permiso de escritura):
+**Settings → Collaborators → Add people** → escribe el usuario de GitHub de cada compañero y del profesorado. Cada invitado debe **aceptar la invitación** (le llega por correo o en <https://github.com/notifications>).
+
+**2. Proteger la rama `main`** para que nadie pueda subir a ella sin PR:
+**Settings → Branches → Add branch ruleset** (o *Add classic branch protection rule*) y, para la rama `main`, activa:
+
+| Opción | Para qué sirve |
+|---|---|
+| ✅ *Require a pull request before merging* | Prohíbe `git push` directo a `main`: todo entra por PR |
+| ✅ *Require approvals* → `1` | Hace falta al menos una aprobación de otra persona |
+| ✅ *Dismiss stale pull request approvals when new commits are pushed* | Si se añaden commits tras aprobar, hay que volver a revisar |
+| ✅ *Block force pushes* (*Do not allow force pushes*) | Impide `git push --force` sobre `main` |
+
+> En un ruleset, en *Target branches* elige **Include default branch** y deja el *Enforcement status* en **Active**. En repositorios **privados** de cuentas gratuitas las reglas de protección pueden no estar disponibles; en ese caso el equipo debe comprometerse a no hacer `push` a `main`.
+
+**3. Elegir cómo se fusionan los PR**: **Settings → General → Pull Requests**:
+
+| Opción | Resultado en la historia de `main` |
+|---|---|
+| *Allow merge commits* | Conserva todos los commits de la rama + un commit de fusión |
+| *Allow squash merging* ✅ | Junta todos los commits del PR en **uno solo** (historia más limpia; recomendado para prácticas) |
+| *Allow rebase merging* | Copia los commits uno a uno sobre `main`, sin commit de fusión |
+
+Marca también ✅ **Automatically delete head branches** para que GitHub borre la rama remota al fusionar el PR.
+
+**4. (Opcional) Plantilla de PR**: crea el archivo `.github/pull_request_template.md` en `main`. Su contenido aparecerá automáticamente en la descripción de cada PR nuevo:
+
+```markdown
+## ¿Qué cambia?
+
+## ¿Cómo se ha probado?
+
+## Checklist
+- [ ] El código se ejecuta sin errores
+- [ ] No se suben datos ni credenciales
+- [ ] Los notebooks están sin salidas
 ```
 
-### 13.3 Colaboradores
+---
 
-En un repositorio propio: **Settings → Collaborators → Add people** para dar permiso de escritura a los compañeros o al profesorado.
+### 13.3 Ejemplo completo: PR en un proyecto de grupo
+
+**Situación:** Ana y Brais hacen en grupo la práctica `ventas-bigdata`. Ana es la propietaria del repositorio y ha añadido a Brais como colaborador (13.2). Brais debe añadir un script que limpie el dataset de ventas.
+
+```
+          main  ●───●─────────────────●  (squash merge del PR #3)
+                     \               /
+  limpieza-ventas     ●───●───●─────┘
+                     (commits de Brais, revisados por Ana en el PR)
+```
+
+**Paso 1 — Brais clona el repositorio** (solo la primera vez):
+
+```bash
+git clone git@github.com:ana-garcia/ventas-bigdata.git
+cd ventas-bigdata
+```
+
+**Paso 2 — Parte de un `main` actualizado y crea su rama:**
+
+```bash
+git switch main
+git pull
+git switch -c limpieza-ventas
+```
+
+> Nombra las ramas según la tarea: `limpieza-ventas`, `fix-fechas`, `notebook-eda`… Una rama = una tarea = un PR.
+
+**Paso 3 — Trabaja y hace commits pequeños:**
+
+```bash
+# ... crea scripts/limpieza.py ...
+git add scripts/limpieza.py
+git commit -m "Añade script de limpieza de nulos en ventas"
+
+# ... normaliza fechas ...
+git add scripts/limpieza.py
+git commit -m "Normaliza la columna fecha a formato ISO"
+```
+
+**Paso 4 — Sube la rama a GitHub:**
+
+```bash
+git push -u origin limpieza-ventas
+```
+
+La terminal muestra un enlace directo para crear el PR:
+
+```
+remote: Create a pull request for 'limpieza-ventas' on GitHub by visiting:
+remote:      https://github.com/ana-garcia/ventas-bigdata/pull/new/limpieza-ventas
+```
+
+**Paso 5 — Abre el pull request.** En GitHub aparece un aviso amarillo con el botón **Compare & pull request** (o usa el enlace anterior):
+
+1. Comprueba las ramas: **base: `main`** ← **compare: `limpieza-ventas`**.
+2. **Título** claro: *Limpieza del dataset de ventas*.
+3. **Descripción**: qué hace, cómo probarlo. Si resuelve una *issue*, escribe `Closes #2` y la *issue* se cerrará sola al fusionar.
+4. En la barra lateral, **Reviewers** → `ana-garcia`.
+5. **Create pull request** (o *Create draft pull request* si aún no está terminado).
+
+**Paso 6 — Ana revisa.** En la pestaña **Files changed** pulsa el `+` junto a una línea para comentarla. Al terminar: **Review changes** → *Request changes* con el comentario «Usa `dropna(subset=["importe"])` en vez de borrar todas las filas con algún nulo».
+
+**Paso 7 — Brais corrige en la misma rama.** No se abre un PR nuevo: basta con subir más commits.
+
+```bash
+# ... corrige el código ...
+git add scripts/limpieza.py
+git commit -m "Elimina solo filas sin importe"
+git push                     # El PR se actualiza solo
+```
+
+En el PR, Brais responde al comentario y pulsa **Resolve conversation**.
+
+**Paso 8 — Ana aprueba y fusiona:** **Review changes → Approve → Submit review** y, después, **Squash and merge → Confirm**. GitHub borra la rama remota si se activó esa opción.
+
+**Paso 9 — Ambos actualizan su copia local:**
+
+```bash
+git switch main
+git pull
+git branch -d limpieza-ventas       # Brais borra su rama local
+git fetch --prune                   # Limpia referencias a ramas remotas ya borradas
+```
+
+> Si `git branch -d` se queja de que la rama *no está fusionada* tras un **squash merge**, es normal (el commit en `main` es distinto de los de la rama). Si ya comprobaste que el PR está fusionado, usa `git branch -D limpieza-ventas`.
+
+---
+
+### 13.4 Mantener un PR al día y resolver conflictos
+
+Si mientras tu PR está abierto otra persona fusiona cambios en `main`, GitHub puede mostrar **This branch has conflicts that must be resolved**. Se resuelve en local, en tu rama:
+
+```bash
+git switch main
+git pull                          # Trae el main nuevo
+git switch limpieza-ventas
+git merge main                    # Integra main en tu rama
+# Resuelve los conflictos como en la sección 10.2
+git add scripts/limpieza.py
+git commit
+git push                          # El PR deja de mostrar conflictos
+```
+
+Para conflictos sencillos también puedes usar el botón **Resolve conflicts** de GitHub, o **Update branch** si no hay conflictos y solo quieres traer lo nuevo de `main`.
+
+---
+
+### 13.5 ¿Qué es un *fork*?
+
+Un **fork** es una copia completa de un repositorio ajeno en **tu** cuenta de GitHub, que **recuerda de dónde viene**. Tienes permiso total sobre tu fork, pero ninguno sobre el original. Para proponer cambios al original, abres un **PR desde tu fork**.
+
+Al trabajar con un fork intervienen **tres repositorios**:
+
+```
+             ┌───────────────────────────────┐
+             │  upstream (ORIGINAL)          │  profe-mp5074/mp5074-practicas
+             │  Solo lectura para ti         │
+             └──────┬─────────────────▲──────┘
+         1. Fork    │                 │  5. Pull request
+         (en GitHub)│                 │     (fork → original)
+             ┌──────▼─────────────────┴──────┐
+             │  origin (TU FORK en GitHub)   │  brais-lopez/mp5074-practicas
+             │  Lectura y escritura          │
+             └──────┬─────────────────▲──────┘
+         2. clone   │                 │  4. push
+             ┌──────▼─────────────────┴──────┐
+             │  Repositorio local (WSL)      │  3. ramas y commits
+             └───────────────────────────────┘
+```
+
+| Remoto | Apunta a | Para qué |
+|---|---|---|
+| `origin` | **Tu fork** | `push` de tus ramas |
+| `upstream` | **El repositorio original** | `fetch` de las novedades (nunca `push`) |
+
+> **Fork frente a plantilla:** si el profesorado marca su repositorio como *Template repository*, el botón **Use this template** crea una copia **independiente**, sin vínculo con el original (no podrás abrir PR hacia él ni sincronizarte). Un fork mantiene el vínculo. Ten en cuenta también que el fork de un repositorio **público** es siempre **público**.
+
+---
+
+### 13.6 Configurar un *fork* paso a paso
+
+**1. Crear el fork en GitHub:** abre el repositorio original y pulsa **Fork** (arriba a la derecha) → como *Owner* elige tu usuario → deja marcado *Copy the `main` branch only* → **Create fork**.
+
+**2. Clonar tu fork** (¡el tuyo, no el original!):
+
+```bash
+git clone git@github.com:brais-lopez/mp5074-practicas.git
+cd mp5074-practicas
+```
+
+**3. Añadir el remoto `upstream`** que apunta al original:
+
+```bash
+git remote add upstream https://github.com/profe-mp5074/mp5074-practicas.git
+```
+
+> Para `upstream` basta la URL HTTPS: solo vas a leer de él, así que no necesita autenticación.
+
+**4. Comprobar la configuración:**
+
+```bash
+git remote -v
+```
+
+```
+origin    git@github.com:brais-lopez/mp5074-practicas.git (fetch)
+origin    git@github.com:brais-lopez/mp5074-practicas.git (push)
+upstream  https://github.com/profe-mp5074/mp5074-practicas.git (fetch)
+upstream  https://github.com/profe-mp5074/mp5074-practicas.git (push)
+```
+
+**5. (Recomendado) Evitar un `push` accidental al original:**
+
+```bash
+git remote set-url --push upstream NO_PUSH
+```
+
+Ahora `git push upstream` fallará siempre, y `git remote -v` mostrará `NO_PUSH` en la línea *(push)* de `upstream`.
+
+**Alternativa con GitHub CLI** — hace los pasos 1 a 4 de una vez:
+
+```bash
+gh repo fork profe-mp5074/mp5074-practicas --clone
+cd mp5074-practicas
+git remote -v          # origin = tu fork, upstream = original (ya configurados)
+```
+
+---
+
+### 13.7 Ejemplo completo: contribuir al repositorio del profesorado
+
+**Situación:** el profesorado publica los enunciados en `profe-mp5074/mp5074-practicas`. Brais encuentra un error en el notebook de la práctica 2 (la ruta del CSV está mal) y quiere proponer la corrección. No tiene permiso de escritura, así que usa un fork (ya configurado como en 13.6).
+
+**Paso 1 — Sincroniza tu `main` con el original** antes de empezar:
+
+```bash
+git switch main
+git fetch upstream                # Descarga las novedades del original
+git merge upstream/main           # Las integra en tu main local
+git push origin main              # Actualiza también tu fork en GitHub
+```
+
+**Paso 2 — Crea una rama para el cambio** (nunca trabajes directamente en `main` de tu fork):
+
+```bash
+git switch -c fix-ruta-practica2
+```
+
+**Paso 3 — Corrige, haz commit y súbelo a tu fork:**
+
+```bash
+# ... corrige practicas/p2/eda.ipynb ...
+git add practicas/p2/eda.ipynb
+git commit -m "Corrige la ruta del CSV en el notebook de la práctica 2"
+git push -u origin fix-ruta-practica2
+```
+
+**Paso 4 — Abre el PR hacia el repositorio original.** En la página de tu fork aparece **Compare & pull request** (o pestaña *Pull requests → New pull request*). Revisa con cuidado las **cuatro** cajas de la parte superior:
+
+```
+base repository: profe-mp5074/mp5074-practicas   base: main
+   ←  head repository: brais-lopez/mp5074-practicas   compare: fix-ruta-practica2
+```
+
+Escribe título y descripción, deja marcado ✅ **Allow edits by maintainers** (permite al profesorado retocar tu rama) y pulsa **Create pull request**. El PR aparece en el repositorio **original**, no en tu fork.
+
+**Paso 5 — Revisión.** Si el profesorado pide cambios, haz nuevos commits en `fix-ruta-practica2` y `git push`: el PR se actualiza igual que en 13.3.
+
+**Paso 6 — Tras la fusión**, sincroniza y limpia:
+
+```bash
+git switch main
+git fetch upstream
+git merge upstream/main
+git push origin main
+git branch -D fix-ruta-practica2
+git push origin --delete fix-ruta-practica2     # Borra la rama de tu fork
+```
+
+---
+
+### 13.8 Mantener el *fork* sincronizado
+
+Tu fork **no se actualiza solo**: si el profesorado añade una práctica nueva al original, tienes que traerla. Tres formas equivalentes:
+
+| Método | Cómo |
+|---|---|
+| **Terminal** (recomendado) | `git fetch upstream` → `git switch main` → `git merge upstream/main` → `git push origin main` |
+| **Web de GitHub** | En tu fork: **Sync fork → Update branch**. Después, en local: `git pull` |
+| **GitHub CLI** | `gh repo sync brais-lopez/mp5074-practicas` y luego `git pull` en local |
+
+> Si has hecho commits directamente en el `main` de tu fork, la sincronización puede dar conflictos. Por eso la regla es: **`main` del fork solo se usa para seguir al original; tu trabajo, siempre en ramas.**
+
+---
+
+### 13.9 *Pull requests* desde la terminal con `gh`
+
+Con GitHub CLI (sección 12.2) puedes hacer todo el ciclo sin abrir el navegador:
+
+| Comando | Qué hace |
+|---|---|
+| `gh pr create --base main --title "..." --body "..."` | Abre un PR desde la rama actual (en un fork, lo crea hacia el original) |
+| `gh pr create --draft` | Abre el PR como borrador |
+| `gh pr list` | Lista los PR abiertos del repositorio |
+| `gh pr status` | Estado de tus PR y de los que te piden revisar |
+| `gh pr checkout 3` | Descarga la rama del PR #3 para probarla en local |
+| `gh pr diff 3` | Muestra los cambios del PR #3 |
+| `gh pr review 3 --approve` | Aprueba el PR (`--request-changes -b "motivo"` para pedir cambios) |
+| `gh pr merge 3 --squash --delete-branch` | Fusiona el PR con *squash* y borra la rama |
+| `gh repo fork ORIGINAL/repo --clone` | Crea un fork, lo clona y configura `upstream` |
+| `gh repo sync` | Sincroniza tu fork con el original |
+
+---
+
+### 13.10 Errores frecuentes con PR y *forks*
+
+| Problema | Causa | Solución |
+|---|---|---|
+| `remote: Permission to ORIGINAL/repo.git denied` | Has clonado el original en vez de tu fork, o no eres colaborador | `git remote set-url origin git@github.com:MI_USUARIO/repo.git` |
+| `protected branch hook declined` al hacer `push` a `main` | `main` está protegida (13.2) | Trabaja en una rama y abre un PR |
+| El PR incluye commits que no son tuyos | Tu rama partía de un `main` desactualizado, o elegiste mal la rama *base* | Sincroniza `main` (13.8), crea la rama de nuevo y abre otro PR |
+| El PR se ha abierto contra **tu propio fork** | En *base repository* quedó tu fork | Cierra el PR y ábrelo eligiendo el original como *base repository* |
+| *Merging is blocked* | Faltan aprobaciones requeridas o hay conflictos | Pide revisión o resuelve conflictos (13.4) |
+| No aparece `upstream` en `git remote -v` | No se añadió tras clonar | `git remote add upstream <url-del-original>` |
+| `Can't automatically merge` al crear el PR | Conflictos con la rama destino | Puedes crearlo igualmente y resolverlos como en 13.4 |
 
 ---
 
@@ -751,6 +1094,12 @@ git push -u origin main               # Primera subida
 git pull                              # Traer y fusionar
 git push                              # Subir
 
+# ---------- Pull requests y forks ----------
+git push -u origin <rama>             # Subir rama y abrir PR en GitHub
+git remote add upstream <url-original>  # Fork: enlazar con el original
+git fetch upstream && git merge upstream/main   # Fork: traer novedades
+gh pr create / gh pr checkout <n>     # PR desde la terminal
+
 # ---------- Deshacer ----------
 git restore <archivo>                 # Descartar cambios (⚠️)
 git restore --staged <archivo>        # Quitar de preparación
@@ -769,6 +1118,9 @@ git reflog                            # Red de seguridad
 - Git en WSL (Microsoft Learn): <https://learn.microsoft.com/es-es/windows/wsl/tutorials/wsl-git>
 - GitHub Docs – Primeros pasos: <https://docs.github.com/es/get-started>
 - GitHub Docs – Conectar con SSH: <https://docs.github.com/es/authentication/connecting-to-github-with-ssh>
+- GitHub Docs – Acerca de las *pull requests*: <https://docs.github.com/es/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests>
+- GitHub Docs – Trabajar con *forks*: <https://docs.github.com/es/pull-requests/collaborating-with-pull-requests/working-with-forks>
+- GitHub Docs – Reglas de protección de ramas: <https://docs.github.com/es/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
 - GitHub CLI: <https://cli.github.com/>
 - Plantillas de `.gitignore`: <https://github.com/github/gitignore>
 - Git LFS: <https://git-lfs.com/>
