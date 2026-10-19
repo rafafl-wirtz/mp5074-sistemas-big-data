@@ -1,4 +1,63 @@
+# ==========================================
+# Zensical / Generadores Estáticos
+# ==========================================
+# Directorios de compilación y salida (build)
 site/
-.venv/
-__pycache__/
+dist/
+build/
+public/
+_site/
+
+# Caché y archivos temporales
+.zensical/
 .cache/
+.tmp/
+
+# Dependencias y entornos (según el runtime de tu proyecto)
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+target/
+
+# Archivos de variables de entorno (secretos)
+.env
+.env.local
+.env.*.local
+
+# ==========================================
+# Visual Studio Code
+# ==========================================
+# Ignora archivos de estado local de VS Code pero conserva configuraciones del equipo
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Espacios de trabajo locales e historial
+*.code-workspace
+.history/
+
+# ==========================================
+# Archivos del Sistema Operativo y Logs
+# ==========================================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
