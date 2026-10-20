@@ -8,8 +8,7 @@ DIAS_LABORAIS_SEMANAIS = 0
 SEMANAS = 0
 
 # Cada medio de transporte ten o seu índice de emisións medio (gramos por km)
-# https://www.movilidad-idae.es/destacados/emisiones-de-co2-por-modos-de-transporte-motorizado
-EMISION_X_KM = 121
+# https://www.idae.es/movilidad-sostenible/emisiones-de-co2-por-modos-de-transporte-motorizado
 
 cantidade_de_emisions = KMS_DIARIOS * DIAS_LABORAIS_SEMANAIS * SEMANAS * EMISION_X_KM
 print('O teu consumo é:', cantidade_de_emisions, 'gC02')
