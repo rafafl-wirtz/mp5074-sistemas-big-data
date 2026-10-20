@@ -956,7 +956,7 @@ git add .gitattributes
 
 ### 15.2 Notebooks
 
-Los `.ipynb` guardan las salidas (tablas, imágenes), lo que genera diferencias enormes y conflictos. Soluciones (detalladas en el [manual de JupyterLab](../jupyterlab/manual_jupyterlab.md), sección 15):
+Los `.ipynb` guardan las salidas (tablas, imágenes), lo que genera diferencias enormes y conflictos. Soluciones (detalladas en el [manual de JupyterLab](../jupyterlab/manual_jupyterlab.md), sección 14):
 
 ```bash
 pip install nbstripout

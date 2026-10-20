@@ -10,8 +10,9 @@
 | 4 | [Docker](docker/manual_docker.md) | Levantar bases de datos, Spark o Jupyter en contenedores sin instalarlos en el equipo |
 | 5 | [Miniconda](miniconda/manual_miniconda.md) | Crear entornos de Python aislados y reproducibles (`bigdata`) |
 | 6 | [JupyterLab](jupyterlab/manual_jupyterlab.md) | Notebooks para explorar y analizar datos |
-| 7 | [Python](python/manual_python.md) | El Python necesario para los notebooks: estructuras de datos, funciones y lectura de ficheros |
-| 8 | [pandas](pandas/manual_pandas.md) | Leer, limpiar, transformar, agregar y combinar datos; trabajo con grandes volúmenes |
+| 7 | [Markdown](markdown/manual_markdown.md) | Dar formato a las celdas de los notebooks, los README de GitHub y esta web |
+| 8 | [Python](python/manual_python.md) | El Python necesario para los notebooks: estructuras de datos, funciones y lectura de ficheros |
+| 9 | [pandas](pandas/manual_pandas.md) | Leer, limpiar, transformar, agregar y combinar datos; trabajo con grandes volúmenes |
 
 ## Documentación oficial
 

@@ -19,15 +19,14 @@
 9. [Celdas Markdown: documentar el análisis](#9-celdas-markdown-documentar-el-análisis)
 10. [Comandos mágicos y comandos del sistema](#10-comandos-mágicos-y-comandos-del-sistema)
 11. [Datos y gráficos en el notebook](#11-datos-y-gráficos-en-el-notebook)
-12. [PySpark en JupyterLab](#12-pyspark-en-jupyterlab)
-13. [Herramientas integradas y extensiones](#13-herramientas-integradas-y-extensiones)
-14. [Exportar y compartir notebooks](#14-exportar-y-compartir-notebooks)
-15. [Notebooks y Git](#15-notebooks-y-git)
-16. [Configuración y seguridad](#16-configuración-y-seguridad)
-17. [Buenas prácticas](#17-buenas-prácticas)
-18. [Solución de problemas frecuentes](#18-solución-de-problemas-frecuentes)
-19. [Chuleta rápida](#19-chuleta-rápida)
-20. [Referencias](#20-referencias)
+12. [Herramientas integradas y extensiones](#12-herramientas-integradas-y-extensiones)
+13. [Exportar y compartir notebooks](#13-exportar-y-compartir-notebooks)
+14. [Notebooks y Git](#14-notebooks-y-git)
+15. [Configuración y seguridad](#15-configuración-y-seguridad)
+16. [Buenas prácticas](#16-buenas-prácticas)
+17. [Solución de problemas frecuentes](#17-solución-de-problemas-frecuentes)
+18. [Chuleta rápida](#18-chuleta-rápida)
+19. [Referencias](#19-referencias)
 
 ---
 
@@ -461,45 +460,9 @@ Haciendo doble clic en el explorador:
 
 ---
 
-## 12. PySpark en JupyterLab
+## 12. Herramientas integradas y extensiones
 
-Con el entorno `bigdata` (que incluye `pyspark` y Java) o con la imagen Docker `pyspark-notebook`:
-
-```python
-from pyspark.sql import SparkSession
-from pyspark.sql import functions as F
-
-spark = (
-    SparkSession.builder
-    .appName("NotebookBigData")
-    .master("local[*]")                        # Usa todos los núcleos del equipo
-    .config("spark.driver.memory", "2g")
-    .getOrCreate()
-)
-
-spark    # Muestra la versión y un enlace a la interfaz web de Spark
-```
-
-Consejos específicos para notebooks con Spark:
-
-- Crea **una sola `SparkSession`** al principio del notebook.
-- `df.show()` imprime texto; para ver una tabla bonita de **pocas filas**, usa `df.limit(20).toPandas()`.
-- **Nunca** hagas `toPandas()` de un DataFrame grande: trae todos los datos a la memoria del notebook.
-- Activa la visualización automática de DataFrames como tabla:
-
-  ```python
-  spark.conf.set("spark.sql.repl.eagerEval.enabled", True)
-  df   # Se muestra como tabla sin necesidad de .show()
-  ```
-
-- Sigue la ejecución de los trabajos en la interfaz web de Spark: <http://localhost:4040>.
-- Al terminar: `spark.stop()`, o reinicia el kernel.
-
----
-
-## 13. Herramientas integradas y extensiones
-
-### 13.1 Incluidas en JupyterLab 4
+### 12.1 Incluidas en JupyterLab 4
 
 - **Terminal** integrada (desde el *Launcher*).
 - **Consola** vinculada a un notebook: clic derecho en el notebook → **New Console for Notebook**; comparte las variables del kernel, ideal para pruebas rápidas.
@@ -514,7 +477,7 @@ Consejos específicos para notebooks con Spark:
   pip install jupyterlab-language-pack-es-ES
   ```
 
-### 13.2 Extensiones útiles
+### 12.2 Extensiones útiles
 
 Las extensiones de JupyterLab 4 se instalan como paquetes de Python (con `pip` o `conda`) y **después se reinicia JupyterLab**:
 
@@ -534,13 +497,13 @@ jupyter labextension list     # Comprueba las extensiones instaladas
 
 ---
 
-## 14. Exportar y compartir notebooks
+## 13. Exportar y compartir notebooks
 
-### 14.1 Desde la interfaz
+### 13.1 Desde la interfaz
 
 **File → Save and Export Notebook As…** → HTML, PDF, Markdown, script de Python (`.py`), LaTeX…
 
-### 14.2 Desde la terminal con `nbconvert`
+### 13.2 Desde la terminal con `nbconvert`
 
 ```bash
 jupyter nbconvert --to html analisis.ipynb
@@ -551,7 +514,7 @@ jupyter nbconvert --to notebook --execute --inplace analisis.ipynb   # Ejecuta e
 
 > Para exportar a **PDF** hace falta LaTeX (`sudo apt install texlive-xetex texlive-fonts-recommended pandoc`). Una alternativa más sencilla es exportar a **HTML** e imprimirlo a PDF desde el navegador, o usar `--to webpdf` (requiere `pip install "nbconvert[webpdf]"` y `playwright install chromium`).
 
-### 14.3 Entregar prácticas
+### 13.3 Entregar prácticas
 
 Antes de entregar un notebook:
 
@@ -562,7 +525,7 @@ Antes de entregar un notebook:
 
 ---
 
-## 15. Notebooks y Git
+## 14. Notebooks y Git
 
 Un `.ipynb` es un JSON que guarda también las **salidas** (tablas, imágenes en base64, contadores). Esto provoca diferencias enormes y conflictos en Git.
 
@@ -598,9 +561,9 @@ Añade al `.gitignore`:
 
 ---
 
-## 16. Configuración y seguridad
+## 15. Configuración y seguridad
 
-### 16.1 Archivo de configuración
+### 15.1 Archivo de configuración
 
 ```bash
 jupyter lab --generate-config
@@ -617,7 +580,7 @@ c.ServerApp.root_dir = "/home/alumno/bigdata"
 
 Las preferencias de la interfaz (tema, atajos, tamaño de fuente…) se cambian en **Settings → Settings Editor**.
 
-### 16.2 Contraseña en lugar de *token*
+### 15.2 Contraseña en lugar de *token*
 
 ```bash
 jupyter server password
@@ -625,7 +588,7 @@ jupyter server password
 
 A partir de entonces, JupyterLab pide esa contraseña en lugar de usar el *token* de la URL.
 
-### 16.3 Seguridad
+### 15.3 Seguridad
 
 - Un notebook **ejecuta código con tus permisos**: no ejecutes notebooks descargados sin revisarlos.
 - **No expongas JupyterLab a la red** (`--ip 0.0.0.0`) sin contraseña: cualquiera que acceda podría ejecutar comandos en tu equipo.
@@ -641,7 +604,7 @@ A partir de entonces, JupyterLab pide esa contraseña en lugar de usar el *token
 
 ---
 
-## 17. Buenas prácticas
+## 16. Buenas prácticas
 
 1. **Estructura clara:** título, descripción del objetivo, importaciones y configuración al principio, y conclusiones al final.
 2. **Una idea por celda**, con celdas cortas.
@@ -672,7 +635,7 @@ proyecto/
 
 ---
 
-## 18. Solución de problemas frecuentes
+## 17. Solución de problemas frecuentes
 
 | Problema | Causa probable | Solución |
 |---|---|---|
@@ -699,7 +662,7 @@ jupyter server list
 
 ---
 
-## 19. Chuleta rápida
+## 18. Chuleta rápida
 
 ```bash
 # ---------- Terminal ----------
@@ -733,7 +696,7 @@ Ctrl+S        Guardar                  Ctrl+Shift+C  Paleta de comandos
 
 ---
 
-## 20. Referencias
+## 19. Referencias
 
 - Documentación oficial de JupyterLab: <https://jupyterlab.readthedocs.io/>
 - Proyecto Jupyter: <https://jupyter.org/>

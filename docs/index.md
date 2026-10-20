@@ -15,8 +15,9 @@
     4. [Docker](ud1/manuales/docker/manual_docker.md): servicios en contenedores.
     5. [Miniconda](ud1/manuales/miniconda/manual_miniconda.md): entornos de Python aislados y reproducibles.
     6. [JupyterLab](ud1/manuales/jupyterlab/manual_jupyterlab.md): notebooks para explorar y analizar datos.
-    7. [Python](ud1/manuales/python/manual_python.md): lo necesario para los notebooks y para trabajar con ficheros.
-    8. [pandas](ud1/manuales/pandas/manual_pandas.md): tratamiento de datos, de la lectura al análisis.
+    7. [Markdown](ud1/manuales/markdown/manual_markdown.md): documentar notebooks, README y esta web.
+    8. [Python](ud1/manuales/python/manual_python.md): lo necesario para los notebooks y para trabajar con ficheros.
+    9. [pandas](ud1/manuales/pandas/manual_pandas.md): tratamiento de datos, de la lectura al análisis.
 
 ### <span class="ud ud2">UD2</span> Orixes de datos
 
