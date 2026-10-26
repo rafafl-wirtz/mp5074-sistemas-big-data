@@ -13,6 +13,7 @@
 | 7 | [Markdown](markdown/manual_markdown.md) | Dar formato a las celdas de los notebooks, los README de GitHub y esta web |
 | 8 | [Python](python/manual_python.md) | El Python necesario para los notebooks: estructuras de datos, funciones y lectura de ficheros |
 | 9 | [pandas](pandas/manual_pandas.md) | Leer, limpiar, transformar, agregar y combinar datos; trabajo con grandes volúmenes |
+| 10 | [JSON y YAML](json_yaml/manual_json_yaml.md) | Leer y escribir datos de APIs (JSON, JSON Lines) y ficheros de configuración (conda, Docker Compose, GitHub Actions) |
 
 ## Documentación oficial
 

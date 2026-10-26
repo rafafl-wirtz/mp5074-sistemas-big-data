@@ -31,6 +31,7 @@ nav = [
       { "Markdown" = "ud1/manuales/markdown/manual_markdown.md" },
       { "Python" = "ud1/manuales/python/manual_python.md" },
       { "pandas" = "ud1/manuales/pandas/manual_pandas.md" },
+      { "JSON y YAML" = "ud1/manuales/json_yaml/manual_json_yaml.md" },
     ] },
   ] },
   { "UD2 · Orixes de datos" = [
