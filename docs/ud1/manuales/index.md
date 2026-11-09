@@ -14,6 +14,7 @@
 | 8 | [Python](python/manual_python.md) | El Python necesario para los notebooks: estructuras de datos, funciones y lectura de ficheros |
 | 9 | [pandas](pandas/manual_pandas.md) | Leer, limpiar, transformar, agregar y combinar datos; trabajo con grandes volúmenes |
 | 10 | [JSON y YAML](json_yaml/manual_json_yaml.md) | Leer y escribir datos de APIs (JSON, JSON Lines) y ficheros de configuración (conda, Docker Compose, GitHub Actions) |
+| 11 | [Estadística y agregados](estadistica/manual_estadistica.md) | Medidas de tendencia central y dispersión, funciones de agregación (SQL y pandas) y agregados en sistemas distribuidos |
 
 ## Documentación oficial
 
