@@ -55,6 +55,12 @@ Suma de todos los valores dividida entre el número de valores:
 
 $$\bar{x} = \frac{x_1 + x_2 + \dots + x_n}{n} = \frac{\sum x_i}{n}$$
 
+!!! info "Cómo leer la fórmula"
+    - $\bar{x}$ (se lee «x barra») es el símbolo de la **media**. Lo verás en muchas otras fórmulas del manual.
+    - $x_i$ es cada uno de los datos: $x_1$ es el primero, $x_2$ el segundo, y así hasta $x_n$.
+    - $n$ es el número de datos.
+    - $\sum$ (sigma mayúscula) significa «suma de»: $\sum x_i$ es la suma de todos los datos.
+
 Es la medida más usada, pero tiene un punto débil importante: **un solo valor extremo la desplaza mucho**.
 
 ### 2.2 Mediana
