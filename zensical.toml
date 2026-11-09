@@ -13,6 +13,11 @@ repo_name = "mp5074-sistemas-big-data"
 copyright = "Curso 2026-27 · IES Fernando Wirtz Suárez"
 
 extra_css = ["assets/stylesheets/extra.css"]
+# Fórmulas matemáticas (LaTeX) con MathJax
+extra_javascript = [
+  "assets/javascripts/mathjax.js",
+  "https://unpkg.com/mathjax@3.2.2/es5/tex-mml-chtml.js",
+]
 
 # Menú lateral. Para añadir un manual nuevo, añade una línea en su sitio.
 nav = [
@@ -96,6 +101,7 @@ tables = {}
 # Anclas al estilo de GitHub (conservan tildes): así funcionan los índices de los manuales
 toc.permalink = true
 toc.slugify = { object = "pymdownx.slugs.slugify", kwds = { case = "lower" } }
+pymdownx.arithmatex.generic = true
 pymdownx.betterem = {}
 pymdownx.details = {}
 pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"

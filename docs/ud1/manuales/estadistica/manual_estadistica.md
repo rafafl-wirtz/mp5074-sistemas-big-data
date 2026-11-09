@@ -483,7 +483,7 @@ La media real es 162 / 8 = **20,25**. El error se produce porque el nodo B tiene
 
 La solución es que cada nodo envíe **(suma, conteo)** en lugar de su media:
 
-$$\bar{x} = \frac{\text{suma}_A + \text{suma}_B}{\text{conteo}_A + \text{conteo}_B} = \frac{12 + 150}{3 + 5} = 20{,}25 \ ✔$$
+$$\bar{x} = \frac{\text{suma}_A + \text{suma}_B}{\text{conteo}_A + \text{conteo}_B} = \frac{12 + 150}{3 + 5} = 20{,}25$$
 
 La **varianza** también es algebraica: basta con que cada nodo envíe (suma, conteo, suma de cuadrados), porque la varianza se puede reescribir solo con esos tres agregados distributivos:
 
@@ -497,7 +497,7 @@ Comprobación con el ejemplo:
 | Nodo B (10…50) | 150 | 5 | 100 + 400 + 900 + 1600 + 2500 = 5500 | 250 |
 | **Global** (se suman) | **162** | **8** | **5556** | ? |
 
-$$s^2 = \frac{5556 - \dfrac{162^2}{8}}{8 - 1} = \frac{5556 - 3280{,}5}{7} \approx 325{,}07 \ ✔ \qquad s \approx 18{,}03$$
+$$s^2 = \frac{5556 - \dfrac{162^2}{8}}{8 - 1} = \frac{5556 - 3280{,}5}{7} \approx 325{,}07 \qquad s \approx 18{,}03$$
 
 Si hubiéramos promediado las varianzas locales, (4 + 250) / 2 = 127 ✘, el resultado estaría muy lejos del real.
 
