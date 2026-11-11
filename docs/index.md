@@ -7,19 +7,11 @@
 ### <span class="ud ud1">UD1</span> Introdución ao Big Data
 
 - [Big Data](ud1/big_data/manual_big_data.md): conceptos fundamentales del módulo.
-- [Conocimientos previos](ud1/conocimientos_previos/manual_conocimientos_previos.md): sistema de ficheros, rutas y variables de entorno.
-- [Manuales del entorno de trabajo](ud1/manuales/index.md):
-    1. [WSL](ud1/manuales/wsl/manual_wsl.md): Ubuntu dentro de Windows.
-    2. [Git](ud1/manuales/git/manual_git.md): control de versiones y GitHub.
-    3. [SSH](ud1/manuales/ssh/manual_ssh.md): claves para GitHub en Windows y Linux.
-    4. [Docker](ud1/manuales/docker/manual_docker.md): servicios en contenedores.
-    5. [Miniconda](ud1/manuales/miniconda/manual_miniconda.md): entornos de Python aislados y reproducibles.
-    6. [JupyterLab](ud1/manuales/jupyterlab/manual_jupyterlab.md): notebooks para explorar y analizar datos.
-    7. [Markdown](ud1/manuales/markdown/manual_markdown.md): documentar notebooks, README y esta web.
-    8. [Python](ud1/manuales/python/manual_python.md): lo necesario para los notebooks y para trabajar con ficheros.
-    9. [pandas para estadística](ud1/manuales/pandas_estadistica/manual_pandas_estadistica.md): el pandas mínimo para la estadística.
-    10. [Estadística y agregados](ud1/manuales/estadistica/manual_estadistica.md): medidas, agregaciones y agregados distribuidos.
-    11. [JSON y YAML](ud1/manuales/json_yaml/manual_json_yaml.md): datos de APIs y ficheros de configuración.
+- [Manuales del entorno de trabajo](ud1/manuales/index.md), agrupados por para qué sirven:
+    - **Preparar el equipo:** [Conocimientos previos](ud1/conocimientos_previos/manual_conocimientos_previos.md) · [WSL](ud1/manuales/wsl/manual_wsl.md) · [Miniconda](ud1/manuales/miniconda/manual_miniconda.md) · [Docker](ud1/manuales/docker/manual_docker.md)
+    - **Trabajar y entregar:** [Git](ud1/manuales/git/manual_git.md) · [SSH](ud1/manuales/ssh/manual_ssh.md) · [Markdown](ud1/manuales/markdown/manual_markdown.md)
+    - **Programar con datos:** [JupyterLab](ud1/manuales/jupyterlab/manual_jupyterlab.md) · [Python](ud1/manuales/python/manual_python.md) · [JSON y YAML](ud1/manuales/json_yaml/manual_json_yaml.md)
+    - **Analizar datos:** [pandas para estadística](ud1/manuales/pandas_estadistica/manual_pandas_estadistica.md) · [Estadística y agregados](ud1/manuales/estadistica/manual_estadistica.md)
 
 ### <span class="ud ud2">UD2</span> Orixes de datos
 

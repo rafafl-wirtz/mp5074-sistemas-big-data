@@ -1,4 +1,4 @@
-# pandas para estadística
+# Pandas para estadística
 
 **Módulo:** MP5074 – Sistemas de Big Data · **UD1** · Curso 2026-27
 
