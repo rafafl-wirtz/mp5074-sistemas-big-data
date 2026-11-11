@@ -180,6 +180,7 @@ Todas las funciones de lectura empiezan por `pd.read_` y devuelven un `DataFrame
 | CSV / TXT | `pd.read_csv` | — |
 | Excel | `pd.read_excel` | `openpyxl` |
 | JSON / JSON Lines | `pd.read_json`, `pd.json_normalize` | — |
+| XML | `pd.read_xml` | `lxml` (o `parser="etree"`, sin instalar nada) |
 | Parquet | `pd.read_parquet` | `pyarrow` |
 | SQL | `pd.read_sql` | `sqlite3` (incluido) o SQLAlchemy |
 | Tablas HTML | `pd.read_html` | `lxml` |
@@ -358,6 +359,34 @@ df = pd.concat(
 )
 df["origen"].value_counts()
 ```
+
+
+### 4.8 XML
+
+**XML** organiza los datos con **etiquetas** que se abren y se cierran (`<m2>420</m2>`) y **atributos** dentro de la etiqueta (`id="T01"`). Forma un árbol, como JSON. Es habitual en administraciones públicas, RSS y servicios web antiguos (SOAP).
+
+```python
+texto = """<?xml version="1.0" encoding="UTF-8"?>
+<tiendas fuente="Tecnoventas">
+  <tienda id="T01" ciudad="A Coruña"><m2>420</m2><apertura>2019-03-01</apertura></tienda>
+  <tienda id="T02" ciudad="Vigo"><m2>380</m2><apertura>2021-06-15</apertura></tienda>
+</tiendas>"""
+(DATOS / "tiendas.xml").write_text(texto, encoding="utf-8")
+
+tiendas = pd.read_xml(
+    DATOS / "tiendas.xml",
+    xpath=".//tienda",          # qué nodos son las filas
+    parser="etree",             # parser incluido en Python (no necesita lxml)
+    parse_dates=["apertura"],
+)
+#     id    ciudad   m2   apertura
+# 0  T01  A Coruña  420 2019-03-01
+# 1  T02      Vigo  380 2021-06-15
+```
+
+- Los **atributos** (`id`, `ciudad`) y los **elementos hijos** (`m2`, `apertura`) se convierten en columnas.
+- Igual que con JSON, hay que decir **qué nodo es una fila**: eso es el `xpath`. El atributo del nodo raíz (`fuente`) es un metadato y no aparece.
+- Para escribir: `df.to_xml(ruta, index=False, root_name="tiendas", row_name="tienda", parser="etree")`.
 
 ---
 
