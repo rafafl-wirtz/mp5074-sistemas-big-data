@@ -56,6 +56,7 @@ Al terminar esta unidad serás capaz de:
 ### Requisitos previos
 
 - Python básico (variables, listas, funciones).
+- El pandas mínimo del manual [pandas para estadística](../pandas_estadistica/manual_pandas_estadistica.md): `Series`, funciones de resumen, filtros y `groupby`.
 - Nociones de SQL: `SELECT`, `WHERE`, `ORDER BY`.
 - Saber qué es un fichero CSV.
 

@@ -12,9 +12,10 @@
 | 6 | [JupyterLab](jupyterlab/manual_jupyterlab.md) | Notebooks para explorar y analizar datos |
 | 7 | [Markdown](markdown/manual_markdown.md) | Dar formato a las celdas de los notebooks, los README de GitHub y esta web |
 | 8 | [Python](python/manual_python.md) | El Python necesario para los notebooks: estructuras de datos, funciones y lectura de ficheros |
-| 9 | [pandas](pandas/manual_pandas.md) | Leer, limpiar, transformar, agregar y combinar datos; trabajo con grandes volúmenes |
-| 10 | [JSON y YAML](json_yaml/manual_json_yaml.md) | Leer y escribir datos de APIs (JSON, JSON Lines) y ficheros de configuración (conda, Docker Compose, GitHub Actions) |
-| 11 | [Estadística y agregados](estadistica/manual_estadistica.md) | Medidas de tendencia central y dispersión, funciones de agregación (SQL y pandas) y agregados en sistemas distribuidos |
+| 9 | [pandas para estadística](pandas_estadistica/manual_pandas_estadistica.md) | El pandas mínimo para la estadística: `Series`, funciones de resumen, filtros, ausentes y `groupby` |
+| 10 | [Estadística y agregados](estadistica/manual_estadistica.md) | Medidas de tendencia central y dispersión, funciones de agregación (SQL y pandas) y agregados en sistemas distribuidos |
+| 11 | [pandas](pandas/manual_pandas.md) | Leer, limpiar, transformar, agregar y combinar datos; trabajo con grandes volúmenes |
+| 12 | [JSON y YAML](json_yaml/manual_json_yaml.md) | Leer y escribir datos de APIs (JSON, JSON Lines) y ficheros de configuración (conda, Docker Compose, GitHub Actions) |
 
 ## Documentación oficial
 
