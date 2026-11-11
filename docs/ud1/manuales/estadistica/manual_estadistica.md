@@ -1,4 +1,4 @@
-# UD1 · Estadística descriptiva y funciones de agregación en Big Data
+# Estadística descriptiva y funciones de agregación en Big Data
 
 ## Índice
 
