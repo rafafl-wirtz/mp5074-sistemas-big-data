@@ -2,7 +2,7 @@
 
 **Módulo:** MP5074 – Sistemas de Big Data · Curso 2026-27
 
-> Este manual recoge **el Python que hace falta** para trabajar con comodidad en los notebooks del módulo: tipos y estructuras de datos, control de flujo, funciones, errores y, sobre todo, **cómo localizar, leer y escribir ficheros** (texto, CSV, JSON, comprimidos, carpetas con muchos archivos). No pretende ser un curso completo de Python, sino la base sobre la que se apoyan pandas y PySpark. Ver también los manuales de [JupyterLab](../jupyterlab/manual_jupyterlab.md), [Miniconda](../miniconda/manual_miniconda.md), [pandas](../pandas/manual_pandas.md) y el apartado de [Conocimientos previos](../../conocimientos_previos/manual_conocimientos_previos.md) (rutas y sistema de ficheros).
+> Este manual recoge **el Python que hace falta** para trabajar con comodidad en los notebooks del módulo: tipos y estructuras de datos, control de flujo, funciones, errores y, sobre todo, **cómo localizar, leer y escribir ficheros** (texto, CSV, JSON, comprimidos, carpetas con muchos archivos). No pretende ser un curso completo de Python, sino la base sobre la que se apoyan pandas y PySpark. Ver también los manuales de [JupyterLab](../jupyterlab/manual_jupyterlab.md), [Miniconda](../miniconda/manual_miniconda.md), [pandas](../../../ud2/manuales/pandas/manual_pandas.md) y el apartado de [Conocimientos previos](../../conocimientos_previos/manual_conocimientos_previos.md) (rutas y sistema de ficheros).
 
 ---
 
@@ -341,7 +341,7 @@ while pagina <= 10:
     pagina += 1
 ```
 
-> En análisis de datos **evita los bucles sobre filas de un DataFrame**: pandas tiene operaciones vectorizadas mucho más rápidas (ver [manual de pandas](../pandas/manual_pandas.md)). Los bucles sí son adecuados para recorrer **ficheros**, **páginas** de una API o **columnas**.
+> En análisis de datos **evita los bucles sobre filas de un DataFrame**: pandas tiene operaciones vectorizadas mucho más rápidas (ver [manual de pandas](../../../ud2/manuales/pandas/manual_pandas.md)). Los bucles sí son adecuados para recorrer **ficheros**, **páginas** de una API o **columnas**.
 
 ---
 
@@ -739,7 +739,7 @@ for cod in ["utf-8", "utf-8-sig", "cp1252", "latin-1"]:
 
 ## 12. Ficheros CSV
 
-Para análisis **usarás pandas** (`pd.read_csv`, ver [manual de pandas](../pandas/manual_pandas.md), sección 4). El módulo `csv` de la biblioteca estándar es útil para ficheros enormes que se procesan fila a fila, o para escribir CSV sin pandas.
+Para análisis **usarás pandas** (`pd.read_csv`, ver [manual de pandas](../../../ud2/manuales/pandas/manual_pandas.md), sección 4). El módulo `csv` de la biblioteca estándar es útil para ficheros enormes que se procesan fila a fila, o para escribir CSV sin pandas.
 
 ### 12.1 Leer
 
@@ -1033,7 +1033,7 @@ f.year, f.month, f.day, f.hour, f.weekday()   # weekday: 0 = lunes
 | `%j` | Día del año | 293 |
 | `%A` / `%B` | Nombre del día / mes (según idioma) | Tuesday / October |
 
-> Para columnas de fechas en tablas usa pandas (`pd.to_datetime`, [manual de pandas](../pandas/manual_pandas.md), sección 15). Guarda las fechas en formato **ISO 8601** (`2026-10-20`): se ordena bien como texto y lo entiende cualquier herramienta.
+> Para columnas de fechas en tablas usa pandas (`pd.to_datetime`, [manual de pandas](../../../ud2/manuales/pandas/manual_pandas.md), sección 15). Guarda las fechas en formato **ISO 8601** (`2026-10-20`): se ordena bien como texto y lo entiende cualquier herramienta.
 
 ---
 
@@ -1144,7 +1144,7 @@ SALIDA.mkdir(exist_ok=True)
 | `TypeError: can only concatenate str (not "int") to str` | Se suma texto con número | f-string: `f"Total: {n}"` o `str(n)` |
 | `IndentationError` | Mezcla de tabuladores y espacios o sangría incorrecta | Usa siempre 4 espacios; `Ctrl + ]` / `Ctrl + [` en Jupyter |
 | Los resultados cambian al volver a ejecutar | Celdas ejecutadas fuera de orden o que modifican variables "en el sitio" | *Restart Kernel and Run All Cells* |
-| El kernel muere (*Kernel died*) al leer un fichero | Sin memoria suficiente | Lee por partes o solo las columnas necesarias ([manual de pandas](../pandas/manual_pandas.md), sección 18) |
+| El kernel muere (*Kernel died*) al leer un fichero | Sin memoria suficiente | Lee por partes o solo las columnas necesarias ([manual de pandas](../../../ud2/manuales/pandas/manual_pandas.md), sección 18) |
 | `!pip install` no hace efecto | Ha instalado en otro Python | Usa `%pip install` |
 
 ---

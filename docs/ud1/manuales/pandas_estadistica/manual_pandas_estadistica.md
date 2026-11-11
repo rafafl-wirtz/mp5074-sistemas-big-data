@@ -2,7 +2,7 @@
 
 **Módulo:** MP5074 – Sistemas de Big Data · **UD1** · Curso 2026-27
 
-> Este manual recoge **solo el pandas que hace falta** para seguir el [manual de estadística descriptiva y agregados](../estadistica/manual_estadistica.md): crear datos, resumirlos con una función, filtrar, tratar valores ausentes y agrupar. Todo lo demás (leer y limpiar ficheros reales, unir tablas, fechas, rendimiento…) está en el [manual completo de pandas](../pandas/manual_pandas.md), que se ve después de la estadística.
+> Este manual recoge **solo el pandas que hace falta** para seguir el [manual de estadística descriptiva y agregados](../estadistica/manual_estadistica.md): crear datos, resumirlos con una función, filtrar, tratar valores ausentes y agrupar. Todo lo demás (leer y limpiar ficheros reales, unir tablas, fechas, rendimiento…) está en el [manual completo de pandas](../../../ud2/manuales/pandas/manual_pandas.md), que se ve en la UD2.
 >
 > Todos los ejemplos usan **los mismos datos que el manual de estadística**, para que al llegar allí ya sepas escribir el código.
 
@@ -817,4 +817,4 @@ pd.concat([s, s], ignore_index=True)             # juntar
 s.sample(frac=0.1, random_state=1)               # muestra
 ```
 
-**Siguiente paso:** el [manual de estadística descriptiva y agregados](../estadistica/manual_estadistica.md). Después, el [manual completo de pandas](../pandas/manual_pandas.md).
+**Siguiente paso:** el [manual de estadística descriptiva y agregados](../estadistica/manual_estadistica.md). En la UD2, el [manual completo de pandas](../../../ud2/manuales/pandas/manual_pandas.md).

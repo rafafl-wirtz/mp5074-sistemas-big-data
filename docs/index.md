@@ -17,9 +17,11 @@
     6. [JupyterLab](ud1/manuales/jupyterlab/manual_jupyterlab.md): notebooks para explorar y analizar datos.
     7. [Markdown](ud1/manuales/markdown/manual_markdown.md): documentar notebooks, README y esta web.
     8. [Python](ud1/manuales/python/manual_python.md): lo necesario para los notebooks y para trabajar con ficheros.
-    9. [pandas](ud1/manuales/pandas/manual_pandas.md): tratamiento de datos, de la lectura al análisis.
-    10. [JSON y YAML](ud1/manuales/json_yaml/manual_json_yaml.md): datos de APIs y ficheros de configuración.
+    9. [pandas para estadística](ud1/manuales/pandas_estadistica/manual_pandas_estadistica.md): el pandas mínimo para la estadística.
+    10. [Estadística y agregados](ud1/manuales/estadistica/manual_estadistica.md): medidas, agregaciones y agregados distribuidos.
+    11. [JSON y YAML](ud1/manuales/json_yaml/manual_json_yaml.md): datos de APIs y ficheros de configuración.
 
 ### <span class="ud ud2">UD2</span> Orixes de datos
 
 - [Presentación de la unidad](ud2/index.md): ficheros, APIs, web scraping e integración con pandas.
+- [Manual de pandas](ud2/manuales/pandas/manual_pandas.md): tratamiento de datos, de la lectura al análisis.

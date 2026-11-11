@@ -7,7 +7,7 @@ Aprendemos a **obtener datos de cualquier origen** y a dejarlos en un DataFrame 
 ## Contenidos
 
 1. **Tipos de datos:** estructurados, semiestructurados y no estructurados. Formatos CSV, JSON, XML y Excel.
-2. **pandas:** `Series` y `DataFrame`, lectura de CSV, Excel y JSON, selección, filtros, agrupaciones y series temporales.
+2. **pandas** ([manual de pandas](manuales/pandas/manual_pandas.md)): `Series` y `DataFrame`, lectura de CSV, Excel y JSON, selección, filtros, agrupaciones y series temporales.
 3. **APIs:** HTTP, REST frente a SOAP, consumo de servicios web con `requests`, paginación y errores.
 4. **Web scraping:**
     - Árbol DOM y selectores CSS.

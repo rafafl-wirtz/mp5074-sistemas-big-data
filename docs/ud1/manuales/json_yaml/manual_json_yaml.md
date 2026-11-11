@@ -4,7 +4,7 @@
 
 > **JSON** y **YAML** son dos formatos de texto para representar **datos estructurados**: objetos con claves, listas y valores anidados. JSON es el idioma de las **APIs**, de MongoDB y de los logs; YAML es el idioma de la **configuración**: el entorno de conda, Docker Compose, GitHub Actions, MkDocs… En este módulo los vas a leer y escribir en todas las unidades didácticas.
 >
-> Este manual da por hecho que tienes el entorno `bigdata` funcionando (ver los manuales de [Miniconda](../miniconda/manual_miniconda.md), [Python](../python/manual_python.md) y [pandas](../pandas/manual_pandas.md)). Los ejemplos usan dos ficheros del módulo: `datos/catalogo.json` (catálogo de 11 productos con datos anidados) y `datos/visitas_web.jsonl.gz` (≈250 000 eventos de navegación en JSON Lines comprimido).
+> Este manual da por hecho que tienes el entorno `bigdata` funcionando (ver los manuales de [Miniconda](../miniconda/manual_miniconda.md), [Python](../python/manual_python.md) y [pandas](../../../ud2/manuales/pandas/manual_pandas.md)). Los ejemplos usan dos ficheros del módulo: `datos/catalogo.json` (catálogo de 11 productos con datos anidados) y `datos/visitas_web.jsonl.gz` (≈250 000 eventos de navegación en JSON Lines comprimido).
 
 ---
 

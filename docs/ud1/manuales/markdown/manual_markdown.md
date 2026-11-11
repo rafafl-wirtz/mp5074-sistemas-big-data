@@ -200,7 +200,7 @@ Cada título crea un **ancla**. Se enlaza con `#` seguido del título transforma
 
 ```markdown
 [Ir a la instalación](#3-instalación)
-[Agrupar en el manual de pandas](../pandas/manual_pandas.md#12-agrupar-y-agregar)
+[Agrupar en el manual de pandas](../../../ud2/manuales/pandas/manual_pandas.md#12-agrupar-y-agregar)
 ```
 
 Cómo se forma el ancla (GitHub y esta web): **minúsculas**, los espacios pasan a **guiones**, se **quitan** los signos de puntuación (`.`, `:`, `¿`, `?`, `` ` ``, paréntesis…) y se **conservan las tildes**:
