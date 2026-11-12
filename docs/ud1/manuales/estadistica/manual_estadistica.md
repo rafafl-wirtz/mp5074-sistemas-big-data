@@ -588,10 +588,10 @@ En la ventana **de sesión**, a diferencia de las otras dos, la duración no se 
 
 ## Lecturas y referencias
 
-- Documentación oficial de Pandas: *Group by: split-apply-combine* — https://pandas.pydata.org/docs/user_guide/groupby.html
-- Documentación oficial de PostgreSQL: *Aggregate Functions* — https://www.postgresql.org/docs/current/functions-aggregate.html
-- Documentación de Apache Spark: funciones SQL integradas (`approx_count_distinct`, `percentile_approx`) — https://spark.apache.org/docs/latest/api/sql/
-- Gray, J. et al. (1997). *Data Cube: A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Totals*. Data Mining and Knowledge Discovery, 1(1).
+- Documentación oficial de pandas: [*Group by: split-apply-combine*](https://pandas.pydata.org/docs/user_guide/groupby.html)
+- Documentación oficial de PostgreSQL: [*Aggregate Functions*](https://www.postgresql.org/docs/current/functions-aggregate.html)
+- Documentación de Apache Spark: [funciones SQL integradas](https://spark.apache.org/docs/latest/api/sql/) (`approx_count_distinct`, `percentile_approx`)
+- Gray, J. et al. (1997). *Data Cube: A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Totals*. Data Mining and Knowledge Discovery, 1(1). [doi:10.1023/A:1009726021843](https://doi.org/10.1023/A:1009726021843)
 
 ---
 
