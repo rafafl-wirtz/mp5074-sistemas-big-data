@@ -71,17 +71,17 @@ conda install -c conda-forge pandas pyarrow openpyxl
 En el notebook, siempre con los alias habituales:
 
 ```python
-import numpy as np
-import pandas as pd
+import numpy as np          # cálculo numérico; pandas se apoya en NumPy
+import pandas as pd         # "pd" es el alias que usa todo el mundo
 
-pd.__version__
+pd.__version__              # versión instalada (este manual usa la 3.x)
 ```
 
 Opciones de visualización útiles:
 
 ```python
 pd.set_option("display.max_columns", 50)      # mostrar hasta 50 columnas
-pd.set_option("display.max_rows", 100)
+pd.set_option("display.max_rows", 100)        # tablas de más de 100 filas se muestran recortadas (…)
 pd.set_option("display.float_format", "{:,.2f}".format)   # 2 decimales y separador de miles
 pd.reset_option("display.float_format")       # volver al formato por defecto
 ```
@@ -113,7 +113,8 @@ pd.reset_option("display.float_format")       # volver al formato por defecto
 
 ```python
 s = pd.Series([12.5, 7.0, 30.2], index=["a", "b", "c"], name="precio")
-s["b"]              # 7.0
+# valores: 12.5, 7.0, 30.2 · etiquetas (índice): a, b, c · nombre de la Series: "precio"
+s["b"]              # 7.0  → acceso por etiqueta, como en un diccionario
 s.mean()            # 16.57
 s * 1.21            # operación vectorizada sobre todos los elementos
 ```
@@ -126,14 +127,14 @@ df = pd.DataFrame({
     "tienda": ["Ferrol", "Vigo", "Lugo"],
     "unidades": [2, 1, 3],
     "precio": [25.0, 12.5, 7.9],
-})
+})   # cada clave es el nombre de una columna; todas las listas deben tener la misma longitud
 
 # Desde una lista de diccionarios (un dict por fila: lo que devuelve una API JSON)
 filas = [
     {"tienda": "Ferrol", "unidades": 2, "precio": 25.0},
     {"tienda": "Vigo", "unidades": 1},                    # falta precio → NaN
 ]
-pd.DataFrame(filas)
+pd.DataFrame(filas)   # las columnas salen de las claves; si una fila no trae una clave, queda NaN
 ```
 
 ### 3.3 Dataset de ejemplo para el manual
@@ -141,32 +142,32 @@ pd.DataFrame(filas)
 Todos los ejemplos siguientes usan estas dos tablas. Ejecuta esta celda al principio para poder seguirlos:
 
 ```python
-rng = np.random.default_rng(42)
-n = 1_000
+rng = np.random.default_rng(42)   # generador aleatorio con semilla fija: todos obtenemos los mismos datos
+n = 1_000                         # número de ventas (el _ solo separa los miles para leerlo mejor)
 
 ventas = pd.DataFrame({
-    "id_venta": np.arange(1, n + 1),
-    "fecha": pd.date_range("2026-01-01", periods=n, freq="8h"),
-    "tienda": rng.choice(["Ferrol", "Coruña", "Vigo", "Lugo"], n),
-    "categoria": rng.choice(["Informática", "Hogar", "Libros"], n, p=[0.5, 0.3, 0.2]),
+    "id_venta": np.arange(1, n + 1),                                       # 1, 2, …, 1000
+    "fecha": pd.date_range("2026-01-01", periods=n, freq="8h"),            # una venta cada 8 horas
+    "tienda": rng.choice(["Ferrol", "Coruña", "Vigo", "Lugo"], n),         # elige al azar entre las 4
+    "categoria": rng.choice(["Informática", "Hogar", "Libros"], n, p=[0.5, 0.3, 0.2]),  # p = probabilidad de cada una
     "canal": rng.choice(["tienda", "online"], n),
-    "unidades": rng.integers(1, 6, n),
-    "precio": rng.uniform(5, 300, n).round(2),
-    "id_cliente": rng.integers(100, 200, n),
+    "unidades": rng.integers(1, 6, n),                                     # enteros de 1 a 5 (el 6 no entra)
+    "precio": rng.uniform(5, 300, n).round(2),                             # decimales entre 5 y 300 €
+    "id_cliente": rng.integers(100, 200, n),                               # clientes 100 a 199
 })
 
 # Ensuciamos los datos a propósito, como en la vida real
-ventas.loc[rng.choice(n, 30, replace=False), "precio"] = np.nan        # nulos
-ventas.loc[rng.choice(n, 10, replace=False), "tienda"] = " vigo "      # texto inconsistente
-ventas = pd.concat([ventas, ventas.sample(5, random_state=1)], ignore_index=True)   # duplicados
+ventas.loc[rng.choice(n, 30, replace=False), "precio"] = np.nan        # 30 filas al azar sin precio (nulos)
+ventas.loc[rng.choice(n, 10, replace=False), "tienda"] = " vigo "      # 10 tiendas mal escritas (espacios, minúscula)
+ventas = pd.concat([ventas, ventas.sample(5, random_state=1)], ignore_index=True)   # añadimos 5 filas repetidas (duplicados)
 
-clientes = pd.DataFrame({
-    "id_cliente": range(100, 200),
+clientes = pd.DataFrame({                 # segunda tabla: un registro por cliente
+    "id_cliente": range(100, 200),        # la misma clave que en ventas → permite unirlas (sección 14)
     "segmento": rng.choice(["particular", "empresa"], 100),
     "provincia": rng.choice(["A Coruña", "Lugo", "Ourense", "Pontevedra"], 100),
 })
 
-ventas.head()
+ventas.head()                             # muestra las 5 primeras filas
 ```
 
 ---
@@ -190,19 +191,20 @@ Para seguir los ejemplos, guarda primero el dataset en varios formatos:
 
 ```python
 from pathlib import Path
-DATOS = Path("datos")
-DATOS.mkdir(exist_ok=True)
+DATOS = Path("datos")              # carpeta donde guardaremos los ficheros de ejemplo
+DATOS.mkdir(exist_ok=True)         # la crea si no existe (exist_ok evita el error si ya existe)
 
-ventas.to_csv(DATOS / "ventas.csv", index=False)
-ventas.to_csv(DATOS / "ventas_es.csv", index=False, sep=";", decimal=",", encoding="latin-1")
-ventas.to_excel(DATOS / "ventas.xlsx", index=False, sheet_name="2026")
-ventas.to_parquet(DATOS / "ventas.parquet", index=False)
+# Con Path, el operador / une carpeta y nombre de fichero: datos/ventas.csv
+ventas.to_csv(DATOS / "ventas.csv", index=False)       # index=False: no guardar el índice 0, 1, 2… como columna
+ventas.to_csv(DATOS / "ventas_es.csv", index=False, sep=";", decimal=",", encoding="latin-1")  # CSV "a la española"
+ventas.to_excel(DATOS / "ventas.xlsx", index=False, sheet_name="2026")   # Excel con una hoja llamada 2026
+ventas.to_parquet(DATOS / "ventas.parquet", index=False)                  # Parquet (necesita pyarrow)
 ```
 
 ### 4.1 CSV
 
 ```python
-df = pd.read_csv(DATOS / "ventas.csv")
+df = pd.read_csv(DATOS / "ventas.csv")   # por defecto: separador ",", punto decimal, UTF-8 y cabecera en la 1.ª fila
 ```
 
 Parámetros que más se usan:
@@ -230,12 +232,12 @@ Parámetros que más se usan:
 ```python
 df = pd.read_csv(
     DATOS / "ventas_es.csv",
-    sep=";",
-    decimal=",",
-    encoding="latin-1",
-    parse_dates=["fecha"],
+    sep=";",                  # las columnas van separadas por punto y coma
+    decimal=",",              # 12,5 se lee como el número 12.5
+    encoding="latin-1",       # codificación de Windows: si no, falla con ñ, tildes o €
+    parse_dates=["fecha"],    # convierte esa columna en fecha (si no, sería texto)
 )
-df.dtypes
+df.dtypes                     # comprueba el tipo de cada columna
 ```
 
 > ¿No sabes cómo es el fichero? Míralo antes: `!head -n 5 datos/ventas_es.csv` en el notebook, o lee unas pocas filas con `nrows=5`. Ver el [manual de Python](../../../ud1/manuales/python/manual_python.md), sección 12.3.
@@ -245,8 +247,8 @@ Lectura rápida de solo lo necesario (útil para ficheros grandes):
 ```python
 df = pd.read_csv(
     DATOS / "ventas.csv",
-    usecols=["fecha", "tienda", "unidades", "precio"],
-    dtype={"tienda": "category", "unidades": "int8"},
+    usecols=["fecha", "tienda", "unidades", "precio"],    # solo estas 4 columnas: el resto ni se carga
+    dtype={"tienda": "category", "unidades": "int8"},     # tipos que ocupan menos memoria (sección 18.3)
     parse_dates=["fecha"],
 )
 ```
@@ -254,10 +256,11 @@ df = pd.read_csv(
 ### 4.2 Excel
 
 ```python
-df = pd.read_excel(DATOS / "ventas.xlsx", sheet_name="2026")
+df = pd.read_excel(DATOS / "ventas.xlsx", sheet_name="2026")    # una hoja concreta (por nombre o por posición: 0, 1…)
 
 hojas = pd.read_excel(DATOS / "ventas.xlsx", sheet_name=None)   # todas: dict {nombre_hoja: DataFrame}
-list(hojas)
+list(hojas)                                                     # nombres de las hojas leídas
+hojas["2026"]                                                   # el DataFrame de una hoja
 ```
 
 Otros parámetros útiles: `skiprows`, `usecols="A:D"`, `header`, `nrows`. Excel es **lento** y tiene un límite de 1 048 576 filas: no es un formato para Big Data.
@@ -270,14 +273,17 @@ Un JSON con forma de **lista de registros** se lee directamente:
 from io import StringIO
 
 texto = '[{"id": 1, "tienda": "Ferrol", "precio": 25.0}, {"id": 2, "tienda": "Vigo", "precio": 12.5}]'
-pd.read_json(StringIO(texto))
+pd.read_json(StringIO(texto))   # StringIO hace que un texto se comporte como un fichero
+# cada objeto {} es una fila y cada clave una columna: id, tienda, precio
 ```
 
 **JSON Lines** (un objeto por línea, típico de logs y exportaciones):
 
 ```python
+# Guardamos 100 ventas: orient="records" → un objeto por fila; lines=True → uno por línea;
+# date_format="iso" → fechas como texto 2026-01-01T08:00:00
 ventas.head(100).to_json(DATOS / "ventas.jsonl", orient="records", lines=True, date_format="iso")
-df = pd.read_json(DATOS / "ventas.jsonl", lines=True)
+df = pd.read_json(DATOS / "ventas.jsonl", lines=True)   # lines=True también al leer
 ```
 
 **JSON anidado** (respuestas de API): `pd.json_normalize` "aplana" los diccionarios internos en columnas:
@@ -291,7 +297,13 @@ pedidos = [
 ]
 
 pd.json_normalize(pedidos)                       # columnas: id, lineas, cliente.nombre, cliente.ciudad
-pd.json_normalize(pedidos, record_path="lineas", meta=["id", ["cliente", "nombre"]])
+# "cliente" (un diccionario) se aplana en columnas; "lineas" (una lista) se queda entera en la celda
+
+pd.json_normalize(
+    pedidos,
+    record_path="lineas",                 # una fila por cada elemento de la lista "lineas"
+    meta=["id", ["cliente", "nombre"]],   # datos del pedido que se repiten en cada una de sus filas
+)
 ```
 
 Resultado del segundo:
@@ -308,7 +320,7 @@ Resultado del segundo:
 **Parquet** es el formato de referencia en Big Data: columnar, comprimido, conserva los tipos y permite leer solo algunas columnas o filas.
 
 ```python
-df = pd.read_parquet(DATOS / "ventas.parquet")
+df = pd.read_parquet(DATOS / "ventas.parquet")                                     # conserva los tipos: no hace falta parse_dates
 df = pd.read_parquet(DATOS / "ventas.parquet", columns=["fecha", "precio"])        # solo 2 columnas
 df = pd.read_parquet(DATOS / "ventas.parquet", filters=[("tienda", "==", "Ferrol")])  # filtra al leer
 ```
@@ -320,17 +332,19 @@ También lee **carpetas** con muchos ficheros Parquet, incluidas las particiones
 ```python
 import sqlite3
 
-con = sqlite3.connect(DATOS / "tienda.db")
-clientes.to_sql("clientes", con, if_exists="replace", index=False)   # escribir una tabla
+con = sqlite3.connect(DATOS / "tienda.db")    # abre (o crea) una base de datos SQLite en un fichero
+clientes.to_sql("clientes", con, if_exists="replace", index=False)   # escribir una tabla (si existe, la reemplaza)
 
+# La consulta la ejecuta la base de datos; pandas recibe el resultado como DataFrame
 df = pd.read_sql("SELECT provincia, COUNT(*) AS n FROM clientes GROUP BY provincia", con)
-con.close()
+con.close()                                   # cerrar la conexión al terminar
 ```
 
 Para PostgreSQL, MySQL, etc., se usa una conexión de **SQLAlchemy**:
 
 ```py
 from sqlalchemy import create_engine
+# cadena de conexión: tipo_bd+driver://usuario:contraseña@servidor:puerto/base_de_datos
 motor = create_engine("postgresql+psycopg://usuario:clave@localhost:5432/bigdata")
 df = pd.read_sql("SELECT * FROM ventas WHERE fecha >= '2026-01-01'", motor)
 ```
@@ -339,7 +353,7 @@ df = pd.read_sql("SELECT * FROM ventas WHERE fecha >= '2026-01-01'", motor)
 
 ```py
 url = "https://ejemplo.org/datos/municipios.csv"
-df = pd.read_csv(url, sep=";", encoding="latin-1")
+df = pd.read_csv(url, sep=";", encoding="latin-1")   # en vez de una ruta se pasa la URL; se descarga y se lee
 
 tablas = pd.read_html("https://es.wikipedia.org/wiki/Provincia_de_La_Coruña")   # lista de DataFrames
 ```
@@ -349,15 +363,16 @@ tablas = pd.read_html("https://es.wikipedia.org/wiki/Provincia_de_La_Coruña")  
 ### 4.7 Muchos ficheros a la vez
 
 ```python
-for mes in [1, 2, 3]:                           # creamos 3 ficheros de ejemplo
+for mes in [1, 2, 3]:                           # creamos 3 ficheros de ejemplo, uno por mes
+    # filtramos las ventas de ese mes y las guardamos en ventas_2026-01.csv, -02, -03 ({mes:02d} = 2 cifras)
     ventas[ventas["fecha"].dt.month == mes].to_csv(DATOS / f"ventas_2026-{mes:02d}.csv", index=False)
 
-ficheros = sorted(DATOS.glob("ventas_2026-*.csv"))
-df = pd.concat(
-    (pd.read_csv(f).assign(origen=f.name) for f in ficheros),
-    ignore_index=True,
+ficheros = sorted(DATOS.glob("ventas_2026-*.csv"))   # lista de ficheros que encajan con el patrón (* = cualquier texto)
+df = pd.concat(                                      # concat apila todas las tablas en una (sección 14.1)
+    (pd.read_csv(f).assign(origen=f.name) for f in ficheros),   # lee cada fichero y añade la columna "origen"
+    ignore_index=True,                               # numera las filas de nuevo: 0, 1, 2…
 )
-df["origen"].value_counts()
+df["origen"].value_counts()                          # cuántas filas vienen de cada fichero
 ```
 
 
@@ -371,7 +386,7 @@ texto = """<?xml version="1.0" encoding="UTF-8"?>
   <tienda id="T01" ciudad="A Coruña"><m2>420</m2><apertura>2019-03-01</apertura></tienda>
   <tienda id="T02" ciudad="Vigo"><m2>380</m2><apertura>2021-06-15</apertura></tienda>
 </tiendas>"""
-(DATOS / "tiendas.xml").write_text(texto, encoding="utf-8")
+(DATOS / "tiendas.xml").write_text(texto, encoding="utf-8")   # lo guardamos como fichero para leerlo
 
 tiendas = pd.read_xml(
     DATOS / "tiendas.xml",
@@ -393,13 +408,15 @@ tiendas = pd.read_xml(
 ## 5. Guardar datos y elegir formato
 
 ```python
-SALIDA = Path("resultados")
+SALIDA = Path("resultados")          # carpeta para los resultados (separada de los datos de entrada)
 SALIDA.mkdir(exist_ok=True)
 
 ventas.to_csv(SALIDA / "ventas.csv", index=False)                       # index=False casi siempre ✅
-ventas.to_csv(SALIDA / "ventas.csv.gz", index=False)                    # comprimido
-ventas.to_csv(SALIDA / "ventas_excel.csv", index=False, sep=";", decimal=",", encoding="utf-8-sig")  # para abrir en Excel ES
-ventas.to_parquet(SALIDA / "ventas.parquet", index=False)
+ventas.to_csv(SALIDA / "ventas.csv.gz", index=False)                    # comprimido: basta con la extensión .gz
+# ; y coma decimal = Excel en español; utf-8-sig añade una marca para que Excel muestre bien las tildes
+ventas.to_csv(SALIDA / "ventas_excel.csv", index=False, sep=";", decimal=",", encoding="utf-8-sig")
+ventas.to_parquet(SALIDA / "ventas.parquet", index=False)               # el formato recomendado para seguir trabajando
+# force_ascii=False: guarda "Coruña" tal cual y no como "Coru\u00f1a"
 ventas.to_json(SALIDA / "ventas.jsonl", orient="records", lines=True, date_format="iso", force_ascii=False)
 ventas.to_excel(SALIDA / "ventas.xlsx", index=False)
 ```
@@ -407,9 +424,9 @@ ventas.to_excel(SALIDA / "ventas.xlsx", index=False)
 Varias hojas en un mismo Excel:
 
 ```python
-with pd.ExcelWriter(SALIDA / "informe.xlsx") as writer:
-    ventas.to_excel(writer, sheet_name="ventas", index=False)
-    clientes.to_excel(writer, sheet_name="clientes", index=False)
+with pd.ExcelWriter(SALIDA / "informe.xlsx") as writer:            # abre el fichero; se guarda al salir del with
+    ventas.to_excel(writer, sheet_name="ventas", index=False)       # hoja 1
+    clientes.to_excel(writer, sheet_name="clientes", index=False)   # hoja 2
 ```
 
 > Sin `index=False`, pandas guarda el índice como una columna más y al volver a leer aparece una columna `Unnamed: 0`.
@@ -434,8 +451,10 @@ Guardar en carpetas por el valor de una o varias columnas, como hace Spark:
 
 ```python
 (ventas
- .assign(mes=ventas["fecha"].dt.month)
- .to_parquet(SALIDA / "ventas_part", partition_cols=["tienda", "mes"], index=False))
+ .assign(mes=ventas["fecha"].dt.month)          # añadimos el mes para poder particionar por él
+ .to_parquet(SALIDA / "ventas_part",            # ventas_part es una CARPETA, no un fichero
+             partition_cols=["tienda", "mes"],  # una subcarpeta por tienda y, dentro, una por mes
+             index=False))
 ```
 
 ```
@@ -448,6 +467,7 @@ resultados/ventas_part/
 Al leer con filtros por la columna de partición, **solo se abren las carpetas necesarias**:
 
 ```python
+# filters: lista de condiciones (columna, operador, valor); solo se leen las carpetas tienda=Ferrol
 pd.read_parquet(SALIDA / "ventas_part", filters=[("tienda", "==", "Ferrol")]).shape
 ```
 
@@ -483,21 +503,21 @@ ventas.nunique()                           # nº de valores distintos por column
 ```
 
 ```python
-ventas.isna().sum()                        # nulos por columna
-ventas.isna().mean().mul(100).round(1)     # % de nulos por columna
-ventas.duplicated().sum()                  # filas duplicadas
-ventas.memory_usage(deep=True).sum() / 1024**2   # memoria en MB
+ventas.isna().sum()                        # nulos por columna (isna da True/False y cada True cuenta 1)
+ventas.isna().mean().mul(100).round(1)     # % de nulos por columna (la media de True/False es la proporción)
+ventas.duplicated().sum()                  # filas idénticas a otra anterior
+ventas.memory_usage(deep=True).sum() / 1024**2   # memoria en MB (bytes / 1024 / 1024); deep=True mide bien el texto
 ```
 
 Estadísticos sueltos:
 
 ```python
-ventas["precio"].mean()
-ventas["precio"].median()
-ventas["precio"].std()
-ventas["precio"].min(), ventas["precio"].max()
-ventas["precio"].quantile([0.25, 0.5, 0.75, 0.95])
-ventas[["unidades", "precio"]].corr()      # correlación entre columnas numéricas
+ventas["precio"].mean()                    # media
+ventas["precio"].median()                  # mediana (valor central)
+ventas["precio"].std()                     # desviación típica (cuánto se separan los valores de la media)
+ventas["precio"].min(), ventas["precio"].max()        # mínimo y máximo a la vez (devuelve una tupla)
+ventas["precio"].quantile([0.25, 0.5, 0.75, 0.95])    # percentiles 25, 50, 75 y 95
+ventas[["unidades", "precio"]].corr()      # correlación entre columnas numéricas (de -1 a 1)
 ```
 
 > Las operaciones estadísticas **ignoran los nulos** por defecto (`skipna=True`).
@@ -514,7 +534,7 @@ ventas[["tienda", "precio"]]             # varias columnas → DataFrame (doble 
 ventas.precio                            # atajo de lectura (no funciona con espacios ni tildes)
 ventas.filter(like="id")                 # columnas cuyo nombre contiene "id"
 ventas.select_dtypes("number")           # solo columnas numéricas
-ventas.select_dtypes(exclude="number")
+ventas.select_dtypes(exclude="number")   # todas menos las numéricas
 ```
 
 ### 7.2 Filas y celdas: `loc` e `iloc`
@@ -528,7 +548,7 @@ ventas.select_dtypes(exclude="number")
 ```python
 ventas.loc[0]                            # fila con etiqueta 0
 ventas.loc[0:4, ["tienda", "precio"]]    # filas 0 a 4 (incluida), dos columnas
-ventas.loc[ventas["precio"] > 250, "tienda"]   # condición + columna
+ventas.loc[ventas["precio"] > 250, "tienda"]   # filas que cumplen la condición, solo la columna "tienda"
 
 ventas.iloc[0]                           # primera fila
 ventas.iloc[:5, :3]                      # 5 primeras filas, 3 primeras columnas
@@ -550,16 +570,16 @@ ventas.at[0, "precio"] = 19.99           # cambiar una celda
 Una comparación sobre una columna devuelve una `Series` de `True`/`False`, que sirve como **máscara**:
 
 ```python
-ventas["precio"] > 250                   # Series booleana
-ventas[ventas["precio"] > 250]           # filas que cumplen
+ventas["precio"] > 250                   # Series booleana: True donde el precio supera 250
+ventas[ventas["precio"] > 250]           # al ponerla entre corchetes, solo quedan las filas True
 ```
 
 Combinar condiciones con `&` (y), `|` (o), `~` (no), **cada condición entre paréntesis**:
 
 ```python
-caras_ferrol = ventas[(ventas["tienda"] == "Ferrol") & (ventas["precio"] > 250)]
-ventas[(ventas["canal"] == "online") | (ventas["unidades"] >= 5)]
-ventas[~(ventas["categoria"] == "Libros")]
+caras_ferrol = ventas[(ventas["tienda"] == "Ferrol") & (ventas["precio"] > 250)]   # de Ferrol Y de más de 250 €
+ventas[(ventas["canal"] == "online") | (ventas["unidades"] >= 5)]                  # online O con 5 o más unidades
+ventas[~(ventas["categoria"] == "Libros")]                                          # que NO sean libros (~ invierte)
 ```
 
 > ⚠️ No uses `and` / `or` con pandas: da el error *"The truth value of a Series is ambiguous"*. Usa `&` y `|`.
@@ -569,17 +589,19 @@ Otros filtros muy útiles:
 ```python
 ventas[ventas["tienda"].isin(["Ferrol", "Coruña"])]      # pertenece a una lista
 ventas[ventas["precio"].between(50, 100)]                # entre dos valores (incluidos)
-ventas[ventas["precio"].isna()]                          # nulos
-ventas[ventas["precio"].notna()]
-ventas[ventas["tienda"].str.contains("vigo", case=False, na=False)]   # texto que contiene
+ventas[ventas["precio"].isna()]                          # filas sin precio
+ventas[ventas["precio"].notna()]                         # filas con precio
+# texto que contiene "vigo"; case=False: sin distinguir mayúsculas; na=False: los nulos cuentan como "no"
+ventas[ventas["tienda"].str.contains("vigo", case=False, na=False)]
 ventas[ventas["fecha"] >= "2026-06-01"]                  # fechas: comparar con texto ISO
 ```
 
 ### 7.4 `query`: filtros legibles
 
 ```python
-ventas.query("tienda == 'Ferrol' and precio > 250")
-ventas.query("tienda in ['Ferrol', 'Lugo'] and unidades >= 4")
+# La condición va como texto: nombres de columna tal cual y and / or / not en vez de & | ~
+ventas.query("tienda == 'Ferrol' and precio > 250")              # el mismo filtro que caras_ferrol
+ventas.query("tienda in ['Ferrol', 'Lugo'] and unidades >= 4")   # in equivale a isin
 
 umbral = 200
 ventas.query("precio > @umbral")                         # @ para usar variables de Python
@@ -592,8 +614,8 @@ ventas.query("precio > @umbral")                         # @ para usar variables
 ### 8.1 Operaciones vectorizadas
 
 ```python
-ventas["importe"] = ventas["unidades"] * ventas["precio"]
-ventas["importe_iva"] = (ventas["importe"] * 1.21).round(2)
+ventas["importe"] = ventas["unidades"] * ventas["precio"]    # multiplica fila a fila, sin bucles
+ventas["importe_iva"] = (ventas["importe"] * 1.21).round(2)  # +21 % de IVA, redondeado a 2 decimales
 ventas["es_online"] = ventas["canal"] == "online"          # columna booleana
 ```
 
@@ -601,23 +623,24 @@ ventas["es_online"] = ventas["canal"] == "online"          # columna booleana
 
 ```python
 ventas.assign(
-    importe=lambda d: d["unidades"] * d["precio"],
-    mes=lambda d: d["fecha"].dt.month,
-).head()
+    importe=lambda d: d["unidades"] * d["precio"],   # nombre_columna = cómo calcularla
+    mes=lambda d: d["fecha"].dt.month,               # en lambda d: …, "d" es el DataFrame en ese momento
+).head()                                             # ventas no cambia: assign devuelve una copia
 ```
 
 ### 8.2 Valores condicionales
 
 ```python
-# Dos opciones
+# Dos opciones: np.where(condición, valor si se cumple, valor si no)
 ventas["tipo"] = np.where(ventas["importe"] > 500, "grande", "normal")
 
 # Varias opciones: np.select (la primera condición que se cumpla)
 condiciones = [ventas["importe"] >= 1000, ventas["importe"] >= 300]
 ventas["tramo"] = np.select(condiciones, ["alto", "medio"], default="bajo")
+# ≥ 1000 → "alto"; si no, ≥ 300 → "medio"; si no se cumple ninguna → "bajo"
 
 # Asignar solo en las filas que cumplen una condición
-ventas.loc[ventas["canal"] == "online", "gastos_envio"] = 4.95
+ventas.loc[ventas["canal"] == "online", "gastos_envio"] = 4.95   # el resto de filas queda NaN
 ```
 
 ### 8.3 Tramos: `cut` y `qcut`
@@ -625,9 +648,10 @@ ventas.loc[ventas["canal"] == "online", "gastos_envio"] = 4.95
 ```python
 ventas["rango_precio"] = pd.cut(
     ventas["precio"],
-    bins=[0, 50, 150, np.inf],
-    labels=["económico", "medio", "premium"],
+    bins=[0, 50, 150, np.inf],                 # límites: (0, 50], (50, 150], (150, infinito)
+    labels=["económico", "medio", "premium"],  # un nombre por tramo (uno menos que límites)
 )
+# q=4: 4 tramos con el mismo número de ventas en cada uno (cuartiles)
 ventas["cuartil_importe"] = pd.qcut(ventas["importe"], q=4, labels=["Q1", "Q2", "Q3", "Q4"])
 ```
 
@@ -645,11 +669,13 @@ ventas["categoria"].map({"Informática": "TEC", "Hogar": "HOG", "Libros": "LIB"}
 ### 8.5 `apply`: solo cuando no hay alternativa vectorizada
 
 ```python
+# apply llama a la función una vez por cada valor: p es cada precio
 ventas["precio"].apply(lambda p: round(p * 1.21, 2))     # funciona, pero es LENTO
 ventas["precio"].mul(1.21).round(2)                      # ✅ equivalente vectorizado, mucho más rápido
 
+# axis=1: la función recibe cada FILA entera; aquí une tienda e id → "Vigo-15"
 ventas.apply(lambda fila: f"{fila['tienda']}-{fila['id_venta']}", axis=1)   # por filas: aún más lento
-ventas["tienda"] + "-" + ventas["id_venta"].astype(str)                    # ✅ vectorizado
+ventas["tienda"] + "-" + ventas["id_venta"].astype(str)                    # ✅ vectorizado (astype(str) para unir texto)
 ```
 
 > `apply` ejecuta una función de Python **fila a fila**: en millones de filas puede ser cientos de veces más lento. Úsalo solo cuando la operación no exista como método de pandas o NumPy.
@@ -657,11 +683,12 @@ ventas["tienda"] + "-" + ventas["id_venta"].astype(str)                    # ✅
 ### 8.6 Renombrar, eliminar y reordenar
 
 ```python
-ventas = ventas.rename(columns={"id_cliente": "cliente"})
+ventas = ventas.rename(columns={"id_cliente": "cliente"})           # {nombre_actual: nombre_nuevo}
 ventas = ventas.rename(columns={"cliente": "id_cliente"})            # la dejamos como estaba
 
 ventas.drop(columns=["importe_iva", "es_online"])                     # devuelve una copia sin esas columnas
-ventas.drop(index=[0, 1])                                             # sin esas filas
+ventas.drop(index=[0, 1])                                             # sin las filas de etiqueta 0 y 1
+# drop no cambia ventas: para guardar el cambio, ventas = ventas.drop(...)
 
 ventas = ventas[["id_venta", "fecha", "tienda", "categoria", "canal",
                  "unidades", "precio", "importe", "id_cliente"]]     # reordenar (y quedarse con estas)
@@ -694,10 +721,10 @@ Que cada columna tenga el **tipo correcto** es imprescindible: con tipo texto no
 ### 9.1 Convertir tipos
 
 ```python
-ventas["unidades"] = ventas["unidades"].astype("int16")
-ventas["tienda"] = ventas["tienda"].astype("category")
-ventas["id_cliente"] = ventas["id_cliente"].astype(str)
-ventas["id_cliente"] = ventas["id_cliente"].astype(int)
+ventas["unidades"] = ventas["unidades"].astype("int16")      # entero pequeño: ocupa menos memoria
+ventas["tienda"] = ventas["tienda"].astype("category")       # texto con pocos valores que se repiten
+ventas["id_cliente"] = ventas["id_cliente"].astype(str)      # número → texto (p. ej., para tratarlo como código)
+ventas["id_cliente"] = ventas["id_cliente"].astype(int)      # texto → número (falla si hay algo no numérico)
 ```
 
 ### 9.2 Números guardados como texto
@@ -712,6 +739,8 @@ pd.to_numeric(s, errors="coerce")       # lo que no se puede convertir → NaN
 # 1      7.0
 # ...
 
+# 1.º quitamos el punto de los miles ("1.234,0" → "1234,0"); 2.º la coma pasa a punto ("1234,0" → "1234.0")
+# regex=False: el "." se busca como carácter normal, no como comodín de expresión regular
 limpio = s.str.replace(".", "", regex=False).str.replace(",", ".", regex=False)
 pd.to_numeric(limpio, errors="coerce")  # 12.5, 7.0, NaN, 1234.0, NaN
 ```
@@ -737,15 +766,15 @@ Flujo habitual: **nombres de columnas → tipos → texto → duplicados → nul
 ### 10.1 Normalizar los nombres de columnas
 
 ```python
-sucio = pd.DataFrame(columns=[" Fecha Venta", "Importe (€)", "Código Postal", "TIENDA"])
+sucio = pd.DataFrame(columns=[" Fecha Venta", "Importe (€)", "Código Postal", "TIENDA"])   # solo cabeceras
 
 sucio.columns = (
-    sucio.columns
-    .str.strip()
-    .str.lower()
-    .str.normalize("NFKD").str.encode("ascii", "ignore").str.decode("ascii")   # quita tildes
-    .str.replace(r"[^\w]+", "_", regex=True)
-    .str.strip("_")
+    sucio.columns                 # los nombres de columna también admiten el accesor .str
+    .str.strip()                  # quita espacios al principio y al final
+    .str.lower()                  # todo a minúsculas
+    .str.normalize("NFKD").str.encode("ascii", "ignore").str.decode("ascii")   # quita tildes (ó → o) y símbolos (€)
+    .str.replace(r"[^\w]+", "_", regex=True)   # cualquier grupo de caracteres que no sea letra/número → "_"
+    .str.strip("_")               # quita los "_" que hayan quedado al principio o al final
 )
 list(sucio.columns)    # ['fecha_venta', 'importe', 'codigo_postal', 'tienda']
 ```
@@ -755,7 +784,7 @@ list(sucio.columns)    # ['fecha_venta', 'importe', 'codigo_postal', 'tienda']
 ```python
 ventas["tienda"].value_counts()          # aparece " vigo " además de "Vigo"
 
-ventas["tienda"] = ventas["tienda"].str.strip().str.title()
+ventas["tienda"] = ventas["tienda"].str.strip().str.title()   # " vigo " → "vigo" → "Vigo" (1.ª letra en mayúscula)
 ventas["tienda"].value_counts()          # ya solo 4 tiendas
 ```
 
@@ -778,22 +807,25 @@ Métodos `.str` más usados:
 ```python
 codigos = pd.Series(["ES-15-Ferrol", "ES-36-Vigo", "ES-27-Lugo"])
 codigos.str.split("-", expand=True)                    # 3 columnas: ES | 15 | Ferrol
-codigos.str.extract(r"ES-(?P<provincia>\d+)-(?P<ciudad>\w+)")   # columnas con nombre
+# expresión regular: cada (...) es un grupo que se convierte en columna; ?P<nombre> le da nombre
+# \d+ = una o más cifras · \w+ = una o más letras o cifras
+codigos.str.extract(r"ES-(?P<provincia>\d+)-(?P<ciudad>\w+)")   # columnas: provincia | ciudad
 ```
 
 ### 10.3 Valores inconsistentes
 
 ```python
 estados = pd.Series(["Sí", "si", "SI", "S", "No", "no", "N", None])
-estados.str.lower().str[0].map({"s": True, "n": False})
+# a minúsculas → nos quedamos con la 1.ª letra ("sí" → "s") → la traducimos a True/False
+estados.str.lower().str[0].map({"s": True, "n": False})   # None sigue siendo nulo
 ```
 
 ### 10.4 Duplicados
 
 ```python
 ventas.duplicated().sum()                                 # filas idénticas
-ventas[ventas.duplicated(keep=False)]                     # ver todas las copias
-ventas.duplicated(subset=["id_venta"]).sum()              # duplicados por clave
+ventas[ventas.duplicated(keep=False)]                     # ver todas las copias (keep=False marca también la original)
+ventas.duplicated(subset=["id_venta"]).sum()              # duplicados por clave: mismo id aunque cambie otra columna
 
 ventas = ventas.drop_duplicates()                         # elimina filas idénticas (conserva la primera)
 ventas = ventas.drop_duplicates(subset=["id_venta"], keep="last")   # por clave, conserva la última
@@ -804,8 +836,8 @@ ventas = ventas.drop_duplicates(subset=["id_venta"], keep="last")   # por clave,
 pandas representa los nulos como `NaN` (números), `None`/`NaN` (texto), `NaT` (fechas) o `<NA>` (tipos *nullable*). Todos se detectan con `isna()`.
 
 ```python
-ventas.isna().sum()
-ventas[ventas["precio"].isna()].head()
+ventas.isna().sum()                         # cuántos nulos hay en cada columna
+ventas[ventas["precio"].isna()].head()      # ver algunas filas sin precio
 ```
 
 **Opciones para tratarlos:**
@@ -822,9 +854,9 @@ ventas[ventas["precio"].isna()].head()
 
 ```python
 # Imputar el precio con la mediana de su categoría
-mediana_cat = ventas.groupby("categoria")["precio"].transform("median")
-ventas["precio"] = ventas["precio"].fillna(mediana_cat)
-ventas["importe"] = ventas["unidades"] * ventas["precio"]
+mediana_cat = ventas.groupby("categoria")["precio"].transform("median")   # para cada fila, la mediana de su categoría
+ventas["precio"] = ventas["precio"].fillna(mediana_cat)       # rellena cada nulo con el valor de su misma fila
+ventas["importe"] = ventas["unidades"] * ventas["precio"]     # recalculamos el importe con los precios completos
 ventas["precio"].isna().sum()            # 0
 ```
 
@@ -841,13 +873,14 @@ ventas[(ventas["unidades"] <= 0) | (ventas["precio"] < 0)]     # no debería hab
 Después, **atípicos** estadísticos con el método del rango intercuartílico (IQR):
 
 ```python
-q1, q3 = ventas["importe"].quantile([0.25, 0.75])
-iqr = q3 - q1
-lim_inf, lim_sup = q1 - 1.5 * iqr, q3 + 1.5 * iqr
+q1, q3 = ventas["importe"].quantile([0.25, 0.75])       # primer y tercer cuartil
+iqr = q3 - q1                                            # rango intercuartílico: donde está el 50 % central
+lim_inf, lim_sup = q1 - 1.5 * iqr, q3 + 1.5 * iqr        # límites habituales: 1,5 veces el IQR por cada lado
 
-atipicos = ventas[(ventas["importe"] < lim_inf) | (ventas["importe"] > lim_sup)]
-print(f"{len(atipicos)} atípicos fuera de [{lim_inf:.0f}, {lim_sup:.0f}]")
+atipicos = ventas[(ventas["importe"] < lim_inf) | (ventas["importe"] > lim_sup)]   # fuera de los límites
+print(f"{len(atipicos)} atípicos fuera de [{lim_inf:.0f}, {lim_sup:.0f}]")          # :.0f = sin decimales
 
+# clip: lo que está por debajo/encima de los límites se sustituye por el propio límite
 ventas["importe_recortado"] = ventas["importe"].clip(lower=lim_inf, upper=lim_sup)   # o recortarlos
 ```
 
@@ -858,15 +891,16 @@ ventas["importe_recortado"] = ventas["importe"].clip(lower=lim_inf, upper=lim_su
 ## 11. Ordenar y clasificar
 
 ```python
-ventas.sort_values("importe", ascending=False).head()
-ventas.sort_values(["tienda", "importe"], ascending=[True, False])
-ventas.sort_index()
+ventas.sort_values("importe", ascending=False).head()               # de mayor a menor importe
+ventas.sort_values(["tienda", "importe"], ascending=[True, False])  # por tienda (A→Z) y, dentro, importe de mayor a menor
+ventas.sort_index()                                                  # por el índice (deshace una ordenación)
 
 ventas.nlargest(5, "importe")            # las 5 ventas mayores (más rápido que ordenar todo)
-ventas.nsmallest(3, "precio")
+ventas.nsmallest(3, "precio")            # las 3 más baratas
 
+# rank: posición de cada fila (1 = mayor importe); method="min": los empates comparten el puesto más alto
 ventas["ranking"] = ventas["importe"].rank(ascending=False, method="min")
-ventas["ranking_tienda"] = ventas.groupby("tienda")["importe"].rank(ascending=False)
+ventas["ranking_tienda"] = ventas.groupby("tienda")["importe"].rank(ascending=False)   # puesto dentro de su tienda
 ```
 
 ---
@@ -887,8 +921,8 @@ ventas["ranking_tienda"] = ventas.groupby("tienda")["importe"].rank(ascending=Fa
 ### 12.1 Agregaciones simples
 
 ```python
-ventas.groupby("tienda")["importe"].sum()
-ventas.groupby("tienda")["importe"].agg(["sum", "mean", "count"])
+ventas.groupby("tienda")["importe"].sum()     # agrupa por tienda, toma "importe" y suma cada grupo
+ventas.groupby("tienda")["importe"].agg(["sum", "mean", "count"])   # varias funciones → una columna por función
 ventas.groupby(["tienda", "categoria"])["importe"].sum()          # varias claves → índice múltiple
 ventas.groupby("tienda", as_index=False)["importe"].sum()          # tienda como columna, no como índice
 ventas.groupby("tienda").size()                                     # nº de filas por grupo
@@ -904,16 +938,16 @@ Permite poner nombre a cada resultado y aplicar funciones distintas a cada colum
 resumen = (
     ventas
     .groupby("tienda")
-    .agg(
+    .agg(                                     # nombre_resultado=("columna", "función")
         n_ventas=("id_venta", "count"),
         unidades=("unidades", "sum"),
         facturacion=("importe", "sum"),
         ticket_medio=("importe", "mean"),
         clientes_unicos=("id_cliente", "nunique"),
-        ultima_venta=("fecha", "max"),
+        ultima_venta=("fecha", "max"),        # la fecha más reciente
     )
-    .sort_values("facturacion", ascending=False)
-    .round({"facturacion": 2, "ticket_medio": 2})
+    .sort_values("facturacion", ascending=False)       # las tiendas que más facturan primero
+    .round({"facturacion": 2, "ticket_medio": 2})      # redondea solo esas dos columnas
 )
 resumen
 ```
@@ -923,7 +957,9 @@ resumen
 `agg` reduce cada grupo a una fila; `transform` devuelve **un valor por fila original**, ideal para comparar cada fila con su grupo:
 
 ```python
+# A cada venta le pone la media de SU tienda (mismo número de filas que ventas)
 ventas["media_tienda"] = ventas.groupby("tienda")["importe"].transform("mean")
+# Peso de cada venta sobre el total de su tienda: importe / total de la tienda × 100
 ventas["pct_sobre_tienda"] = ventas["importe"] / ventas.groupby("tienda")["importe"].transform("sum") * 100
 ventas[["tienda", "importe", "media_tienda", "pct_sobre_tienda"]].head()
 ```
@@ -932,18 +968,19 @@ ventas[["tienda", "importe", "media_tienda", "pct_sobre_tienda"]].head()
 
 ```python
 # Solo los clientes con más de 12 compras
+# filter recibe cada grupo (g = las ventas de un cliente) y conserva sus filas si la condición es True
 ventas.groupby("id_cliente").filter(lambda g: len(g) > 12)["id_cliente"].nunique()
 
 # Alternativa vectorizada (más rápida)
-n_compras = ventas.groupby("id_cliente")["id_venta"].transform("count")
-ventas[n_compras > 12]
+n_compras = ventas.groupby("id_cliente")["id_venta"].transform("count")   # nº de compras de su cliente, en cada fila
+ventas[n_compras > 12]                                                     # filtro normal con esa columna
 ```
 
 ### 12.5 Recorrer los grupos
 
 ```python
-for tienda, grupo in ventas.groupby("tienda"):
-    print(tienda, len(grupo), round(grupo["importe"].sum(), 2))
+for tienda, grupo in ventas.groupby("tienda"):    # en cada vuelta: el valor de la clave y su DataFrame
+    print(tienda, len(grupo), round(grupo["importe"].sum(), 2))   # nombre, nº de ventas y facturación
 ```
 
 ---
@@ -961,16 +998,16 @@ pd.pivot_table(
     columns="categoria",         # columnas
     values="importe",            # valores
     aggfunc="sum",               # cómo agregar
-    fill_value=0,
+    fill_value=0,                # combinaciones sin ventas → 0 en vez de NaN
     margins=True,                # fila y columna de totales ("All")
-).round(0)
+).round(0)                        # sin decimales
 ```
 
 ### 13.2 Tablas de frecuencias: `crosstab`
 
 ```python
-pd.crosstab(ventas["tienda"], ventas["canal"])                      # recuentos
-pd.crosstab(ventas["tienda"], ventas["canal"], normalize="index")   # % por fila
+pd.crosstab(ventas["tienda"], ventas["canal"])                      # recuentos: nº de ventas por tienda y canal
+pd.crosstab(ventas["tienda"], ventas["canal"], normalize="index")   # proporción por fila (cada fila suma 1)
 ```
 
 ### 13.3 Formato ancho ↔ largo
@@ -989,10 +1026,14 @@ El formato **largo** (una observación por fila) es el que necesitan `groupby`, 
 ```python
 ancho = pd.DataFrame({"tienda": ["Ferrol", "Vigo"], "ene": [100, 80], "feb": [120, 90]})
 
+# melt: "tienda" se mantiene; las demás columnas (ene, feb) pasan a filas
+#   var_name = nombre de la columna que recibe los antiguos nombres (ene, feb)
+#   value_name = nombre de la columna que recibe los valores
 largo = ancho.melt(id_vars="tienda", var_name="mes", value_name="ventas")
 largo
 
-largo.pivot(index="tienda", columns="mes", values="ventas").reset_index()
+# pivot hace lo contrario: una fila por tienda, una columna por mes, y en las celdas las ventas
+largo.pivot(index="tienda", columns="mes", values="ventas").reset_index()   # reset_index: tienda vuelve a ser columna
 ```
 
 > `pivot` falla si hay **combinaciones repetidas** de índice y columna; en ese caso usa `pivot_table` con una función de agregación.
@@ -1002,7 +1043,7 @@ largo.pivot(index="tienda", columns="mes", values="ventas").reset_index()
 Mueven un nivel del índice a las columnas y viceversa:
 
 ```python
-por_tienda_cat = ventas.groupby(["tienda", "categoria"])["importe"].sum()
+por_tienda_cat = ventas.groupby(["tienda", "categoria"])["importe"].sum()   # índice de dos niveles: tienda y categoría
 por_tienda_cat.unstack()          # categoria pasa a columnas
 por_tienda_cat.unstack().stack()  # y vuelve
 ```
@@ -1010,8 +1051,8 @@ por_tienda_cat.unstack().stack()  # y vuelve
 ### 13.5 Listas dentro de celdas: `explode`
 
 ```python
-pedidos = pd.DataFrame({"pedido": ["P1", "P2"], "productos": [["teclado", "ratón"], ["monitor"]]})
-pedidos.explode("productos")       # una fila por producto
+pedidos = pd.DataFrame({"pedido": ["P1", "P2"], "productos": [["teclado", "ratón"], ["monitor"]]})   # listas en celdas
+pedidos.explode("productos")       # una fila por producto: P1 teclado, P1 ratón, P2 monitor
 ```
 
 ---
@@ -1021,19 +1062,20 @@ pedidos.explode("productos")       # una fila por producto
 ### 14.1 `concat`: apilar
 
 ```python
-enero = ventas[ventas["fecha"].dt.month == 1]
-febrero = ventas[ventas["fecha"].dt.month == 2]
+enero = ventas[ventas["fecha"].dt.month == 1]      # ventas de enero
+febrero = ventas[ventas["fecha"].dt.month == 2]    # ventas de febrero
 
 pd.concat([enero, febrero], ignore_index=True)                 # una debajo de otra (mismas columnas)
 pd.concat([enero, febrero], keys=["ene", "feb"])                # con etiqueta de origen
-pd.concat([ventas[["tienda"]], ventas[["importe"]]], axis=1)    # una al lado de otra (por índice)
+pd.concat([ventas[["tienda"]], ventas[["importe"]]], axis=1)    # axis=1: una al lado de otra (empareja por índice)
 ```
 
 ### 14.2 `merge`: unir por columnas clave (como un `JOIN` de SQL)
 
 ```python
+# on: columna que tienen en común; how="left": se conservan TODAS las ventas
 ventas_cli = ventas.merge(clientes, on="id_cliente", how="left")
-ventas_cli[["id_venta", "id_cliente", "segmento", "provincia"]].head()
+ventas_cli[["id_venta", "id_cliente", "segmento", "provincia"]].head()   # cada venta con los datos de su cliente
 ```
 
 | `how` | Resultado | SQL |
@@ -1057,8 +1099,8 @@ Opciones útiles:
 
 ```python
 # Claves con nombre distinto en cada tabla
-clientes_ren = clientes.rename(columns={"id_cliente": "codigo"})
-ventas.merge(clientes_ren, left_on="id_cliente", right_on="codigo", how="left")
+clientes_ren = clientes.rename(columns={"id_cliente": "codigo"})     # simulamos una tabla con otro nombre de clave
+ventas.merge(clientes_ren, left_on="id_cliente", right_on="codigo", how="left")   # left_on: clave en ventas; right_on: en clientes
 
 # Varias claves
 # a.merge(b, on=["tienda", "fecha"])
@@ -1068,9 +1110,10 @@ ventas.merge(clientes_ren, left_on="id_cliente", right_on="codigo", how="left")
 
 # Diagnóstico: ¿de qué tabla viene cada fila?
 diag = ventas.merge(clientes, on="id_cliente", how="outer", indicator=True)
-diag["_merge"].value_counts()        # both / left_only / right_only
+diag["_merge"].value_counts()        # both: en las dos · left_only: solo en ventas · right_only: solo en clientes
 
 # Comprobar la relación esperada (lanza error si no se cumple)
+# many_to_one: muchas ventas por cliente, pero cada cliente UNA sola vez en clientes
 ventas.merge(clientes, on="id_cliente", how="left", validate="many_to_one")
 ```
 
@@ -1079,10 +1122,10 @@ ventas.merge(clientes, on="id_cliente", how="left", validate="many_to_one")
 ### 14.3 `join`: unir por índice
 
 ```python
-resumen_tienda = ventas.groupby("tienda")[["importe"]].sum()
+resumen_tienda = ventas.groupby("tienda")[["importe"]].sum()   # la tienda queda como índice
 objetivos = pd.DataFrame({"objetivo": [80_000, 90_000, 70_000, 85_000]},
-                         index=["Coruña", "Ferrol", "Lugo", "Vigo"])
-resumen_tienda.join(objetivos)
+                         index=["Coruña", "Ferrol", "Lugo", "Vigo"])   # aquí también el índice es la tienda
+resumen_tienda.join(objetivos)        # une las filas cuyo índice coincide: importe y objetivo de cada tienda
 ```
 
 ---
@@ -1092,10 +1135,11 @@ resumen_tienda.join(objetivos)
 ### 15.1 Convertir a fecha
 
 ```python
-pd.to_datetime("2026-10-20")
+pd.to_datetime("2026-10-20")                     # formato ISO (año-mes-día): se entiende sin ayuda
+# format describe cómo viene escrita: %d día, %m mes, %Y año con 4 cifras (%H hora, %M minutos)
 pd.to_datetime(pd.Series(["20/10/2026", "21/10/2026"]), format="%d/%m/%Y")   # formato explícito ✅
 pd.to_datetime(pd.Series(["20/10/2026", "fecha mala"]), format="%d/%m/%Y", errors="coerce")   # inválidas → NaT
-pd.to_datetime(pd.Series([1792483200]), unit="s")       # marca de tiempo Unix (segundos)
+pd.to_datetime(pd.Series([1792483200]), unit="s")       # marca de tiempo Unix: segundos desde el 1-1-1970
 ```
 
 > Indica siempre `format=` (o `dayfirst=True`) con fechas españolas: sin él, `"01/02/2026"` podría interpretarse como 2 de enero.
@@ -1103,15 +1147,15 @@ pd.to_datetime(pd.Series([1792483200]), unit="s")       # marca de tiempo Unix (
 ### 15.2 El accesor `.dt`
 
 ```python
-f = ventas["fecha"]
-ventas["anio"] = f.dt.year
-ventas["mes"] = f.dt.month
+f = ventas["fecha"]                            # variable corta para no repetir ventas["fecha"]
+ventas["anio"] = f.dt.year                     # .dt da acceso a las partes de cada fecha
+ventas["mes"] = f.dt.month                     # 1 a 12
 ventas["dia_semana"] = f.dt.dayofweek          # 0 = lunes
 ventas["nombre_dia"] = f.dt.day_name()         # 'Monday'...
-ventas["hora"] = f.dt.hour
-ventas["trimestre"] = f.dt.quarter
-ventas["semana"] = f.dt.isocalendar().week
-ventas["fin_de_semana"] = f.dt.dayofweek >= 5
+ventas["hora"] = f.dt.hour                     # 0 a 23
+ventas["trimestre"] = f.dt.quarter             # 1 a 4
+ventas["semana"] = f.dt.isocalendar().week     # nº de semana del año (1 a 53)
+ventas["fin_de_semana"] = f.dt.dayofweek >= 5  # True si es sábado (5) o domingo (6)
 ventas["solo_fecha"] = f.dt.normalize()        # quita la hora
 ventas["periodo_mes"] = f.dt.to_period("M")    # 2026-01, 2026-02...
 ```
@@ -1119,9 +1163,9 @@ ventas["periodo_mes"] = f.dt.to_period("M")    # 2026-01, 2026-02...
 Diferencias entre fechas:
 
 ```python
-(pd.Timestamp("2026-12-31") - ventas["fecha"]).dt.days.head()
-ventas["fecha"] + pd.Timedelta(days=30)
-ventas["fecha"] + pd.DateOffset(months=1)
+(pd.Timestamp("2026-12-31") - ventas["fecha"]).dt.days.head()   # restar fechas da una duración; .dt.days, en días
+ventas["fecha"] + pd.Timedelta(days=30)        # sumar una duración fija: 30 días
+ventas["fecha"] + pd.DateOffset(months=1)      # sumar un mes de calendario (31-ene + 1 mes = 28-feb)
 ```
 
 ### 15.3 Remuestreo: `resample`
@@ -1129,10 +1173,16 @@ ventas["fecha"] + pd.DateOffset(months=1)
 Agrega por periodos de tiempo. Requiere que la fecha sea el índice (o usar `on=`):
 
 ```python
+# Facturación de cada día: agrupa las ventas por día ("D") según la columna fecha y suma el importe
 diario = ventas.resample("D", on="fecha")["importe"].sum()
+
+# Por mes ("ME" = fin de mes): suma del importe y nº de ventas de cada mes
 mensual = ventas.resample("ME", on="fecha")["importe"].agg(["sum", "count"])
+
+# Primero por tienda y, dentro de cada tienda, por semanas ("W")
 semanal_tienda = ventas.groupby("tienda").resample("W", on="fecha")["importe"].sum()
-mensual
+
+mensual        # índice = último día de cada mes; columnas sum y count
 ```
 
 | Alias | Periodo | Alias | Periodo |
@@ -1147,12 +1197,12 @@ mensual
 ### 15.4 Ventanas móviles y comparaciones
 
 ```python
-serie = diario.to_frame("importe")
-serie["media_7d"] = serie["importe"].rolling(7).mean()          # media móvil de 7 días
-serie["acumulado"] = serie["importe"].cumsum()
-serie["dia_anterior"] = serie["importe"].shift(1)
-serie["variacion"] = serie["importe"].diff()                     # diferencia con el anterior
-serie["variacion_pct"] = serie["importe"].pct_change() * 100
+serie = diario.to_frame("importe")      # la Series diaria de 15.3 pasa a DataFrame para añadirle columnas
+serie["media_7d"] = serie["importe"].rolling(7).mean()   # media de ese día y los 6 anteriores (los 6 primeros: NaN)
+serie["acumulado"] = serie["importe"].cumsum()           # suma acumulada desde el primer día
+serie["dia_anterior"] = serie["importe"].shift(1)        # desplaza los valores una fila: cada día ve el del día anterior
+serie["variacion"] = serie["importe"].diff()             # diferencia con el día anterior (hoy − ayer)
+serie["variacion_pct"] = serie["importe"].pct_change() * 100   # cambio en % respecto al día anterior
 serie.head(10)
 ```
 
@@ -1162,8 +1212,10 @@ serie.head(10)
 pd.date_range("2026-01-01", "2026-01-31", freq="D")            # todos los días de enero
 pd.date_range("2026-01-01", periods=12, freq="MS")              # inicio de cada mes
 
+# tz_localize: indica en qué zona horaria ESTÁ una fecha que no la tenía (no cambia la hora)
 utc = pd.Series(pd.to_datetime(["2026-10-20 10:00"])).dt.tz_localize("UTC")
-utc.dt.tz_convert("Europe/Madrid")                              # 12:00+02:00
+# tz_convert: expresa esa misma hora en otra zona
+utc.dt.tz_convert("Europe/Madrid")                              # 12:00+02:00 (horario de verano)
 ```
 
 ---
@@ -1175,19 +1227,20 @@ pandas dibuja directamente con matplotlib a través de `.plot()`:
 ```python
 import matplotlib.pyplot as plt
 
-mensual["sum"].plot(title="Facturación mensual", ylabel="€")
-plt.show()
+mensual["sum"].plot(title="Facturación mensual", ylabel="€")   # líneas: el índice (meses) en el eje X
+plt.show()                                                     # muestra el gráfico
 
+# barras horizontales con la facturación de cada tienda, ordenadas de menor a mayor
 ventas.groupby("tienda")["importe"].sum().sort_values().plot.barh(title="Facturación por tienda")
 plt.show()
 
-ventas["precio"].plot.hist(bins=30, title="Distribución de precios")
+ventas["precio"].plot.hist(bins=30, title="Distribución de precios")   # histograma con 30 barras
 plt.show()
 
-ventas.plot.scatter(x="precio", y="importe", alpha=0.3)
+ventas.plot.scatter(x="precio", y="importe", alpha=0.3)   # un punto por venta; alpha = transparencia (0 a 1)
 plt.show()
 
-ventas.boxplot(column="importe", by="tienda")
+ventas.boxplot(column="importe", by="tienda")             # una caja por tienda (mediana, cuartiles y atípicos)
 plt.show()
 ```
 
@@ -1213,12 +1266,12 @@ En lugar de crear muchas variables intermedias (`df1`, `df2`, `df_final`…), se
 ```python
 top_tiendas_online = (
     ventas
-    .query("canal == 'online'")
-    .assign(mes=lambda d: d["fecha"].dt.month)
-    .groupby(["tienda", "mes"], as_index=False)
-    .agg(facturacion=("importe", "sum"))
-    .sort_values("facturacion", ascending=False)
-    .head(10)
+    .query("canal == 'online'")                      # 1. solo ventas online
+    .assign(mes=lambda d: d["fecha"].dt.month)       # 2. añade el mes
+    .groupby(["tienda", "mes"], as_index=False)      # 3. agrupa por tienda y mes
+    .agg(facturacion=("importe", "sum"))             # 4. suma lo facturado
+    .sort_values("facturacion", ascending=False)     # 5. de mayor a menor
+    .head(10)                                        # 6. las 10 primeras
 )
 top_tiendas_online
 ```
@@ -1227,10 +1280,12 @@ Para insertar una función propia en la cadena, `pipe`:
 
 ```python
 def quitar_atipicos(df, col):
+    """Devuelve df sin las filas atípicas de la columna col (método IQR, sección 10.6)."""
     q1, q3 = df[col].quantile([0.25, 0.75])
     iqr = q3 - q1
-    return df[df[col].between(q1 - 1.5 * iqr, q3 + 1.5 * iqr)]
+    return df[df[col].between(q1 - 1.5 * iqr, q3 + 1.5 * iqr)]   # se queda con las filas dentro de los límites
 
+# pipe(f, arg) equivale a f(ventas, arg), pero se puede poner en mitad de una cadena
 ventas.pipe(quitar_atipicos, "importe").shape
 ```
 
@@ -1239,7 +1294,7 @@ ventas.pipe(quitar_atipicos, "importe").shape
 En pandas 3 **cualquier DataFrame obtenido de otro se comporta como una copia independiente**. Consecuencias:
 
 ```python
-filtrado = ventas[ventas["tienda"] == "Ferrol"]
+filtrado = ventas[ventas["tienda"] == "Ferrol"]   # subconjunto de ventas
 filtrado["precio"] = 0                     # modifica SOLO 'filtrado', nunca 'ventas' ✅
 ```
 
@@ -1265,7 +1320,7 @@ ventas.loc[ventas["tienda"] == "Ferrol", "gastos_envio"] = 0     # ✅
 ### 18.1 Medir antes de optimizar
 
 ```python
-ventas.info(memory_usage="deep")
+ventas.info(memory_usage="deep")          # memoria total real (incluye el texto)
 ventas.memory_usage(deep=True).sort_values(ascending=False) / 1024**2    # MB por columna
 ```
 
@@ -1279,9 +1334,9 @@ ventas.memory_usage(deep=True).sort_values(ascending=False) / 1024**2    # MB po
 
 ```python
 pd.read_csv(DATOS / "ventas.csv", nrows=1000)                          # una muestra para explorar
-pd.read_csv(DATOS / "ventas.csv", usecols=["fecha", "tienda", "precio"])
-pd.read_parquet(DATOS / "ventas.parquet", columns=["tienda", "precio"],
-                filters=[("precio", ">", 100)])
+pd.read_csv(DATOS / "ventas.csv", usecols=["fecha", "tienda", "precio"])   # solo las columnas necesarias
+pd.read_parquet(DATOS / "ventas.parquet", columns=["tienda", "precio"],    # en Parquet: columnas…
+                filters=[("precio", ">", 100)])                            # …y filas, al leer
 ```
 
 ### 18.3 Tipos que ocupan menos
@@ -1296,18 +1351,19 @@ pd.read_parquet(DATOS / "ventas.parquet", columns=["tienda", "precio"],
 ```python
 def optimizar_tipos(df, max_categorias=0.5):
     """Reduce la memoria: enteros y decimales más pequeños y texto repetido como category."""
-    df = df.copy()
-    for col in df.select_dtypes("integer"):
-        df[col] = pd.to_numeric(df[col], downcast="integer")
-    for col in df.select_dtypes("float"):
-        df[col] = pd.to_numeric(df[col], downcast="float")
-    for col in df.select_dtypes(["object", "str"]):
+    df = df.copy()                                    # trabajamos sobre una copia: el original no cambia
+    for col in df.select_dtypes("integer"):           # columnas de enteros
+        df[col] = pd.to_numeric(df[col], downcast="integer")   # el entero más pequeño que admite sus valores
+    for col in df.select_dtypes("float"):             # columnas de decimales
+        df[col] = pd.to_numeric(df[col], downcast="float")     # float64 → float32 si es posible
+    for col in df.select_dtypes(["object", "str"]):   # columnas de texto
+        # si hay pocos valores distintos respecto al nº de filas (menos del 50 %), compensa category
         if df[col].nunique() / len(df) < max_categorias:
             df[col] = df[col].astype("category")
     return df
 
-antes = ventas.memory_usage(deep=True).sum() / 1024**2
-despues = optimizar_tipos(ventas).memory_usage(deep=True).sum() / 1024**2
+antes = ventas.memory_usage(deep=True).sum() / 1024**2                     # MB antes
+despues = optimizar_tipos(ventas).memory_usage(deep=True).sum() / 1024**2  # MB después
 print(f"{antes:.2f} MB → {despues:.2f} MB")
 ```
 
@@ -1316,6 +1372,7 @@ print(f"{antes:.2f} MB → {despues:.2f} MB")
 **Backend de Apache Arrow** (más compacto para texto y compatible con Parquet y Spark):
 
 ```python
+# engine: quién lee el fichero (pyarrow, más rápido); dtype_backend: cómo se guardan los datos en memoria
 df = pd.read_csv(DATOS / "ventas.csv", engine="pyarrow", dtype_backend="pyarrow")
 df.dtypes.head()        # int64[pyarrow], string[pyarrow], ...
 ```
@@ -1325,12 +1382,14 @@ df.dtypes.head()        # int64[pyarrow], string[pyarrow], ...
 Si el fichero **no cabe en memoria**, se lee por bloques y se agrega cada bloque. Solo se guarda en memoria el resultado parcial:
 
 ```python
-parciales = []
+parciales = []                                       # aquí guardamos el resumen de cada bloque
+# con chunksize, read_csv no devuelve un DataFrame sino bloques de 200 filas que se recorren con for
 for bloque in pd.read_csv(DATOS / "ventas.csv", chunksize=200,
                           usecols=["tienda", "unidades", "precio"]):
     bloque["importe"] = bloque["unidades"] * bloque["precio"]
-    parciales.append(bloque.groupby("tienda")["importe"].agg(["sum", "count"]))
+    parciales.append(bloque.groupby("tienda")["importe"].agg(["sum", "count"]))   # suma y recuento del bloque
 
+# apilamos los resúmenes y sumamos por tienda (level=0: agrupar por el índice, que es la tienda)
 total = pd.concat(parciales).groupby(level=0).sum()      # combinar los resultados parciales
 total["media"] = total["sum"] / total["count"]           # la media se calcula al final, no se promedian medias
 total
@@ -1344,13 +1403,14 @@ Patrón **CSV grande → Parquet por bloques**, para trabajar después con Parqu
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-writer = None
+writer = None                                        # el escritor se crea con el primer bloque
 for bloque in pd.read_csv(DATOS / "ventas.csv", chunksize=200, parse_dates=["fecha"]):
-    tabla = pa.Table.from_pandas(bloque, preserve_index=False)
-    if writer is None:
+    tabla = pa.Table.from_pandas(bloque, preserve_index=False)   # DataFrame → tabla de Arrow
+    if writer is None:                                # solo la primera vuelta:
+        # abre el Parquet de salida con las columnas y tipos (schema) del primer bloque
         writer = pq.ParquetWriter(SALIDA / "ventas_convertido.parquet", tabla.schema)
-    writer.write_table(tabla)
-writer.close()
+    writer.write_table(tabla)                         # añade el bloque al final del fichero
+writer.close()                                        # cierra el fichero: sin esto queda incompleto
 ```
 
 ### 18.5 Vectorizar: evitar bucles
@@ -1365,10 +1425,11 @@ writer.close()
 
 ```python
 import time
-grande = pd.DataFrame({"a": np.random.rand(200_000), "b": np.random.rand(200_000)})
+grande = pd.DataFrame({"a": np.random.rand(200_000), "b": np.random.rand(200_000)})   # 200 000 filas al azar
 
-t = time.perf_counter(); grande.apply(lambda f: f["a"] * f["b"], axis=1); lento = time.perf_counter() - t
-t = time.perf_counter(); grande["a"] * grande["b"]; rapido = time.perf_counter() - t
+# perf_counter() da la hora exacta: tiempo = hora al terminar − hora al empezar
+t = time.perf_counter(); grande.apply(lambda f: f["a"] * f["b"], axis=1); lento = time.perf_counter() - t   # fila a fila
+t = time.perf_counter(); grande["a"] * grande["b"]; rapido = time.perf_counter() - t                       # vectorizado
 print(f"apply: {lento:.2f} s · vectorizado: {rapido:.4f} s · {lento / rapido:.0f} veces más rápido")
 ```
 
@@ -1418,11 +1479,11 @@ print(f"apply: {lento:.2f} s · vectorizado: {rapido:.4f} s · {lento / rapido:.
 
 ```py
 from pyspark.sql import SparkSession
-spark = SparkSession.builder.appName("pandas-spark").getOrCreate()
+spark = SparkSession.builder.appName("pandas-spark").getOrCreate()   # arranca Spark (o reutiliza la sesión abierta)
 spark.conf.set("spark.sql.execution.arrow.pyspark.enabled", "true")   # conversión rápida con Arrow
 
 sdf = spark.createDataFrame(ventas)          # pandas → Spark (datos pequeños o medianos)
-resumen = (sdf.groupBy("tienda").sum("importe")
+resumen = (sdf.groupBy("tienda").sum("importe")   # la agregación la hace Spark
               .toPandas())                    # Spark → pandas: SOLO resultados pequeños
 ```
 
@@ -1559,23 +1620,27 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-BRUTOS = Path("datos/brutos"); BRUTOS.mkdir(parents=True, exist_ok=True)
-PROCESADOS = Path("datos/procesados"); PROCESADOS.mkdir(parents=True, exist_ok=True)
+# parents=True crea también "datos" si no existe
+BRUTOS = Path("datos/brutos"); BRUTOS.mkdir(parents=True, exist_ok=True)           # datos tal como llegan
+PROCESADOS = Path("datos/procesados"); PROCESADOS.mkdir(parents=True, exist_ok=True)   # datos ya limpios
 
-rng = np.random.default_rng(7)
-n = 2_000
+rng = np.random.default_rng(7)          # semilla fija: siempre los mismos datos
+n = 2_000                               # 2000 lecturas
 crudo = pd.DataFrame({
-    " Estación ": rng.choice(["Ferrol", "A Coruña", " ferrol", "Vigo", "VIGO"], n),
+    " Estación ": rng.choice(["Ferrol", "A Coruña", " ferrol", "Vigo", "VIGO"], n),   # nombres mal escritos a propósito
+    # una lectura cada 3 horas; strftime la convierte en texto "dd/mm/aaaa hh:mm", como en el CSV real
     "Fecha/Hora": pd.date_range("2026-01-01", periods=n, freq="3h").strftime("%d/%m/%Y %H:%M"),
+    # normal(media, desviación, n): valores alrededor de 30 y 20; astype(str) para poder escribir "n/d" o comas
     "NO2 (µg/m³)": rng.normal(30, 10, n).round(1).astype(str),
     "PM10 (µg/m³)": rng.normal(20, 8, n).round(1).astype(str),
 })
-crudo.loc[rng.choice(n, 40, replace=False), "NO2 (µg/m³)"] = "n/d"
+crudo.loc[rng.choice(n, 40, replace=False), "NO2 (µg/m³)"] = "n/d"                  # 40 lecturas sin dato
 crudo.loc[rng.choice(n, 5, replace=False), "PM10 (µg/m³)"] = "-999"           # código de error del sensor
-crudo["NO2 (µg/m³)"] = crudo["NO2 (µg/m³)"].str.replace(".", ",", regex=False)
+crudo["NO2 (µg/m³)"] = crudo["NO2 (µg/m³)"].str.replace(".", ",", regex=False)     # coma decimal, a la española
 crudo["PM10 (µg/m³)"] = crudo["PM10 (µg/m³)"].str.replace(".", ",", regex=False)
 crudo = pd.concat([crudo, crudo.sample(30, random_state=3)])                   # duplicados
 
+# errors="replace": los caracteres que no existen en Latin-1 (como ³) se escriben como "?"
 crudo.to_csv(BRUTOS / "calidad_aire_2026.csv", sep=";", index=False, encoding="latin-1",
              errors="replace")
 ```
@@ -1583,9 +1648,10 @@ crudo.to_csv(BRUTOS / "calidad_aire_2026.csv", sep=";", index=False, encoding="l
 **Paso 2 — Inspeccionar y leer correctamente:**
 
 ```python
+# Antes de usar pandas, miramos las 3 primeras líneas tal cual
 with open(BRUTOS / "calidad_aire_2026.csv", encoding="latin-1") as f:
-    for _ in range(3):
-        print(repr(f.readline()))
+    for _ in range(3):                      # _ : variable que no usamos, solo repetimos 3 veces
+        print(repr(f.readline()))           # repr muestra también los caracteres invisibles (\n, espacios)
 
 df = pd.read_csv(
     BRUTOS / "calidad_aire_2026.csv",
@@ -1594,69 +1660,76 @@ df = pd.read_csv(
     encoding="latin-1",
     na_values=["n/d", "-999"],          # -999 es el código de "sin lectura" del sensor
 )
-print(df.shape)
-df.dtypes
+print(df.shape)                          # filas y columnas leídas
+df.dtypes                                # NO2 y PM10 deben salir como números (float64)
 ```
 
 **Paso 3 — Limpiar con una cadena de transformaciones documentada:**
 
 ```python
 def normalizar_columnas(d):
+    """Nombres de columna en minúsculas, sin tildes, espacios ni unidades (como en la sección 10.1)."""
     d = d.copy()
     d.columns = (d.columns.str.strip().str.lower()
-                 .str.normalize("NFKD").str.encode("ascii", "ignore").str.decode("ascii")
+                 .str.normalize("NFKD").str.encode("ascii", "ignore").str.decode("ascii")   # quita tildes
                  .str.replace(r"\(.*\)", "", regex=True)          # quita las unidades entre paréntesis
                  .str.replace(r"[^\w]+", "_", regex=True).str.strip("_"))
     return d
 
-filas_ini = len(df)
+filas_ini = len(df)                      # guardamos cuántas filas había para contar las que se pierden
 
 limpio = (
     df
     .pipe(normalizar_columnas)                                    # estacion, fecha_hora, no2, pm10
     .assign(
+        # " ferrol", "VIGO"… → "Ferrol", "Vigo"; y unificamos "A Coruña" como "Coruña"
         estacion=lambda d: d["estacion"].str.strip().str.title().replace({"A Coruña": "Coruña"}),
-        fecha=lambda d: pd.to_datetime(d["fecha_hora"], format="%d/%m/%Y %H:%M"),
+        fecha=lambda d: pd.to_datetime(d["fecha_hora"], format="%d/%m/%Y %H:%M"),   # texto → fecha
     )
-    .drop(columns="fecha_hora")
-    .drop_duplicates()
+    .drop(columns="fecha_hora")                                   # ya tenemos "fecha"; sobra el texto original
+    .drop_duplicates()                                            # quita las lecturas repetidas
     .query("no2 >= 0 or no2.isna()", engine="python")             # elimina lecturas negativas imposibles
-    .sort_values(["estacion", "fecha"])
-    .reset_index(drop=True)
+    .sort_values(["estacion", "fecha"])                           # ordenado por estación y, dentro, por fecha
+    .reset_index(drop=True)                                       # índice 0, 1, 2… de nuevo
 )
 
 print(f"Filas: {filas_ini} → {len(limpio)} ({filas_ini - len(limpio)} eliminadas)")
-print(limpio["estacion"].value_counts())
-limpio.isna().sum()
+print(limpio["estacion"].value_counts())       # deben quedar solo 3 estaciones
+limpio.isna().sum()                            # nulos que quedan (los "n/d" y los -999)
 ```
 
 **Paso 4 — Imputar nulos con criterio temporal** (interpolación dentro de cada estación):
 
 ```python
 limpio[["no2", "pm10"]] = (
-    limpio.groupby("estacion")[["no2", "pm10"]]
+    limpio.groupby("estacion")[["no2", "pm10"]]       # por estación: no mezclar lecturas de sitios distintos
+    # interpolate: rellena el hueco con un valor intermedio entre la lectura anterior y la siguiente
     .transform(lambda s: s.interpolate(limit=2))      # rellena huecos de hasta 2 lecturas seguidas
 )
-limpio.isna().sum()
+limpio.isna().sum()                                   # quedan nulos solo en huecos más largos
 ```
 
 **Paso 5 — Tipo `category` y guardar en Parquet particionado:**
 
 ```python
-limpio = limpio.astype({"estacion": "category"})
+limpio = limpio.astype({"estacion": "category"})     # pocas estaciones que se repiten → category
 limpio["mes"] = limpio["fecha"].dt.month
 
+# una subcarpeta por estación: estacion=Coruña/, estacion=Ferrol/, estacion=Vigo/
 limpio.to_parquet(PROCESADOS / "calidad_aire", partition_cols=["estacion"], index=False)
-sorted(p.name for p in (PROCESADOS / "calidad_aire").iterdir())
+sorted(p.name for p in (PROCESADOS / "calidad_aire").iterdir())   # lista las subcarpetas creadas
 ```
 
 **Paso 6 — Analizar leyendo solo lo necesario:**
 
 ```python
+# solo 4 columnas; "estacion" se reconstruye a partir del nombre de las carpetas
 aire = pd.read_parquet(PROCESADOS / "calidad_aire", columns=["estacion", "fecha", "no2", "pm10"])
 
 resumen_mensual = (
     aire
+    # pd.Grouper agrupa la fecha por meses (como resample, pero dentro de un groupby)
+    # observed=True: solo las estaciones que tienen datos (estacion es category)
     .groupby(["estacion", pd.Grouper(key="fecha", freq="ME")], observed=True)
     .agg(no2_medio=("no2", "mean"), pm10_max=("pm10", "max"), lecturas=("no2", "count"))
     .round(1)
@@ -1665,9 +1738,8 @@ resumen_mensual.head(6)
 ```
 
 ```python
-tabla = resumen_mensual["no2_medio"].unstack("estacion")
-tabla.index = tabla.index.strftime("%Y-%m")
+tabla = resumen_mensual["no2_medio"].unstack("estacion")   # una columna por estación, una fila por mes
+tabla.index = tabla.index.strftime("%Y-%m")                  # fechas → texto "2026-01" para el eje X
+# una línea por estación; marker="o" dibuja un punto en cada mes; el ; final evita texto extra en Jupyter
 tabla.plot(title="NO₂ medio mensual por estación", ylabel="µg/m³", marker="o");
 ```
-
-**Qué hemos aplicado:** lectura con `sep`, `decimal`, `encoding` y `na_values` (secc. 4.1), normalización de columnas y texto (10.1–10.2), fechas con formato explícito (15.1), duplicados y valores imposibles (10.4, 10.6), imputación por grupo y en orden temporal (10.5), tipos optimizados (18.3), Parquet particionado (5.2) y lectura selectiva y agregación temporal (4.4, 15.3). Es el mismo flujo **bruto → limpio → analítico** que se aplica a gran escala con Spark.
