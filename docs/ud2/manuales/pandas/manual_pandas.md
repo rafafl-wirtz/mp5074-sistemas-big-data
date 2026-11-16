@@ -523,6 +523,7 @@ ventas.select_dtypes(exclude="number")
 |---|---|---|
 | Selecciona por | **Etiquetas** (nombres de índice y columnas) o condiciones | **Posiciones** enteras (0, 1, 2…) |
 | Rango `a:b` | **Incluye** `b` | **Excluye** `b` (como en Python) |
+| Una sola celda | `at[fila, "col"]` | `iat[i, j]` |
 
 ```python
 ventas.loc[0]                            # fila con etiqueta 0
@@ -533,8 +534,15 @@ ventas.iloc[0]                           # primera fila
 ventas.iloc[:5, :3]                      # 5 primeras filas, 3 primeras columnas
 ventas.iloc[-1]                          # última fila
 
-ventas.at[0, "precio"]                   # una celda (rápido)
-ventas.iat[0, 6]                         # una celda por posición
+ventas.at[0, "precio"]                   # una celda por etiqueta: fila 0, columna "precio"
+ventas.iat[0, 6]                         # la misma celda por posición: fila 0, columna 6 (precio)
+```
+
+**Una sola celda: `at` e `iat`.** Son las versiones de `loc` e `iloc` para leer o cambiar **un único valor**: `at` usa etiquetas (como `loc`) e `iat` posiciones (como `iloc`). Devuelven el valor directamente, no una `Series`, y son más rápidas que `loc`/`iloc` cuando solo necesitas una celda. Con `iat` hay que contar las columnas desde 0: en `ventas`, `precio` es la séptima columna, así que su posición es 6. Por eso, salvo que trabajes por posición, `at` es más legible.
+
+```python
+ventas.at[0, "precio"] = 19.99           # cambiar una celda
+# ventas.at[0:4, "precio"]               # ✘ error: at no admite rangos ni listas → usa loc
 ```
 
 ### 7.3 Filtrar con condiciones (*boolean indexing*)
