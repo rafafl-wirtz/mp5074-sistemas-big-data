@@ -2,7 +2,7 @@
 
 **Módulo:** MP5074 – Sistemas de Big Data · Curso 2026-27
 
-> **pandas** es la librería de Python para trabajar con **datos tabulares**: leerlos de casi cualquier origen, explorarlos, limpiarlos, transformarlos, agregarlos, combinarlos y guardarlos. Es la herramienta con la que se prepara y se prototipa la mayor parte del trabajo con datos, y su forma de pensar (DataFrames, columnas, agrupaciones) es la misma que usaremos después con **PySpark**. Este manual recoge todo lo necesario para el módulo y dedica una sección a **cómo trabajar con volúmenes grandes** y cuándo dar el salto a herramientas distribuidas. Requiere el entorno `bigdata` del [manual de Miniconda](../../../ud1/manuales/miniconda/manual_miniconda.md) y conviene haber repasado el [manual de Python](../../../ud1/manuales/python/manual_python.md).
+> **pandas** es la librería de Python para trabajar con **datos tabulares**: leerlos de casi cualquier origen, explorarlos, limpiarlos, transformarlos, agregarlos, combinarlos y guardarlos. Es la herramienta con la que se prepara y se prototipa la mayor parte del trabajo con datos, y su forma de pensar (DataFrames, columnas, agrupaciones). Este manual recoge todo lo necesario para el módulo y dedica una sección a **cómo trabajar con volúmenes grandes** y cuándo dar el salto a herramientas distribuidas.
 
 ---
 
