@@ -51,7 +51,7 @@ nav = [
   { "UD2 · Orixes de datos" = [
     "ud2/index.md",
     { "Manuales" = [
-      { "pandas" = "ud2/manuales/pandas/manual_pandas.md" },
+      { "Pandas" = "ud2/manuales/pandas/manual_pandas.md" },
       { "APIs REST" = "ud2/manuales/api_rest/manual_api_rest.md" },
       { "BeautifulSoup" = "ud2/manuales/beautifulsoup/manual_beautifulsoup.md" },
       { "Selenium" = "ud2/manuales/selenium/manual_selenium.md" },
