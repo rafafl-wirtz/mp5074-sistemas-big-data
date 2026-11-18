@@ -415,12 +415,33 @@ sopa = BeautifulSoup(driver.page_source, "html.parser")                       # 
 
 ### 11.2 Tablas: `read_html` sobre `page_source`
 
-Si los datos están en una `<table>`, es aún más directo:
+Si los datos están en una `<table>`, es aún más directo: Selenium pone el HTML y **pandas** lo convierte en DataFrame, sin recorrer `<tr>` y `<td>` a mano.
 
 ```py
 from io import StringIO
-tabla = pd.read_html(StringIO(driver.page_source), attrs={"id": "resultados"})[0]   # la tabla con id="resultados"
+import pandas as pd
+
+html = driver.page_source                          # Selenium: HTML ya renderizado (str)
+tablas = pd.read_html(StringIO(html),              # pandas: cada <table> → un DataFrame
+                      attrs={"id": "resultados"})  # solo las <table id="resultados">
+tabla = tablas[0]                                  # read_html SIEMPRE devuelve una lista
 ```
+
+Pieza a pieza:
+
+| Parte | De quién es | Qué hace |
+|---|---|---|
+| `driver.page_source` | Selenium | Devuelve el HTML del DOM en ese instante, con el JavaScript ya ejecutado, como texto (`str`). |
+| `StringIO(html)` | Python (`io`) | Envuelve el texto para que se lea como si fuera un fichero. |
+| `pd.read_html(...)` | pandas | Busca todas las `<table>` del HTML y devuelve una **lista de DataFrames**, una por tabla. |
+| `attrs={"id": "resultados"}` | pandas | Filtra por atributos HTML: solo se queda con las tablas que tengan ese `id`. |
+| `[0]` | Python | Coge el primer DataFrame de la lista. Aunque solo haya una tabla que encaje, devuelve una lista. |
+
+!!! info "¿Por qué `StringIO`?"
+    Desde pandas 2.1, pasar el HTML como texto directamente a `read_html` está obsoleto y da un `FutureWarning`, porque pandas no sabe si esa cadena es HTML, una ruta o una URL. Con `StringIO` queda claro que es contenido.
+
+!!! warning "Requisitos y errores típicos"
+    `read_html` necesita un *parser* instalado: `lxml` (recomendado) o bien `beautifulsoup4` + `html5lib`. Si no hay ninguno, da `ImportError`. Si no encuentra ninguna tabla que encaje, da `ValueError: No tables found`.
 
 `read_html` pierde los enlaces y los atributos (iconos, clases). Si los necesitas, usa BeautifulSoup.
 

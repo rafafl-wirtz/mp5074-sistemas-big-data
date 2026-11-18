@@ -8,10 +8,10 @@ Aprendemos a **obtener datos de cualquier origen** y a dejarlos en un DataFrame 
 
 1. **Tipos de datos:** estructurados, semiestructurados y no estructurados. Formatos CSV, JSON, XML y Excel.
 2. **pandas** ([manual de pandas](manuales/pandas/manual_pandas.md)): `Series` y `DataFrame`, lectura de CSV, Excel y JSON, selección, filtros, agrupaciones y series temporales.
-3. **APIs:** HTTP, REST frente a SOAP, consumo de servicios web con `requests`, paginación y errores.
+3. **APIs** ([manual de APIs REST](manuales/api_rest/manual_api_rest.md)): HTTP, métodos y códigos de estado, REST frente a SOAP, consumo de servicios web con `requests`, paginación y errores.
 4. **Web scraping:**
     - Árbol DOM y selectores CSS.
-    - Páginas estáticas con `requests` y BeautifulSoup.
+    - Páginas estáticas con `requests` y BeautifulSoup ([manual de BeautifulSoup](manuales/beautifulsoup/manual_beautifulsoup.md)).
     - Páginas dinámicas con Selenium ([manual de Selenium](manuales/selenium/manual_selenium.md)).
 5. **Integración de fuentes:** `merge()`, `join()` y `concat()`.
 6. **Ingesta Big Data:** Flume, Sqoop, Kafka y NiFi.
