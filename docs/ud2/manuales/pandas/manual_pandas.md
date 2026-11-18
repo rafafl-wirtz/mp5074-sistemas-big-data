@@ -88,6 +88,17 @@ pd.reset_option("display.float_format")       # volver al formato por defecto
 
 > **Este manual sigue pandas 3.x** (publicado en enero de 2026). Si usas pandas 2.x casi todo funciona igual; las diferencias principales son que pandas 3 usa por defecto el tipo **`str`** para las columnas de texto (en 2.x aparecían como `object`) y que activa siempre el modo ***Copy-on-Write*** ([sección 17](#17-encadenar-operaciones-y-copy-on-write)).
 
+> **Versión de Python.** pandas 3 necesita **Python 3.11 o superior**. Con Python 3.10 o anterior, `conda` y `pip` instalan **sin avisar** la última pandas 2.x, y algunos ejemplos de este manual se comportarán de otra forma. El entorno `bigdata` usa Python 3.12 ([manual de Miniconda](../../../ud1/manuales/miniconda/manual_miniconda.md)), así que cumple. Compruébalo al empezar:
+
+```python
+import sys
+
+print(sys.version)           # versión de Python: debe ser 3.11 o superior
+print(pd.__version__)        # versión de pandas: debe empezar por 3.
+```
+
+Si no es así, activa el entorno correcto (`conda activate bigdata`) o, en JupyterLab, elige su *kernel* (**Kernel → Change Kernel…**).
+
 ---
 
 ## 3. Estructuras de datos: `Series` y `DataFrame`
