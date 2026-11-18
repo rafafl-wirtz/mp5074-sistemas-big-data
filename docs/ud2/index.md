@@ -12,7 +12,7 @@ Aprendemos a **obtener datos de cualquier origen** y a dejarlos en un DataFrame 
 4. **Web scraping:**
     - Árbol DOM y selectores CSS.
     - Páginas estáticas con `requests` y BeautifulSoup.
-    - Páginas dinámicas con Selenium.
+    - Páginas dinámicas con Selenium ([manual de Selenium](manuales/selenium/manual_selenium.md)).
 5. **Integración de fuentes:** `merge()`, `join()` y `concat()`.
 6. **Ingesta Big Data:** Flume, Sqoop, Kafka y NiFi.
 7. **Normativa y ética:** RGPD, LOPDGDD, licencias de datos abiertos y `robots.txt`.

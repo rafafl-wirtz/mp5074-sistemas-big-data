@@ -52,6 +52,7 @@ nav = [
     "ud2/index.md",
     { "Manuales" = [
       { "pandas" = "ud2/manuales/pandas/manual_pandas.md" },
+      { "Selenium" = "ud2/manuales/selenium/manual_selenium.md" },
     ] },
   ] },
 ]
