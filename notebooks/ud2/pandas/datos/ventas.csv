@@ -1,0 +1,501 @@
+id_venta,fecha,producto,categoria,cantidad,precio_unitario,descuento,total,region,ciudad,vendedor,canal,metodo_pago
+1,2025-03-13,Ratón,Informática,9,22.63,0,203.67,Cataluña,Barcelona,Pablo Díaz,Teléfono,Tarjeta
+2,2025-04-30,Silla oficina,Oficina,1,177.19,0,177.19,Cataluña,Barcelona,Marta Sánchez,Tienda,PayPal
+3,2025-12-24,Monitor,Informática,3,217.77,0,653.31,Cataluña,Girona,Lucía Martín,Online,Efectivo
+4,2025-07-14,Monitor,Informática,3,240.12,0,720.36,Madrid,Madrid,Lucía Martín,Online,Transferencia
+5,2025-02-10,Portátil,Informática,5,889.05,0,4445.25,Galicia,Vigo,Pablo Díaz,Teléfono,Transferencia
+6,2025-05-29,Silla oficina,Oficina,1,168.92,0,168.92,Cataluña,Barcelona,Carlos Ruiz,Tienda,PayPal
+7,2025-07-01,Auriculares,Audio,12,59.44,0,713.28,Andalucía,Sevilla,Pablo Díaz,Online,Tarjeta
+8,2025-03-25,Silla oficina,Oficina,5,184.86,0.15,785.66,Cataluña,Girona,Javier Gómez,Online,Efectivo
+9,2025-06-11,Altavoz,Audio,2,96.17,0,192.34,Madrid,Alcalá de Henares,Lucía Martín,Tienda,Efectivo
+10,2025-07-22,Silla oficina,Oficina,3,193.55,0,580.65,Galicia,Vigo,Carlos Ruiz,Online,Efectivo
+11,2025-08-08,Monitor,Informática,5,230.78,0,1153.9,C. Valenciana,Alicante,Lucía Martín,Tienda,Efectivo
+12,2025-11-18,Impresora,Oficina,1,149.81,0,149.81,Cataluña,Barcelona,Pablo Díaz,Online,Tarjeta
+13,2025-10-11,Smartphone,Telefonía,4,585.79,0.1,2108.84,Andalucía,Sevilla,Pablo Díaz,Teléfono,Tarjeta
+14,2025-08-11,Impresora,Oficina,3,157.53,0,472.59,Andalucía,Sevilla,Javier Gómez,Tienda,Transferencia
+15,2025-11-24,Impresora,Oficina,5,157.86,0,789.3,Andalucía,Sevilla,Carlos Ruiz,Online,Efectivo
+16,2025-06-15,Impresora,Oficina,5,163.6,0,818.0,C. Valenciana,Alicante,Ana López,Tienda,Transferencia
+17,2025-02-13,Auriculares,Audio,8,56.87,0.1,409.46,Madrid,Alcalá de Henares,Ana López,Teléfono,Efectivo
+18,2025-09-28,Teclado,Informática,18,46.44,0,835.92,Andalucía,Málaga,Carlos Ruiz,Teléfono,Efectivo
+19,2025-08-20,Auriculares,Audio,12,58.79,0.05,670.21,C. Valenciana,Valencia,Carlos Ruiz,Tienda,Tarjeta
+20,2025-04-23,Altavoz,Audio,18,81.38,0,1464.84,C. Valenciana,Valencia,Ana López,Teléfono,Tarjeta
+21,2025-09-21,Monitor,Informática,1,200.97,0,200.97,Madrid,Madrid,Lucía Martín,Teléfono,PayPal
+22,2025-05-05,Monitor,Informática,5,221.73,0.1,997.78,Galicia,Vigo,Javier Gómez,Tienda,Tarjeta
+23,2025-08-28,Ratón,Informática,12,25.79,0.05,294.01,Galicia,A Coruña,Pablo Díaz,Teléfono,Tarjeta
+24,2025-04-09,Portátil,Informática,3,833.45,0,2500.35,Cataluña,Barcelona,Marta Sánchez,Online,Efectivo
+25,2025-08-15,Smartphone,Telefonía,4,562.02,0,2248.08,Madrid,Madrid,Ana López,Teléfono,Tarjeta
+26,2025-09-06,Ratón,Informática,8,27.13,0,217.04,Galicia,Vigo,Carlos Ruiz,Online,Tarjeta
+27,2025-05-27,Teclado,Informática,13,43.91,0,570.83,Galicia,Vigo,Pablo Díaz,Teléfono,PayPal
+28,2025-10-05,Teclado,Informática,7,42.21,0,295.47,C. Valenciana,Valencia,Pablo Díaz,Online,Tarjeta
+29,2025-01-30,Portátil,Informática,5,864.31,0.1,3889.39,Cataluña,Barcelona,Carlos Ruiz,Tienda,Tarjeta
+30,2025-11-01,Monitor,Informática,5,215.77,0,1078.85,C. Valenciana,Valencia,Marta Sánchez,Tienda,PayPal
+31,2025-12-09,Silla oficina,Oficina,3,182.35,0,547.05,Cataluña,Girona,Carlos Ruiz,Online,PayPal
+32,2025-02-07,Teclado,Informática,10,46.55,0.05,442.22,Andalucía,Sevilla,Javier Gómez,Teléfono,Tarjeta
+33,2025-06-28,Ratón,Informática,17,25.19,0,428.23,Cataluña,Barcelona,Carlos Ruiz,Online,Transferencia
+34,2025-11-10,Teclado,Informática,18,44.44,0.15,679.93,Andalucía,Sevilla,Pablo Díaz,Teléfono,Transferencia
+35,2025-02-24,Ratón,Informática,5,27.19,0,135.95,Madrid,Madrid,Lucía Martín,Online,Efectivo
+36,2025-05-09,Altavoz,Audio,9,84.66,0.1,685.75,Galicia,A Coruña,Ana López,Teléfono,PayPal
+37,2025-03-24,Auriculares,Audio,11,54.53,0,599.83,Andalucía,Málaga,Marta Sánchez,Teléfono,PayPal
+38,2025-10-07,Impresora,Oficina,1,135.29,0.15,115.0,Cataluña,Barcelona,Lucía Martín,Teléfono,Efectivo
+39,2025-07-03,Smartphone,Telefonía,3,555.29,0,1665.87,Madrid,Madrid,Pablo Díaz,Tienda,Tarjeta
+40,2025-05-02,Altavoz,Audio,14,95.04,0.1,1197.5,Cataluña,Barcelona,Carlos Ruiz,Online,Tarjeta
+41,2025-05-17,Teclado,Informática,11,47.13,0.05,492.51,Cataluña,Barcelona,Pablo Díaz,Tienda,PayPal
+42,2025-06-29,Portátil,Informática,2,910.96,0,1821.92,Galicia,Vigo,Carlos Ruiz,Tienda,Tarjeta
+43,2025-06-29,Monitor,Informática,3,215.53,0,646.59,Andalucía,Málaga,Pablo Díaz,Teléfono,Transferencia
+44,2025-05-16,Portátil,Informática,3,784.61,0,2353.83,C. Valenciana,Valencia,Ana López,Teléfono,PayPal
+45,2025-09-19,Altavoz,Audio,11,94.11,0.05,983.45,C. Valenciana,Valencia,Javier Gómez,Teléfono,Efectivo
+46,2025-10-03,Auriculares,Audio,14,54.53,0,763.42,C. Valenciana,Valencia,Lucía Martín,Online,Tarjeta
+47,2025-09-17,Altavoz,Audio,4,92.22,0.15,313.55,Andalucía,Málaga,Pablo Díaz,Online,Transferencia
+48,2025-08-04,Smartphone,Telefonía,5,623.67,0,3118.35,Cataluña,Girona,Pablo Díaz,Teléfono,Efectivo
+49,2025-06-05,Silla oficina,Oficina,4,182.49,0.1,656.96,Madrid,Alcalá de Henares,Carlos Ruiz,Online,Transferencia
+50,2025-03-28,Tablet,Telefonía,2,345.93,0.1,622.67,Galicia,A Coruña,Lucía Martín,Teléfono,Transferencia
+51,2025-04-26,Ratón,Informática,8,26.59,0.15,180.81,Andalucía,Sevilla,Carlos Ruiz,Tienda,Tarjeta
+52,2025-08-01,Monitor,Informática,5,241.29,0,1206.45,Galicia,A Coruña,Pablo Díaz,Teléfono,PayPal
+53,2025-02-24,Tablet,Telefonía,2,342.98,0.15,583.07,Madrid,Alcalá de Henares,Carlos Ruiz,Tienda,PayPal
+54,2025-08-26,Portátil,Informática,1,859.76,0.05,816.77,Cataluña,Girona,Javier Gómez,Teléfono,PayPal
+55,2025-08-19,Impresora,Oficina,2,148.38,0.15,252.25,Galicia,Vigo,Carlos Ruiz,Teléfono,Transferencia
+56,2025-02-09,Impresora,Oficina,2,149.54,0,299.08,Galicia,Vigo,Carlos Ruiz,Online,Transferencia
+57,2025-04-29,Altavoz,Audio,3,97.07,0,291.21,Cataluña,Girona,Pablo Díaz,Tienda,Efectivo
+58,2025-08-01,Ratón,Informática,11,24.57,0.1,243.24,Galicia,A Coruña,Carlos Ruiz,Online,PayPal
+59,2025-09-02,Silla oficina,Oficina,1,196.06,0.1,176.45,Galicia,A Coruña,Lucía Martín,Online,PayPal
+60,2025-09-07,Smartphone,Telefonía,5,604.59,0.1,2720.66,Cataluña,Barcelona,Lucía Martín,Online,PayPal
+61,2025-08-28,Portátil,Informática,4,831.11,0.15,2825.77,Cataluña,Barcelona,Marta Sánchez,Teléfono,Tarjeta
+62,2025-03-11,Smartphone,Telefonía,1,611.03,0,611.03,Galicia,Vigo,Carlos Ruiz,Tienda,Transferencia
+63,2025-07-14,Smartphone,Telefonía,4,579.28,0,2317.12,Andalucía,Málaga,Javier Gómez,Online,Tarjeta
+64,2025-04-25,Tablet,Telefonía,5,316.36,0,1581.8,Andalucía,Sevilla,Pablo Díaz,Tienda,Tarjeta
+65,2025-05-03,Monitor,Informática,1,206.77,0.1,186.09,Cataluña,Barcelona,Javier Gómez,Teléfono,Tarjeta
+66,2025-07-08,Silla oficina,Oficina,4,196.12,0.15,666.81,Andalucía,Sevilla,Marta Sánchez,Teléfono,Tarjeta
+67,2025-06-09,Teclado,Informática,4,49.18,0.1,177.05,Madrid,Alcalá de Henares,Javier Gómez,Teléfono,Efectivo
+68,2025-12-17,Ratón,Informática,8,25.46,0,203.68,Andalucía,Sevilla,Marta Sánchez,Tienda,Transferencia
+69,2025-11-28,Impresora,Oficina,3,147.85,0,443.55,C. Valenciana,Alicante,Ana López,Online,PayPal
+70,2025-12-29,Ratón,Informática,12,24.67,0.15,251.63,Galicia,A Coruña,Javier Gómez,Tienda,Transferencia
+71,2025-08-12,Silla oficina,Oficina,5,191.1,0.05,907.72,Galicia,Vigo,Lucía Martín,Tienda,Tarjeta
+72,2025-11-09,Auriculares,Audio,8,64.58,0.05,490.81,C. Valenciana,Alicante,Lucía Martín,Tienda,PayPal
+73,2025-06-24,Altavoz,Audio,7,84.27,0,589.89,Andalucía,Málaga,Marta Sánchez,Teléfono,Transferencia
+74,2025-07-28,Impresora,Oficina,2,135.3,0,270.6,Cataluña,Girona,Marta Sánchez,Tienda,PayPal
+75,2025-04-24,Tablet,Telefonía,1,346.37,0,346.37,Andalucía,Málaga,Pablo Díaz,Tienda,Transferencia
+76,2025-08-06,Silla oficina,Oficina,5,175.28,0.1,788.76,Andalucía,Málaga,Lucía Martín,Teléfono,PayPal
+77,2025-06-11,Auriculares,Audio,8,57.68,0,461.44,Cataluña,Barcelona,Pablo Díaz,Teléfono,Efectivo
+78,2025-09-26,Monitor,Informática,4,207.52,0,830.08,C. Valenciana,Alicante,Ana López,Tienda,Transferencia
+79,2025-03-06,Monitor,Informática,3,213.88,0,641.64,C. Valenciana,Alicante,Ana López,Tienda,Transferencia
+80,2025-10-21,Teclado,Informática,16,46.24,0,739.84,Madrid,Alcalá de Henares,Javier Gómez,Online,PayPal
+81,2025-02-28,Altavoz,Audio,2,84.32,0,168.64,Galicia,A Coruña,Javier Gómez,Online,Tarjeta
+82,2025-10-16,Silla oficina,Oficina,1,184.66,0,184.66,Cataluña,Girona,Ana López,Tienda,Tarjeta
+83,2025-04-26,Impresora,Oficina,5,157.93,0.1,710.69,C. Valenciana,Alicante,Javier Gómez,Online,Transferencia
+84,2025-01-31,Silla oficina,Oficina,3,197.64,0.1,533.63,C. Valenciana,Valencia,Carlos Ruiz,Teléfono,Efectivo
+85,2025-10-10,Auriculares,Audio,6,61.93,0,371.58,Cataluña,Barcelona,Carlos Ruiz,Tienda,PayPal
+86,2025-04-29,Tablet,Telefonía,4,363.26,0,1453.04,Madrid,Alcalá de Henares,Pablo Díaz,Online,PayPal
+87,2025-12-05,Ratón,Informática,9,25.94,0.15,198.44,C. Valenciana,Valencia,Javier Gómez,Tienda,Efectivo
+88,2025-03-26,Teclado,Informática,5,48.68,0,243.4,Madrid,Alcalá de Henares,Marta Sánchez,Teléfono,Transferencia
+89,2025-05-20,Tablet,Telefonía,3,323.7,0.15,825.43,Galicia,Vigo,Javier Gómez,Tienda,Tarjeta
+90,2025-02-16,Smartphone,Telefonía,5,628.14,0,3140.7,Madrid,Madrid,Pablo Díaz,Teléfono,Tarjeta
+91,2025-11-30,Auriculares,Audio,6,60.91,0.05,347.19,C. Valenciana,Alicante,Lucía Martín,Tienda,PayPal
+92,2025-06-20,Tablet,Telefonía,4,382.83,0,1531.32,Galicia,Vigo,Pablo Díaz,Tienda,Efectivo
+93,2025-10-09,Altavoz,Audio,16,88.41,0,1414.56,Galicia,A Coruña,Javier Gómez,Tienda,Transferencia
+94,2025-12-03,Auriculares,Audio,13,57.88,0.1,677.2,Madrid,Alcalá de Henares,Javier Gómez,Tienda,Efectivo
+95,2025-01-27,Impresora,Oficina,4,145.85,0.15,495.89,Galicia,A Coruña,Lucía Martín,Teléfono,Efectivo
+96,2025-11-19,Auriculares,Audio,16,59.26,0,948.16,Madrid,Madrid,Pablo Díaz,Tienda,Transferencia
+97,2025-02-28,Impresora,Oficina,4,135.41,0,541.64,Cataluña,Girona,Ana López,Teléfono,Efectivo
+98,2025-08-01,Tablet,Telefonía,3,380.29,0.1,1026.78,Andalucía,Málaga,Javier Gómez,Tienda,PayPal
+99,2025-03-11,Impresora,Oficina,2,139.34,0.1,250.81,C. Valenciana,Valencia,Lucía Martín,Online,Transferencia
+100,2025-10-28,Impresora,Oficina,1,143.02,0,143.02,Andalucía,Málaga,Carlos Ruiz,Online,PayPal
+101,2025-06-14,Altavoz,Audio,18,86.98,0.05,1487.36,Galicia,A Coruña,Pablo Díaz,Tienda,PayPal
+102,2025-08-31,Monitor,Informática,4,235.66,0,942.64,Andalucía,Málaga,Javier Gómez,Teléfono,Efectivo
+103,2025-06-19,Tablet,Telefonía,2,382.54,0.1,688.57,C. Valenciana,Valencia,Javier Gómez,Tienda,PayPal
+104,2025-02-08,Portátil,Informática,4,887.82,0.15,3018.59,Cataluña,Girona,Lucía Martín,Online,PayPal
+105,2025-11-17,Ratón,Informática,18,26.76,0.05,457.6,Andalucía,Málaga,Marta Sánchez,Tienda,Tarjeta
+106,2025-08-11,Monitor,Informática,3,225.77,0,677.31,Madrid,Madrid,Pablo Díaz,Teléfono,Tarjeta
+107,2025-06-16,Tablet,Telefonía,3,326.65,0,979.95,Madrid,Madrid,Lucía Martín,Online,Transferencia
+108,2025-12-16,Smartphone,Telefonía,5,557.47,0.05,2647.98,C. Valenciana,Valencia,Carlos Ruiz,Tienda,Tarjeta
+109,2025-09-12,Silla oficina,Oficina,5,193.35,0.15,821.74,Cataluña,Barcelona,Carlos Ruiz,Online,Transferencia
+110,2025-12-13,Tablet,Telefonía,1,332.87,0.05,316.23,Andalucía,Sevilla,Ana López,Online,Transferencia
+111,2025-08-22,Silla oficina,Oficina,4,172.77,0.15,587.42,Andalucía,Málaga,Carlos Ruiz,Online,PayPal
+112,2025-06-01,Ratón,Informática,19,23.69,0,450.11,C. Valenciana,Alicante,Ana López,Teléfono,PayPal
+113,2025-05-27,Auriculares,Audio,2,54.1,0.1,97.38,Galicia,A Coruña,Marta Sánchez,Online,Efectivo
+114,2025-11-18,Monitor,Informática,2,225.32,0.15,383.04,Madrid,Madrid,Lucía Martín,Online,Tarjeta
+115,2025-06-17,Silla oficina,Oficina,2,175.14,0,350.28,Andalucía,Málaga,Carlos Ruiz,Tienda,Efectivo
+116,2025-05-20,Impresora,Oficina,3,161.29,0.1,435.48,C. Valenciana,Valencia,Lucía Martín,Online,Transferencia
+117,2025-04-26,Altavoz,Audio,15,95.48,0,1432.2,Cataluña,Girona,Marta Sánchez,Online,Tarjeta
+118,2025-07-08,Smartphone,Telefonía,5,541.67,0,2708.35,Galicia,Vigo,Marta Sánchez,Online,Transferencia
+119,2025-10-15,Ratón,Informática,16,25.87,0,413.92,C. Valenciana,Alicante,Marta Sánchez,Tienda,Tarjeta
+120,2025-03-01,Tablet,Telefonía,3,378.66,0.15,965.58,Galicia,A Coruña,Ana López,Tienda,Transferencia
+121,2025-07-18,Tablet,Telefonía,2,323.13,0.1,581.63,Cataluña,Girona,Lucía Martín,Teléfono,PayPal
+122,2025-09-08,Silla oficina,Oficina,2,188.72,0.05,358.57,Madrid,Alcalá de Henares,Lucía Martín,Tienda,Transferencia
+123,2025-12-18,Monitor,Informática,2,217.51,0,435.02,Madrid,Alcalá de Henares,Marta Sánchez,Teléfono,Transferencia
+124,2025-02-16,Portátil,Informática,2,832.68,0,1665.36,Galicia,A Coruña,Pablo Díaz,Teléfono,Tarjeta
+125,2025-04-16,Portátil,Informática,2,898.76,0,1797.52,C. Valenciana,Valencia,Marta Sánchez,Tienda,Efectivo
+126,2025-05-22,Monitor,Informática,2,212.46,0.1,382.43,Madrid,Madrid,Carlos Ruiz,Teléfono,Transferencia
+127,2025-07-03,Teclado,Informática,1,41.49,0,41.49,Madrid,Madrid,Marta Sánchez,Online,Tarjeta
+128,2025-09-27,Teclado,Informática,5,42.89,0.15,182.28,Galicia,A Coruña,Pablo Díaz,Tienda,PayPal
+129,2025-08-20,Tablet,Telefonía,5,369.46,0.1,1662.57,Madrid,Madrid,Marta Sánchez,Tienda,Transferencia
+130,2025-07-25,Tablet,Telefonía,1,360.03,0,360.03,Galicia,Vigo,Pablo Díaz,Tienda,PayPal
+131,2025-03-17,Tablet,Telefonía,1,320.14,0,320.14,C. Valenciana,Valencia,Carlos Ruiz,Online,Transferencia
+132,2025-09-16,Smartphone,Telefonía,5,659.36,0,3296.8,Galicia,Vigo,Ana López,Teléfono,Tarjeta
+133,2025-04-27,Impresora,Oficina,2,156.63,0.05,297.6,Galicia,Vigo,Lucía Martín,Online,PayPal
+134,2025-12-07,Smartphone,Telefonía,3,627.55,0.05,1788.52,Andalucía,Málaga,Lucía Martín,Tienda,PayPal
+135,2025-02-19,Ratón,Informática,3,22.96,0,68.88,Galicia,Vigo,Carlos Ruiz,Teléfono,Tarjeta
+136,2025-07-30,Silla oficina,Oficina,5,196.44,0,982.2,Madrid,Alcalá de Henares,Pablo Díaz,Online,Tarjeta
+137,2025-09-17,Auriculares,Audio,12,61.2,0,734.4,C. Valenciana,Valencia,Carlos Ruiz,Teléfono,PayPal
+138,2025-02-28,Monitor,Informática,3,235.28,0.1,635.26,Andalucía,Málaga,Marta Sánchez,Tienda,PayPal
+139,2025-01-14,Impresora,Oficina,5,164.24,0.1,739.08,C. Valenciana,Alicante,Ana López,Tienda,Transferencia
+140,2025-03-15,Auriculares,Audio,12,65.06,0,780.72,Cataluña,Girona,Ana López,Tienda,Tarjeta
+141,2025-08-21,Ratón,Informática,7,26.23,0.05,174.43,Galicia,Vigo,Carlos Ruiz,Online,Transferencia
+142,2025-01-27,Altavoz,Audio,19,94.98,0.1,1624.16,Madrid,Madrid,Carlos Ruiz,Teléfono,Tarjeta
+143,2025-08-15,Ratón,Informática,14,23.86,0.05,317.34,C. Valenciana,Alicante,Lucía Martín,Tienda,Tarjeta
+144,2025-09-07,Altavoz,Audio,10,88.74,0.15,754.29,C. Valenciana,Alicante,Ana López,Tienda,PayPal
+145,2025-03-12,Silla oficina,Oficina,2,163.97,0,327.94,Cataluña,Girona,Lucía Martín,Online,Tarjeta
+146,2025-07-14,Portátil,Informática,4,849.56,0,3398.24,Cataluña,Barcelona,Marta Sánchez,Teléfono,Transferencia
+147,2025-08-24,Ratón,Informática,2,24.49,0.05,46.53,Madrid,Madrid,Lucía Martín,Teléfono,PayPal
+148,2025-07-27,Silla oficina,Oficina,4,176.56,0,706.24,Madrid,Madrid,Lucía Martín,Tienda,PayPal
+149,2025-10-29,Altavoz,Audio,4,82.59,0,330.36,Galicia,Vigo,Marta Sánchez,Tienda,PayPal
+150,2025-02-09,Auriculares,Audio,8,62.95,0,503.6,Cataluña,Barcelona,Marta Sánchez,Teléfono,Efectivo
+151,2025-03-16,Altavoz,Audio,5,87.32,0,436.6,Madrid,Alcalá de Henares,Carlos Ruiz,Tienda,Efectivo
+152,2025-10-24,Ratón,Informática,16,23.39,0.05,355.53,C. Valenciana,Alicante,Pablo Díaz,Teléfono,Transferencia
+153,2025-11-20,Altavoz,Audio,3,83.72,0.05,238.6,Galicia,Vigo,Lucía Martín,Teléfono,Tarjeta
+154,2025-01-20,Altavoz,Audio,10,90.13,0.05,856.23,Galicia,A Coruña,Lucía Martín,Online,Tarjeta
+155,2025-10-25,Ratón,Informática,17,25.58,0.05,413.12,Galicia,A Coruña,Javier Gómez,Teléfono,Efectivo
+156,2025-08-19,Altavoz,Audio,17,91.89,0,1562.13,Madrid,Madrid,Lucía Martín,Teléfono,Tarjeta
+157,2025-08-13,Impresora,Oficina,1,154.38,0,154.38,Galicia,A Coruña,Lucía Martín,Online,Transferencia
+158,2025-01-27,Smartphone,Telefonía,3,589.05,0.15,1502.08,C. Valenciana,Alicante,Ana López,Online,Tarjeta
+159,2025-03-18,Impresora,Oficina,3,155.35,0,466.05,C. Valenciana,Alicante,Ana López,Teléfono,Efectivo
+160,2025-12-29,Altavoz,Audio,13,86.58,0,1125.54,C. Valenciana,Valencia,Lucía Martín,Teléfono,PayPal
+161,2025-09-18,Altavoz,Audio,17,95.64,0,1625.88,Galicia,Vigo,Ana López,Online,Transferencia
+162,2025-04-26,Teclado,Informática,11,49.06,0.05,512.68,Cataluña,Barcelona,Carlos Ruiz,Tienda,Transferencia
+163,2025-01-20,Ratón,Informática,18,25.04,0.15,383.11,C. Valenciana,Alicante,Marta Sánchez,Tienda,PayPal
+164,2025-01-23,Teclado,Informática,20,41.96,0,839.2,Galicia,Vigo,Lucía Martín,Teléfono,Efectivo
+165,2025-05-03,Tablet,Telefonía,4,357.74,0,1430.96,C. Valenciana,Alicante,Javier Gómez,Tienda,Transferencia
+166,2025-09-15,Silla oficina,Oficina,4,197.44,0,789.76,Galicia,Vigo,Carlos Ruiz,Tienda,Efectivo
+167,2025-02-22,Auriculares,Audio,16,54.63,0,874.08,C. Valenciana,Valencia,Lucía Martín,Tienda,Efectivo
+168,2025-02-16,Auriculares,Audio,17,59.39,0,1009.63,Galicia,A Coruña,Javier Gómez,Online,Tarjeta
+169,2025-07-17,Smartphone,Telefonía,5,546.39,0,2731.95,Cataluña,Barcelona,Lucía Martín,Tienda,Tarjeta
+170,2025-01-20,Altavoz,Audio,11,97.75,0,1075.25,Cataluña,Girona,Javier Gómez,Teléfono,Efectivo
+171,2025-05-12,Tablet,Telefonía,1,346.4,0,346.4,Madrid,Madrid,Carlos Ruiz,Teléfono,PayPal
+172,2025-01-25,Ratón,Informática,8,26.38,0,211.04,Madrid,Madrid,Javier Gómez,Teléfono,PayPal
+173,2025-01-09,Ratón,Informática,16,23.05,0.1,331.92,C. Valenciana,Valencia,Pablo Díaz,Tienda,Transferencia
+174,2025-08-02,Smartphone,Telefonía,3,540.19,0,1620.57,C. Valenciana,Valencia,Pablo Díaz,Teléfono,Tarjeta
+175,2025-09-17,Impresora,Oficina,1,164.24,0.1,147.82,C. Valenciana,Valencia,Javier Gómez,Online,Tarjeta
+176,2025-07-02,Smartphone,Telefonía,3,657.72,0.15,1677.19,Madrid,Madrid,Lucía Martín,Tienda,Tarjeta
+177,2025-06-30,Silla oficina,Oficina,3,188.47,0,565.41,Madrid,Alcalá de Henares,Pablo Díaz,Tienda,PayPal
+178,2025-01-19,Tablet,Telefonía,2,359.22,0,718.44,Galicia,Vigo,Carlos Ruiz,Tienda,Efectivo
+179,2025-10-06,Portátil,Informática,3,818.65,0.1,2210.36,Galicia,Vigo,Lucía Martín,Tienda,Efectivo
+180,2025-05-20,Auriculares,Audio,2,58.28,0.15,99.08,Andalucía,Sevilla,Lucía Martín,Online,PayPal
+181,2025-09-12,Tablet,Telefonía,4,377.62,0,1510.48,Cataluña,Girona,Lucía Martín,Teléfono,Transferencia
+182,2025-04-03,Ratón,Informática,3,26.14,0.05,74.5,C. Valenciana,Alicante,Lucía Martín,Tienda,Tarjeta
+183,2025-08-07,Altavoz,Audio,10,92.9,0.05,882.55,C. Valenciana,Valencia,Pablo Díaz,Online,Transferencia
+184,2025-05-21,Tablet,Telefonía,3,317.96,0.1,858.49,Galicia,A Coruña,Ana López,Teléfono,PayPal
+185,2025-11-08,Altavoz,Audio,6,90.24,0,541.44,Cataluña,Girona,Ana López,Tienda,Tarjeta
+186,2025-10-18,Monitor,Informática,3,232.25,0,696.75,Galicia,A Coruña,Marta Sánchez,Tienda,PayPal
+187,2025-09-29,Altavoz,Audio,3,87.7,0.1,236.79,Cataluña,Girona,Javier Gómez,Online,Transferencia
+188,2025-09-13,Monitor,Informática,1,240.26,0.15,204.22,Cataluña,Girona,Marta Sánchez,Tienda,Transferencia
+189,2025-12-22,Auriculares,Audio,7,62.45,0.1,393.44,Andalucía,Málaga,Carlos Ruiz,Tienda,Efectivo
+190,2025-12-08,Ratón,Informática,15,24.76,0,371.4,Andalucía,Málaga,Pablo Díaz,Tienda,Transferencia
+191,2025-04-25,Auriculares,Audio,6,64.22,0,385.32,C. Valenciana,Valencia,Carlos Ruiz,Tienda,Efectivo
+192,2025-08-28,Tablet,Telefonía,5,316.84,0.1,1425.78,Andalucía,Sevilla,Marta Sánchez,Tienda,Tarjeta
+193,2025-07-29,Auriculares,Audio,16,58.78,0.1,846.43,Galicia,A Coruña,Carlos Ruiz,Online,Tarjeta
+194,2025-10-10,Tablet,Telefonía,5,347.61,0,1738.05,Cataluña,Barcelona,Carlos Ruiz,Online,Tarjeta
+195,2025-06-15,Ratón,Informática,10,25.09,0,250.9,Cataluña,Barcelona,Lucía Martín,Teléfono,Transferencia
+196,2025-11-17,Ratón,Informática,18,23.75,0,427.5,Cataluña,Girona,Marta Sánchez,Teléfono,Tarjeta
+197,2025-03-29,Impresora,Oficina,5,154.23,0.1,694.03,Cataluña,Girona,Marta Sánchez,Tienda,Tarjeta
+198,2025-10-20,Ratón,Informática,19,22.73,0,431.87,Cataluña,Girona,Marta Sánchez,Teléfono,Tarjeta
+199,2025-09-05,Tablet,Telefonía,5,377.23,0,1886.15,Andalucía,Sevilla,Pablo Díaz,Online,Transferencia
+200,2025-08-01,Tablet,Telefonía,1,320.11,0,320.11,Galicia,Vigo,Javier Gómez,Tienda,Transferencia
+201,2025-07-24,Silla oficina,Oficina,3,167.17,0.15,426.28,Andalucía,Sevilla,Lucía Martín,Teléfono,Tarjeta
+202,2025-05-07,Altavoz,Audio,4,85.35,0,341.4,Galicia,A Coruña,Ana López,Tienda,Transferencia
+203,2025-06-17,Smartphone,Telefonía,4,643.7,0,2574.8,Cataluña,Girona,Carlos Ruiz,Tienda,PayPal
+204,2025-02-16,Impresora,Oficina,3,149.0,0.05,424.65,Madrid,Alcalá de Henares,Marta Sánchez,Online,Efectivo
+205,2025-09-11,Monitor,Informática,1,223.67,0,223.67,Andalucía,Málaga,Lucía Martín,Teléfono,Tarjeta
+206,2025-07-26,Ratón,Informática,9,24.65,0.15,188.57,Andalucía,Málaga,Ana López,Online,Tarjeta
+207,2025-02-07,Silla oficina,Oficina,3,182.23,0.1,492.02,Andalucía,Málaga,Marta Sánchez,Online,Transferencia
+208,2025-07-21,Silla oficina,Oficina,1,186.49,0,186.49,Madrid,Alcalá de Henares,Lucía Martín,Teléfono,Transferencia
+209,2025-01-21,Teclado,Informática,17,42.29,0.05,682.98,C. Valenciana,Valencia,Ana López,Tienda,Transferencia
+210,2025-03-13,Tablet,Telefonía,2,351.35,0.1,632.43,C. Valenciana,Alicante,Marta Sánchez,Online,Efectivo
+211,2025-09-17,Smartphone,Telefonía,3,658.87,0.1,1778.95,Andalucía,Málaga,Pablo Díaz,Teléfono,Transferencia
+212,2025-08-02,Tablet,Telefonía,3,372.1,0,1116.3,Madrid,Alcalá de Henares,Pablo Díaz,Teléfono,Tarjeta
+213,2025-01-27,Silla oficina,Oficina,5,179.09,0.1,805.91,Cataluña,Girona,Carlos Ruiz,Teléfono,PayPal
+214,2025-12-25,Teclado,Informática,8,47.89,0,383.12,C. Valenciana,Valencia,Carlos Ruiz,Tienda,PayPal
+215,2025-07-30,Altavoz,Audio,14,88.54,0.15,1053.63,Cataluña,Girona,Pablo Díaz,Teléfono,Tarjeta
+216,2025-09-27,Teclado,Informática,18,45.17,0,813.06,Galicia,Vigo,Lucía Martín,Tienda,PayPal
+217,2025-11-09,Impresora,Oficina,3,145.27,0.15,370.44,Andalucía,Málaga,Carlos Ruiz,Tienda,Transferencia
+218,2025-12-20,Impresora,Oficina,3,143.95,0,431.85,Cataluña,Girona,Lucía Martín,Online,Transferencia
+219,2025-10-21,Impresora,Oficina,3,163.01,0,489.03,Madrid,Alcalá de Henares,Javier Gómez,Online,Efectivo
+220,2025-12-02,Auriculares,Audio,3,54.5,0,163.5,Galicia,Vigo,Pablo Díaz,Online,Efectivo
+221,2025-03-12,Monitor,Informática,3,234.43,0.1,632.96,Andalucía,Sevilla,Marta Sánchez,Teléfono,Efectivo
+222,2025-01-27,Monitor,Informática,5,200.23,0,1001.15,Cataluña,Barcelona,Javier Gómez,Online,PayPal
+223,2025-03-22,Ratón,Informática,5,25.91,0,129.55,C. Valenciana,Alicante,Pablo Díaz,Online,PayPal
+224,2025-11-27,Monitor,Informática,3,231.26,0,693.78,Andalucía,Sevilla,Ana López,Teléfono,Efectivo
+225,2025-04-01,Impresora,Oficina,1,157.16,0,157.16,Galicia,A Coruña,Javier Gómez,Online,Efectivo
+226,2025-11-05,Auriculares,Audio,1,64.52,0,64.52,C. Valenciana,Valencia,Lucía Martín,Online,PayPal
+227,2025-05-20,Impresora,Oficina,2,150.73,0.1,271.31,Galicia,A Coruña,Ana López,Online,Efectivo
+228,2025-06-01,Tablet,Telefonía,2,360.38,0,720.76,Andalucía,Sevilla,Carlos Ruiz,Teléfono,PayPal
+229,2025-04-05,Smartphone,Telefonía,1,601.83,0.05,571.74,Madrid,Madrid,Javier Gómez,Online,Efectivo
+230,2025-06-18,Portátil,Informática,2,809.33,0.05,1537.73,Andalucía,Málaga,Marta Sánchez,Teléfono,Tarjeta
+231,2025-08-27,Auriculares,Audio,8,61.84,0,494.72,Madrid,Alcalá de Henares,Carlos Ruiz,Online,Transferencia
+232,2025-04-24,Ratón,Informática,10,25.69,0,256.9,C. Valenciana,Valencia,Carlos Ruiz,Online,Efectivo
+233,2025-12-26,Tablet,Telefonía,5,367.34,0,1836.7,Galicia,Vigo,Marta Sánchez,Teléfono,Efectivo
+234,2025-08-17,Monitor,Informática,5,227.94,0,1139.7,C. Valenciana,Alicante,Ana López,Teléfono,Tarjeta
+235,2025-10-02,Portátil,Informática,5,905.89,0,4529.45,C. Valenciana,Valencia,Carlos Ruiz,Online,PayPal
+236,2025-09-19,Ratón,Informática,19,25.9,0.05,467.49,Madrid,Alcalá de Henares,Ana López,Online,Efectivo
+237,2025-08-25,Impresora,Oficina,5,147.46,0,737.3,C. Valenciana,Alicante,Pablo Díaz,Tienda,PayPal
+238,2025-01-24,Auriculares,Audio,7,63.8,0.1,401.94,Madrid,Alcalá de Henares,Lucía Martín,Teléfono,Tarjeta
+239,2025-05-27,Impresora,Oficina,1,164.82,0.05,156.58,Madrid,Alcalá de Henares,Carlos Ruiz,Tienda,PayPal
+240,2025-07-12,Altavoz,Audio,13,98.87,0.05,1221.04,Galicia,A Coruña,Pablo Díaz,Teléfono,Efectivo
+241,2025-03-07,Altavoz,Audio,18,83.14,0.05,1421.69,C. Valenciana,Valencia,Ana López,Tienda,Transferencia
+242,2025-07-14,Tablet,Telefonía,5,362.14,0.05,1720.16,C. Valenciana,Valencia,Carlos Ruiz,Online,Transferencia
+243,2025-11-11,Teclado,Informática,4,42.98,0,171.92,Galicia,A Coruña,Carlos Ruiz,Tienda,Tarjeta
+244,2025-05-06,Ratón,Informática,15,25.47,0.1,343.84,Madrid,Madrid,Javier Gómez,Online,Efectivo
+245,2025-05-29,Impresora,Oficina,1,141.52,0,141.52,C. Valenciana,Valencia,Pablo Díaz,Teléfono,Transferencia
+246,2025-03-15,Silla oficina,Oficina,3,183.53,0,550.59,Andalucía,Sevilla,Javier Gómez,Online,Transferencia
+247,2025-11-17,Portátil,Informática,5,859.64,0.15,3653.47,Cataluña,Girona,Marta Sánchez,Online,Tarjeta
+248,2025-12-23,Altavoz,Audio,13,97.95,0.1,1146.02,Andalucía,Málaga,Javier Gómez,Tienda,Transferencia
+249,2025-04-26,Smartphone,Telefonía,5,562.07,0.05,2669.83,Cataluña,Girona,Pablo Díaz,Tienda,PayPal
+250,2025-03-10,Portátil,Informática,4,860.61,0.1,3098.2,C. Valenciana,Alicante,Carlos Ruiz,Online,Efectivo
+251,2025-10-02,Altavoz,Audio,15,92.64,0,1389.6,Madrid,Madrid,Ana López,Online,PayPal
+252,2025-12-10,Silla oficina,Oficina,1,183.71,0,183.71,C. Valenciana,Valencia,Javier Gómez,Tienda,Transferencia
+253,2025-03-02,Auriculares,Audio,1,65.48,0,65.48,Cataluña,Girona,Carlos Ruiz,Teléfono,Efectivo
+254,2025-07-14,Smartphone,Telefonía,5,649.82,0,3249.1,Andalucía,Málaga,Marta Sánchez,Teléfono,Transferencia
+255,2025-02-20,Auriculares,Audio,17,57.14,0.05,922.81,Galicia,Vigo,Lucía Martín,Tienda,Transferencia
+256,2025-01-09,Altavoz,Audio,19,88.45,0,1680.55,Cataluña,Girona,Marta Sánchez,Teléfono,PayPal
+257,2025-10-19,Auriculares,Audio,11,55.83,0,614.13,Galicia,A Coruña,Javier Gómez,Teléfono,Transferencia
+258,2025-08-24,Auriculares,Audio,16,63.16,0.15,858.98,Galicia,A Coruña,Pablo Díaz,Online,Efectivo
+259,2025-11-25,Teclado,Informática,16,46.98,0,751.68,C. Valenciana,Valencia,Marta Sánchez,Tienda,Tarjeta
+260,2025-02-04,Portátil,Informática,4,894.94,0,3579.76,Cataluña,Barcelona,Ana López,Tienda,PayPal
+261,2025-01-09,Altavoz,Audio,20,82.09,0.05,1559.71,Galicia,A Coruña,Marta Sánchez,Teléfono,PayPal
+262,2025-01-09,Portátil,Informática,3,767.84,0.1,2073.17,Andalucía,Málaga,Carlos Ruiz,Tienda,Tarjeta
+263,2025-05-10,Impresora,Oficina,2,139.47,0.1,251.05,C. Valenciana,Alicante,Lucía Martín,Online,Tarjeta
+264,2025-12-23,Altavoz,Audio,15,98.27,0.1,1326.64,Cataluña,Barcelona,Lucía Martín,Teléfono,Tarjeta
+265,2025-09-01,Portátil,Informática,4,780.9,0.05,2967.42,C. Valenciana,Valencia,Pablo Díaz,Tienda,Efectivo
+266,2025-10-17,Ratón,Informática,14,25.0,0.15,297.5,Andalucía,Sevilla,Marta Sánchez,Tienda,Efectivo
+267,2025-01-24,Monitor,Informática,5,237.66,0.05,1128.88,Andalucía,Sevilla,Pablo Díaz,Online,Tarjeta
+268,2025-10-28,Teclado,Informática,11,48.86,0,537.46,Cataluña,Barcelona,Pablo Díaz,Online,Tarjeta
+269,2025-12-13,Auriculares,Audio,8,55.95,0.1,402.84,Galicia,Vigo,Javier Gómez,Teléfono,Efectivo
+270,2025-08-12,Ratón,Informática,12,25.0,0,300.0,Madrid,Madrid,Ana López,Online,PayPal
+271,2025-04-27,Altavoz,Audio,9,81.53,0.05,697.08,Galicia,Vigo,Marta Sánchez,Online,PayPal
+272,2025-06-01,Teclado,Informática,13,46.62,0,606.06,C. Valenciana,Valencia,Pablo Díaz,Tienda,Tarjeta
+273,2025-06-12,Auriculares,Audio,5,55.85,0.15,237.36,Galicia,Vigo,Ana López,Tienda,Tarjeta
+274,2025-02-14,Auriculares,Audio,9,59.34,0,534.06,Cataluña,Barcelona,Javier Gómez,Online,PayPal
+275,2025-11-02,Ratón,Informática,12,22.63,0.1,244.4,Madrid,Alcalá de Henares,Javier Gómez,Tienda,Transferencia
+276,2025-05-05,Smartphone,Telefonía,1,586.54,0.15,498.56,C. Valenciana,Valencia,Pablo Díaz,Online,Efectivo
+277,2025-02-02,Teclado,Informática,9,42.92,0.05,366.97,Cataluña,Barcelona,Javier Gómez,Online,PayPal
+278,2025-05-07,Auriculares,Audio,3,59.81,0,179.43,Andalucía,Málaga,Marta Sánchez,Teléfono,Efectivo
+279,2025-06-20,Tablet,Telefonía,3,322.49,0,967.47,Galicia,Vigo,Lucía Martín,Online,Transferencia
+280,2025-06-14,Smartphone,Telefonía,5,637.86,0,3189.3,Andalucía,Sevilla,Javier Gómez,Online,Efectivo
+281,2025-10-22,Smartphone,Telefonía,3,656.25,0.15,1673.44,Galicia,A Coruña,Lucía Martín,Online,Transferencia
+282,2025-10-07,Smartphone,Telefonía,5,583.8,0,2919.0,C. Valenciana,Valencia,Pablo Díaz,Teléfono,Tarjeta
+283,2025-12-21,Tablet,Telefonía,2,381.01,0.05,723.92,Andalucía,Sevilla,Javier Gómez,Teléfono,PayPal
+284,2025-08-05,Teclado,Informática,8,46.2,0,369.6,Cataluña,Girona,Ana López,Online,PayPal
+285,2025-10-06,Silla oficina,Oficina,5,176.43,0.15,749.83,Galicia,A Coruña,Lucía Martín,Teléfono,Tarjeta
+286,2025-01-23,Ratón,Informática,12,26.34,0,316.08,C. Valenciana,Alicante,Lucía Martín,Online,Tarjeta
+287,2025-10-13,Portátil,Informática,2,781.76,0.1,1407.17,C. Valenciana,Valencia,Javier Gómez,Online,PayPal
+288,2025-03-19,Tablet,Telefonía,5,369.06,0.15,1568.5,C. Valenciana,Alicante,Ana López,Online,Tarjeta
+289,2025-06-28,Auriculares,Audio,3,58.99,0,176.97,Cataluña,Girona,Lucía Martín,Online,Efectivo
+290,2025-12-23,Impresora,Oficina,4,149.49,0,597.96,Galicia,Vigo,Lucía Martín,Tienda,Transferencia
+291,2025-11-28,Portátil,Informática,1,902.73,0,902.73,Andalucía,Sevilla,Pablo Díaz,Tienda,Efectivo
+292,2025-08-07,Impresora,Oficina,2,140.23,0,280.46,C. Valenciana,Alicante,Carlos Ruiz,Online,Efectivo
+293,2025-11-11,Teclado,Informática,14,46.26,0.05,615.26,Madrid,Madrid,Javier Gómez,Teléfono,PayPal
+294,2025-12-27,Smartphone,Telefonía,2,540.53,0,1081.06,Andalucía,Sevilla,Marta Sánchez,Tienda,Efectivo
+295,2025-12-10,Altavoz,Audio,15,86.87,0,1303.05,Andalucía,Málaga,Marta Sánchez,Teléfono,Transferencia
+296,2025-06-28,Silla oficina,Oficina,4,175.99,0.1,633.56,Madrid,Alcalá de Henares,Javier Gómez,Teléfono,Efectivo
+297,2025-06-10,Auriculares,Audio,19,65.02,0,1235.38,Cataluña,Barcelona,Carlos Ruiz,Online,Tarjeta
+298,2025-08-03,Teclado,Informática,5,43.86,0.1,197.37,Galicia,A Coruña,Marta Sánchez,Online,PayPal
+299,2025-10-12,Teclado,Informática,18,44.88,0.15,686.66,Cataluña,Barcelona,Javier Gómez,Online,Efectivo
+300,2025-07-03,Teclado,Informática,15,43.33,0.1,584.95,Madrid,Madrid,Javier Gómez,Tienda,Efectivo
+301,2025-07-29,Smartphone,Telefonía,5,655.66,0.15,2786.55,Galicia,Vigo,Javier Gómez,Teléfono,PayPal
+302,2025-05-30,Tablet,Telefonía,5,326.71,0,1633.55,Cataluña,Barcelona,Lucía Martín,Tienda,Transferencia
+303,2025-10-09,Teclado,Informática,19,47.53,0.15,767.61,Galicia,A Coruña,Marta Sánchez,Tienda,Transferencia
+304,2025-08-14,Impresora,Oficina,3,159.7,0.1,431.19,Madrid,Madrid,Javier Gómez,Tienda,Efectivo
+305,2025-06-28,Auriculares,Audio,2,64.5,0.05,122.55,Andalucía,Sevilla,Javier Gómez,Tienda,Efectivo
+306,2025-12-30,Monitor,Informática,5,233.67,0.15,993.1,Andalucía,Málaga,Carlos Ruiz,Teléfono,Efectivo
+307,2025-09-30,Monitor,Informática,1,233.8,0.1,210.42,Andalucía,Málaga,Marta Sánchez,Teléfono,Efectivo
+308,2025-05-17,Altavoz,Audio,10,98.62,0,986.2,C. Valenciana,Valencia,Carlos Ruiz,Online,Tarjeta
+309,2025-05-08,Auriculares,Audio,5,64.4,0.15,273.7,Cataluña,Barcelona,Pablo Díaz,Online,Efectivo
+310,2025-11-18,Smartphone,Telefonía,5,598.74,0.15,2544.64,Andalucía,Málaga,Javier Gómez,Online,Tarjeta
+311,2025-08-21,Ratón,Informática,9,24.51,0.15,187.5,Andalucía,Málaga,Lucía Martín,Teléfono,Tarjeta
+312,2025-02-02,Ratón,Informática,15,26.15,0.15,333.41,Andalucía,Málaga,Carlos Ruiz,Online,Efectivo
+313,2025-10-23,Tablet,Telefonía,3,333.8,0,1001.4,C. Valenciana,Valencia,Marta Sánchez,Online,Transferencia
+314,2025-03-22,Portátil,Informática,4,772.81,0,3091.24,Madrid,Alcalá de Henares,Javier Gómez,Tienda,PayPal
+315,2025-03-23,Monitor,Informática,2,241.81,0.15,411.08,Andalucía,Málaga,Ana López,Teléfono,Transferencia
+316,2025-11-17,Auriculares,Audio,6,54.99,0,329.94,Galicia,Vigo,Pablo Díaz,Teléfono,Efectivo
+317,2025-09-02,Smartphone,Telefonía,1,618.66,0,618.66,Cataluña,Barcelona,Carlos Ruiz,Teléfono,Efectivo
+318,2025-03-03,Impresora,Oficina,1,155.4,0,155.4,Andalucía,Málaga,Pablo Díaz,Tienda,PayPal
+319,2025-02-22,Ratón,Informática,3,23.64,0.15,60.28,Madrid,Alcalá de Henares,Lucía Martín,Online,Efectivo
+320,2025-02-05,Smartphone,Telefonía,2,632.82,0.15,1075.79,Cataluña,Barcelona,Marta Sánchez,Teléfono,Efectivo
+321,2025-07-30,Tablet,Telefonía,2,339.58,0.15,577.29,Cataluña,Girona,Carlos Ruiz,Tienda,Tarjeta
+322,2025-06-29,Teclado,Informática,19,47.27,0.15,763.41,Galicia,Vigo,Lucía Martín,Tienda,Efectivo
+323,2025-11-04,Auriculares,Audio,8,61.74,0.1,444.53,C. Valenciana,Alicante,Pablo Díaz,Tienda,Transferencia
+324,2025-06-01,Monitor,Informática,5,220.78,0,1103.9,Galicia,A Coruña,Carlos Ruiz,Online,PayPal
+325,2025-01-07,Ratón,Informática,20,23.71,0,474.2,C. Valenciana,Alicante,Lucía Martín,Tienda,PayPal
+326,2025-08-30,Silla oficina,Oficina,5,177.15,0.15,752.89,Cataluña,Barcelona,Ana López,Teléfono,Tarjeta
+327,2025-09-17,Portátil,Informática,1,809.57,0,809.57,Galicia,Vigo,Pablo Díaz,Teléfono,PayPal
+328,2025-10-03,Smartphone,Telefonía,1,624.22,0.15,530.59,C. Valenciana,Valencia,Lucía Martín,Tienda,Transferencia
+329,2025-06-17,Ratón,Informática,7,25.06,0,175.42,C. Valenciana,Alicante,Marta Sánchez,Teléfono,Tarjeta
+330,2025-02-14,Auriculares,Audio,8,62.38,0,499.04,Cataluña,Girona,Ana López,Online,Tarjeta
+331,2025-12-29,Auriculares,Audio,6,61.99,0,371.94,Madrid,Madrid,Pablo Díaz,Tienda,Efectivo
+332,2025-03-27,Tablet,Telefonía,5,381.71,0.1,1717.69,Andalucía,Málaga,Carlos Ruiz,Teléfono,Transferencia
+333,2025-05-20,Ratón,Informática,1,26.36,0,26.36,Galicia,A Coruña,Lucía Martín,Teléfono,Tarjeta
+334,2025-10-18,Tablet,Telefonía,3,346.86,0,1040.58,Galicia,A Coruña,Lucía Martín,Tienda,Transferencia
+335,2025-01-02,Ratón,Informática,4,26.97,0,107.88,C. Valenciana,Valencia,Ana López,Tienda,Tarjeta
+336,2025-10-11,Tablet,Telefonía,2,340.48,0,680.96,Madrid,Alcalá de Henares,Carlos Ruiz,Online,Efectivo
+337,2025-10-20,Smartphone,Telefonía,3,649.9,0,1949.7,Madrid,Alcalá de Henares,Ana López,Teléfono,Tarjeta
+338,2025-02-05,Teclado,Informática,17,42.51,0,722.67,Galicia,Vigo,Lucía Martín,Online,Transferencia
+339,2025-05-30,Ratón,Informática,1,25.27,0,25.27,Cataluña,Girona,Pablo Díaz,Teléfono,Efectivo
+340,2025-05-06,Tablet,Telefonía,4,340.78,0,1363.12,C. Valenciana,Valencia,Ana López,Online,Tarjeta
+341,2025-12-03,Monitor,Informática,1,221.83,0,221.83,Madrid,Alcalá de Henares,Pablo Díaz,Teléfono,Transferencia
+342,2025-01-31,Ratón,Informática,8,23.53,0.05,178.83,Galicia,A Coruña,Pablo Díaz,Online,Tarjeta
+343,2025-08-23,Portátil,Informática,5,921.62,0.05,4377.69,Andalucía,Sevilla,Marta Sánchez,Tienda,Efectivo
+344,2025-12-06,Smartphone,Telefonía,5,548.98,0,2744.9,Galicia,A Coruña,Carlos Ruiz,Online,Transferencia
+345,2025-06-12,Altavoz,Audio,13,97.67,0.15,1079.25,Andalucía,Málaga,Lucía Martín,Tienda,Tarjeta
+346,2025-02-24,Monitor,Informática,5,203.99,0,1019.95,Cataluña,Barcelona,Javier Gómez,Online,Transferencia
+347,2025-06-07,Smartphone,Telefonía,3,554.49,0,1663.47,Galicia,Vigo,Lucía Martín,Tienda,Tarjeta
+348,2025-01-21,Teclado,Informática,10,47.77,0.15,406.05,C. Valenciana,Valencia,Lucía Martín,Tienda,Tarjeta
+349,2025-12-13,Monitor,Informática,4,240.61,0.1,866.2,Madrid,Alcalá de Henares,Lucía Martín,Tienda,Tarjeta
+350,2025-05-08,Smartphone,Telefonía,5,642.55,0.15,2730.84,C. Valenciana,Valencia,Javier Gómez,Tienda,Efectivo
+351,2025-07-25,Ratón,Informática,8,22.56,0,180.48,Cataluña,Girona,Pablo Díaz,Teléfono,Tarjeta
+352,2025-04-12,Silla oficina,Oficina,1,183.1,0,183.1,Madrid,Alcalá de Henares,Carlos Ruiz,Tienda,Transferencia
+353,2025-10-21,Ratón,Informática,15,22.71,0,340.65,Cataluña,Girona,Pablo Díaz,Online,PayPal
+354,2025-04-20,Portátil,Informática,4,830.06,0,3320.24,Andalucía,Sevilla,Lucía Martín,Online,PayPal
+355,2025-11-28,Teclado,Informática,20,40.81,0.1,734.58,Cataluña,Girona,Javier Gómez,Online,PayPal
+356,2025-04-13,Portátil,Informática,4,779.91,0,3119.64,Galicia,A Coruña,Pablo Díaz,Teléfono,Tarjeta
+357,2025-09-06,Smartphone,Telefonía,3,633.83,0.05,1806.42,C. Valenciana,Alicante,Marta Sánchez,Teléfono,Transferencia
+358,2025-04-23,Smartphone,Telefonía,1,572.45,0,572.45,C. Valenciana,Valencia,Lucía Martín,Tienda,PayPal
+359,2025-02-21,Impresora,Oficina,5,145.72,0,728.6,Cataluña,Barcelona,Pablo Díaz,Tienda,Transferencia
+360,2025-07-18,Impresora,Oficina,1,159.49,0,159.49,C. Valenciana,Alicante,Carlos Ruiz,Tienda,Efectivo
+361,2025-12-27,Silla oficina,Oficina,3,173.45,0.1,468.31,Madrid,Alcalá de Henares,Marta Sánchez,Teléfono,Efectivo
+362,2025-03-31,Silla oficina,Oficina,4,196.14,0.1,706.1,Andalucía,Málaga,Ana López,Tienda,Tarjeta
+363,2025-01-01,Monitor,Informática,1,224.47,0.1,202.02,Galicia,Vigo,Marta Sánchez,Tienda,Efectivo
+364,2025-03-17,Altavoz,Audio,11,93.9,0,1032.9,Madrid,Madrid,Ana López,Teléfono,Transferencia
+365,2025-06-22,Ratón,Informática,13,24.37,0.1,285.13,Madrid,Alcalá de Henares,Lucía Martín,Tienda,Efectivo
+366,2025-03-31,Smartphone,Telefonía,4,635.02,0.15,2159.07,Andalucía,Málaga,Carlos Ruiz,Teléfono,Efectivo
+367,2025-01-01,Smartphone,Telefonía,3,576.82,0,1730.46,Cataluña,Girona,Marta Sánchez,Tienda,Efectivo
+368,2025-02-23,Silla oficina,Oficina,5,173.46,0,867.3,C. Valenciana,Alicante,Carlos Ruiz,Online,Tarjeta
+369,2025-12-29,Monitor,Informática,3,213.26,0,639.78,Madrid,Alcalá de Henares,Javier Gómez,Tienda,Transferencia
+370,2025-02-25,Monitor,Informática,1,208.98,0,208.98,Andalucía,Sevilla,Ana López,Online,PayPal
+371,2025-06-29,Smartphone,Telefonía,4,656.29,0.05,2493.9,Galicia,Vigo,Ana López,Online,Efectivo
+372,2025-06-13,Teclado,Informática,2,44.56,0,89.12,Madrid,Alcalá de Henares,Ana López,Tienda,Transferencia
+373,2025-10-08,Teclado,Informática,6,48.49,0.15,247.3,Madrid,Madrid,Lucía Martín,Teléfono,PayPal
+374,2025-03-22,Portátil,Informática,2,838.32,0.1,1508.98,Galicia,A Coruña,Ana López,Online,Efectivo
+375,2025-05-16,Monitor,Informática,5,216.01,0.15,918.04,C. Valenciana,Alicante,Lucía Martín,Tienda,Tarjeta
+376,2025-01-28,Portátil,Informática,5,831.79,0.05,3951.0,Cataluña,Girona,Ana López,Online,Tarjeta
+377,2025-02-19,Auriculares,Audio,20,63.89,0.05,1213.91,Cataluña,Barcelona,Carlos Ruiz,Tienda,Transferencia
+378,2025-08-30,Ratón,Informática,4,24.87,0,99.48,Galicia,Vigo,Pablo Díaz,Online,Tarjeta
+379,2025-04-06,Impresora,Oficina,3,146.63,0.05,417.9,Andalucía,Málaga,Ana López,Online,PayPal
+380,2025-03-19,Tablet,Telefonía,3,333.44,0.1,900.29,Madrid,Madrid,Ana López,Teléfono,Transferencia
+381,2025-02-01,Impresora,Oficina,5,147.42,0,737.1,C. Valenciana,Alicante,Marta Sánchez,Online,PayPal
+382,2025-07-22,Silla oficina,Oficina,4,193.74,0,774.96,Madrid,Madrid,Marta Sánchez,Teléfono,Efectivo
+383,2025-04-19,Ratón,Informática,15,27.25,0,408.75,Cataluña,Barcelona,Carlos Ruiz,Tienda,PayPal
+384,2025-11-01,Ratón,Informática,14,27.44,0,384.16,Cataluña,Girona,Lucía Martín,Teléfono,Tarjeta
+385,2025-05-22,Ratón,Informática,13,24.44,0.1,285.95,Andalucía,Málaga,Ana López,Teléfono,PayPal
+386,2025-10-26,Ratón,Informática,5,24.57,0.1,110.56,C. Valenciana,Valencia,Ana López,Teléfono,Tarjeta
+387,2025-07-16,Auriculares,Audio,12,64.41,0.05,734.27,Andalucía,Málaga,Marta Sánchez,Teléfono,PayPal
+388,2025-11-08,Portátil,Informática,4,794.27,0,3177.08,C. Valenciana,Alicante,Ana López,Online,Transferencia
+389,2025-01-11,Monitor,Informática,4,200.17,0,800.68,Andalucía,Málaga,Lucía Martín,Online,Transferencia
+390,2025-06-03,Tablet,Telefonía,1,375.08,0,375.08,Cataluña,Girona,Lucía Martín,Online,PayPal
+391,2025-07-28,Silla oficina,Oficina,2,185.24,0.05,351.96,Cataluña,Girona,Marta Sánchez,Online,Tarjeta
+392,2025-07-26,Impresora,Oficina,1,158.74,0,158.74,C. Valenciana,Valencia,Marta Sánchez,Teléfono,Tarjeta
+393,2025-01-17,Teclado,Informática,7,42.23,0,295.61,Cataluña,Girona,Ana López,Online,Efectivo
+394,2025-11-22,Auriculares,Audio,15,58.42,0.1,788.67,Galicia,A Coruña,Pablo Díaz,Tienda,Efectivo
+395,2025-10-28,Altavoz,Audio,15,89.8,0,1347.0,Galicia,Vigo,Lucía Martín,Tienda,Transferencia
+396,2025-10-20,Ratón,Informática,13,23.93,0,311.09,Cataluña,Barcelona,Carlos Ruiz,Teléfono,Efectivo
+397,2025-12-16,Monitor,Informática,4,209.84,0.1,755.42,Madrid,Madrid,Javier Gómez,Tienda,Efectivo
+398,2025-06-06,Silla oficina,Oficina,2,190.83,0,381.66,C. Valenciana,Alicante,Javier Gómez,Online,Transferencia
+399,2025-11-16,Tablet,Telefonía,4,332.64,0,1330.56,C. Valenciana,Alicante,Marta Sánchez,Tienda,Tarjeta
+400,2025-11-08,Impresora,Oficina,3,164.98,0.1,445.45,C. Valenciana,Alicante,Lucía Martín,Teléfono,Tarjeta
+401,2025-05-22,Tablet,Telefonía,3,319.47,0.15,814.65,Andalucía,Málaga,Pablo Díaz,Teléfono,Transferencia
+402,2025-07-26,Monitor,Informática,2,204.6,0,409.2,C. Valenciana,Alicante,Pablo Díaz,Tienda,Tarjeta
+403,2025-07-18,Tablet,Telefonía,3,384.82,0.05,1096.74,Galicia,A Coruña,Marta Sánchez,Teléfono,Efectivo
+404,2025-11-23,Altavoz,Audio,8,94.08,0.15,639.74,C. Valenciana,Alicante,Pablo Díaz,Online,Transferencia
+405,2025-02-19,Teclado,Informática,18,48.07,0,865.26,Andalucía,Málaga,Carlos Ruiz,Teléfono,Transferencia
+406,2025-12-02,Impresora,Oficina,2,157.89,0.15,268.41,Andalucía,Sevilla,Carlos Ruiz,Online,Efectivo
+407,2025-10-27,Auriculares,Audio,11,59.05,0,649.55,Andalucía,Málaga,Javier Gómez,Tienda,PayPal
+408,2025-02-06,Portátil,Informática,5,912.29,0.1,4105.31,C. Valenciana,Alicante,Carlos Ruiz,Teléfono,Tarjeta
+409,2025-03-12,Smartphone,Telefonía,4,603.58,0,2414.32,Cataluña,Barcelona,Lucía Martín,Online,PayPal
+410,2025-06-20,Teclado,Informática,6,43.35,0,260.1,Galicia,A Coruña,Lucía Martín,Teléfono,Tarjeta
+411,2025-03-23,Portátil,Informática,2,841.85,0,1683.7,C. Valenciana,Alicante,Ana López,Tienda,PayPal
+412,2025-01-20,Smartphone,Telefonía,4,588.41,0.05,2235.96,Madrid,Madrid,Pablo Díaz,Online,Tarjeta
+413,2025-12-13,Altavoz,Audio,17,94.62,0,1608.54,Madrid,Madrid,Pablo Díaz,Teléfono,Efectivo
+414,2025-02-22,Monitor,Informática,3,228.52,0,685.56,Cataluña,Girona,Marta Sánchez,Teléfono,Transferencia
+415,2025-08-22,Teclado,Informática,2,41.09,0,82.18,Andalucía,Málaga,Javier Gómez,Teléfono,Efectivo
+416,2025-03-26,Altavoz,Audio,16,98.93,0,1582.88,Cataluña,Girona,Ana López,Tienda,Efectivo
+417,2025-03-28,Teclado,Informática,1,42.4,0.1,38.16,C. Valenciana,Valencia,Lucía Martín,Teléfono,Tarjeta
+418,2025-01-25,Smartphone,Telefonía,3,645.19,0.1,1742.01,C. Valenciana,Valencia,Pablo Díaz,Tienda,Tarjeta
+419,2025-03-05,Portátil,Informática,4,882.26,0.05,3352.59,Galicia,Vigo,Javier Gómez,Teléfono,Efectivo
+420,2025-12-05,Monitor,Informática,1,228.59,0,228.59,Galicia,A Coruña,Pablo Díaz,Teléfono,Transferencia
+421,2025-09-19,Silla oficina,Oficina,2,183.8,0.05,349.22,Madrid,Madrid,Lucía Martín,Tienda,Tarjeta
+422,2025-04-14,Tablet,Telefonía,2,328.91,0,657.82,C. Valenciana,Alicante,Pablo Díaz,Online,Transferencia
+423,2025-06-19,Teclado,Informática,16,40.85,0,653.6,Galicia,A Coruña,Ana López,Tienda,Tarjeta
+424,2025-09-19,Ratón,Informática,16,26.68,0,426.88,Madrid,Madrid,Pablo Díaz,Teléfono,Tarjeta
+425,2025-08-26,Auriculares,Audio,15,61.73,0,925.95,Andalucía,Sevilla,Ana López,Tienda,Tarjeta
+426,2025-02-18,Auriculares,Audio,11,58.32,0.05,609.44,Madrid,Madrid,Ana López,Tienda,Efectivo
+427,2025-02-17,Altavoz,Audio,15,87.44,0.1,1180.44,Andalucía,Málaga,Lucía Martín,Tienda,Tarjeta
+428,2025-12-20,Smartphone,Telefonía,4,588.03,0,2352.12,Galicia,Vigo,Javier Gómez,Teléfono,Efectivo
+429,2025-08-02,Ratón,Informática,2,23.16,0,46.32,Madrid,Alcalá de Henares,Marta Sánchez,Teléfono,PayPal
+430,2025-12-17,Teclado,Informática,12,46.0,0.1,496.8,Madrid,Madrid,Javier Gómez,Online,Tarjeta
+431,2025-01-07,Smartphone,Telefonía,1,592.88,0,592.88,Andalucía,Sevilla,Pablo Díaz,Online,Tarjeta
+432,2025-12-06,Smartphone,Telefonía,2,619.41,0.05,1176.88,Andalucía,Málaga,Carlos Ruiz,Teléfono,Tarjeta
+433,2025-09-11,Portátil,Informática,2,874.38,0.1,1573.88,Galicia,A Coruña,Ana López,Online,Transferencia
+434,2025-04-25,Monitor,Informática,3,212.56,0,637.68,C. Valenciana,Alicante,Javier Gómez,Tienda,Tarjeta
+435,2025-09-13,Tablet,Telefonía,5,346.09,0.05,1643.93,Madrid,Alcalá de Henares,Lucía Martín,Tienda,PayPal
+436,2025-10-09,Portátil,Informática,4,782.45,0,3129.8,C. Valenciana,Valencia,Ana López,Teléfono,Transferencia
+437,2025-01-28,Impresora,Oficina,4,151.87,0,607.48,Andalucía,Sevilla,Javier Gómez,Online,PayPal
+438,2025-01-02,Altavoz,Audio,4,93.89,0,375.56,Cataluña,Girona,Lucía Martín,Teléfono,Transferencia
+439,2025-09-10,Impresora,Oficina,1,150.66,0,150.66,Cataluña,Barcelona,Pablo Díaz,Teléfono,PayPal
+440,2025-07-21,Ratón,Informática,7,23.77,0,166.39,Madrid,Madrid,Javier Gómez,Tienda,Transferencia
+441,2025-03-05,Ratón,Informática,2,26.29,0.15,44.69,C. Valenciana,Alicante,Javier Gómez,Teléfono,Efectivo
+442,2025-10-27,Tablet,Telefonía,1,315.3,0.1,283.77,Galicia,Vigo,Marta Sánchez,Tienda,Efectivo
+443,2025-09-16,Teclado,Informática,20,41.43,0.1,745.74,Andalucía,Málaga,Javier Gómez,Teléfono,Efectivo
+444,2025-03-10,Auriculares,Audio,11,58.77,0,646.47,Galicia,A Coruña,Javier Gómez,Teléfono,Transferencia
+445,2025-04-13,Impresora,Oficina,5,160.82,0.15,683.48,Cataluña,Barcelona,Marta Sánchez,Teléfono,Transferencia
+446,2025-09-15,Altavoz,Audio,5,97.58,0.15,414.71,Cataluña,Girona,Pablo Díaz,Tienda,Transferencia
+447,2025-12-12,Impresora,Oficina,5,149.41,0.15,634.99,Galicia,Vigo,Javier Gómez,Tienda,Tarjeta
+448,2025-04-13,Portátil,Informática,1,829.75,0.15,705.29,Madrid,Alcalá de Henares,Carlos Ruiz,Online,Transferencia
+449,2025-01-17,Teclado,Informática,10,48.05,0,480.5,C. Valenciana,Alicante,Javier Gómez,Tienda,Efectivo
+450,2025-12-21,Impresora,Oficina,5,146.67,0.15,623.35,Andalucía,Sevilla,Javier Gómez,Online,PayPal
+451,2025-04-14,Altavoz,Audio,2,98.38,0,196.76,Andalucía,Málaga,Carlos Ruiz,Teléfono,Transferencia
+452,2025-05-31,Silla oficina,Oficina,5,181.68,0,908.4,Cataluña,Girona,Carlos Ruiz,Teléfono,Tarjeta
+453,2025-01-21,Teclado,Informática,17,49.16,0,835.72,Galicia,Vigo,Lucía Martín,Teléfono,Transferencia
+454,2025-08-27,Teclado,Informática,9,41.95,0,377.55,Andalucía,Sevilla,Ana López,Tienda,Transferencia
+455,2025-09-09,Silla oficina,Oficina,5,163.83,0.15,696.28,Andalucía,Málaga,Ana López,Teléfono,Transferencia
+456,2025-09-16,Impresora,Oficina,2,141.6,0.1,254.88,Madrid,Madrid,Javier Gómez,Teléfono,PayPal
+457,2025-06-19,Ratón,Informática,7,24.25,0.15,144.29,Andalucía,Málaga,Lucía Martín,Tienda,PayPal
+458,2025-08-17,Impresora,Oficina,1,159.71,0,159.71,Andalucía,Sevilla,Pablo Díaz,Teléfono,Efectivo
+459,2025-07-17,Portátil,Informática,3,881.03,0.05,2510.94,Madrid,Alcalá de Henares,Marta Sánchez,Teléfono,Transferencia
+460,2025-08-17,Portátil,Informática,3,919.93,0.1,2483.81,C. Valenciana,Alicante,Ana López,Online,Efectivo
+461,2025-10-01,Altavoz,Audio,4,90.25,0,361.0,C. Valenciana,Valencia,Pablo Díaz,Tienda,Efectivo
+462,2025-10-03,Monitor,Informática,4,236.06,0,944.24,Cataluña,Girona,Pablo Díaz,Tienda,Efectivo
+463,2025-02-07,Portátil,Informática,3,843.07,0,2529.21,Madrid,Madrid,Carlos Ruiz,Online,Tarjeta
+464,2025-08-19,Silla oficina,Oficina,3,191.58,0.05,546.0,Galicia,Vigo,Javier Gómez,Online,Tarjeta
+465,2025-02-02,Smartphone,Telefonía,5,620.8,0,3104.0,C. Valenciana,Valencia,Pablo Díaz,Tienda,Transferencia
+466,2025-05-25,Impresora,Oficina,3,138.18,0.1,373.09,Madrid,Alcalá de Henares,Javier Gómez,Online,Tarjeta
+467,2025-10-07,Tablet,Telefonía,2,325.94,0,651.88,Galicia,Vigo,Pablo Díaz,Tienda,Transferencia
+468,2025-03-14,Altavoz,Audio,1,98.23,0.1,88.41,C. Valenciana,Valencia,Ana López,Tienda,PayPal
+469,2025-06-26,Impresora,Oficina,1,151.43,0,151.43,Cataluña,Barcelona,Javier Gómez,Teléfono,Efectivo
+470,2025-02-28,Teclado,Informática,20,42.16,0,843.2,Cataluña,Barcelona,Pablo Díaz,Teléfono,Tarjeta
+471,2025-12-10,Impresora,Oficina,5,148.84,0,744.2,Andalucía,Sevilla,Lucía Martín,Tienda,Efectivo
+472,2025-12-10,Silla oficina,Oficina,3,179.54,0,538.62,Cataluña,Barcelona,Ana López,Online,Tarjeta
+473,2025-12-04,Monitor,Informática,4,211.98,0,847.92,C. Valenciana,Alicante,Pablo Díaz,Teléfono,Efectivo
+474,2025-01-03,Silla oficina,Oficina,3,182.41,0.05,519.87,Cataluña,Girona,Carlos Ruiz,Tienda,PayPal
+475,2025-09-03,Auriculares,Audio,5,64.08,0.15,272.34,Andalucía,Málaga,Javier Gómez,Online,Transferencia
+476,2025-02-11,Tablet,Telefonía,2,353.62,0.15,601.15,C. Valenciana,Alicante,Carlos Ruiz,Teléfono,Efectivo
+477,2025-01-10,Auriculares,Audio,3,62.8,0.15,160.14,Madrid,Madrid,Marta Sánchez,Teléfono,PayPal
+478,2025-10-06,Silla oficina,Oficina,1,169.66,0.1,152.69,Andalucía,Málaga,Pablo Díaz,Tienda,Transferencia
+479,2025-03-10,Smartphone,Telefonía,5,566.8,0.15,2408.9,Andalucía,Málaga,Marta Sánchez,Teléfono,Tarjeta
+480,2025-11-11,Smartphone,Telefonía,1,583.66,0.15,496.11,Cataluña,Barcelona,Marta Sánchez,Tienda,PayPal
+481,2025-09-05,Teclado,Informática,19,42.11,0.15,680.08,Cataluña,Girona,Ana López,Tienda,PayPal
+482,2025-12-09,Monitor,Informática,3,200.77,0,602.31,Madrid,Madrid,Marta Sánchez,Online,PayPal
+483,2025-02-22,Tablet,Telefonía,1,379.25,0,379.25,Andalucía,Málaga,Pablo Díaz,Online,Efectivo
+484,2025-09-22,Smartphone,Telefonía,3,618.44,0.1,1669.79,Madrid,Alcalá de Henares,Javier Gómez,Tienda,PayPal
+485,2025-11-06,Altavoz,Audio,12,95.71,0.05,1091.09,Galicia,A Coruña,Marta Sánchez,Tienda,PayPal
+486,2025-04-19,Teclado,Informática,17,42.57,0.15,615.14,Andalucía,Sevilla,Carlos Ruiz,Tienda,Transferencia
+487,2025-08-01,Silla oficina,Oficina,1,187.82,0.15,159.65,Cataluña,Girona,Pablo Díaz,Tienda,PayPal
+488,2025-01-12,Tablet,Telefonía,5,348.53,0,1742.65,Galicia,A Coruña,Ana López,Tienda,Efectivo
+489,2025-01-29,Teclado,Informática,2,46.17,0.1,83.11,Cataluña,Barcelona,Lucía Martín,Tienda,PayPal
+490,2025-02-13,Silla oficina,Oficina,1,196.89,0.15,167.36,Andalucía,Sevilla,Javier Gómez,Teléfono,PayPal
+491,2025-10-26,Tablet,Telefonía,4,326.94,0.1,1176.98,Cataluña,Barcelona,Marta Sánchez,Teléfono,Transferencia
+492,2025-10-30,Teclado,Informática,11,47.02,0.05,491.36,C. Valenciana,Valencia,Carlos Ruiz,Online,PayPal
+493,2025-12-17,Teclado,Informática,7,41.48,0.1,261.32,C. Valenciana,Alicante,Carlos Ruiz,Teléfono,Tarjeta
+494,2025-09-30,Teclado,Informática,20,44.78,0.1,806.04,Madrid,Madrid,Ana López,Online,Efectivo
+495,2025-09-25,Silla oficina,Oficina,1,181.41,0.15,154.2,Galicia,Vigo,Lucía Martín,Tienda,PayPal
+496,2025-10-29,Monitor,Informática,4,239.29,0.05,909.3,Andalucía,Sevilla,Javier Gómez,Tienda,Transferencia
+497,2025-10-06,Tablet,Telefonía,1,368.61,0,368.61,C. Valenciana,Alicante,Lucía Martín,Tienda,Tarjeta
+498,2025-07-12,Portátil,Informática,1,863.26,0.1,776.93,Madrid,Madrid,Pablo Díaz,Online,PayPal
+499,2025-05-10,Altavoz,Audio,14,82.92,0.15,986.75,C. Valenciana,Alicante,Marta Sánchez,Online,Transferencia
+500,2025-10-10,Silla oficina,Oficina,4,171.92,0,687.68,Galicia,Vigo,Carlos Ruiz,Online,PayPal

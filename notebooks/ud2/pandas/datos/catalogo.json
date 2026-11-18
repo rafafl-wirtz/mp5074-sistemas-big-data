@@ -1,0 +1,238 @@
+{
+  "tienda": "Tecnoventas",
+  "actualizado": "2025-12-31",
+  "moneda": "EUR",
+  "productos": [
+    {
+      "sku": "P001",
+      "nombre": "ALTAVOZ",
+      "categoria": "Audio",
+      "proveedor": {
+        "nombre": "JBL",
+        "pais": "Estados Unidos"
+      },
+      "precios": {
+        "coste": 57.55,
+        "pvp": 92.92
+      },
+      "etiquetas": [
+        "bluetooth",
+        "portátil"
+      ],
+      "stock": {
+        "almacen_central": 156,
+        "tiendas": 2
+      }
+    },
+    {
+      "sku": "P002",
+      "nombre": "AURICULARES",
+      "categoria": "Audio",
+      "proveedor": {
+        "nombre": "Sony",
+        "pais": "Japón"
+      },
+      "precios": {
+        "coste": 36.71,
+        "pvp": 61.4
+      },
+      "etiquetas": [
+        "bluetooth",
+        "cancelación de ruido"
+      ],
+      "stock": {
+        "almacen_central": 98,
+        "tiendas": 78
+      }
+    },
+    {
+      "sku": "P003",
+      "nombre": "IMPRESORA",
+      "categoria": "Oficina",
+      "proveedor": {
+        "nombre": "HP",
+        "pais": "Estados Unidos"
+      },
+      "precios": {
+        "coste": 106.39,
+        "pvp": 154.26
+      },
+      "etiquetas": [
+        "wifi",
+        "láser"
+      ],
+      "stock": {
+        "almacen_central": 157,
+        "tiendas": 11
+      }
+    },
+    {
+      "sku": "P004",
+      "nombre": "MONITOR",
+      "categoria": "Informática",
+      "proveedor": {
+        "nombre": "Dell",
+        "pais": "Estados Unidos"
+      },
+      "precios": {
+        "coste": 122.38,
+        "pvp": 226.69
+      },
+      "etiquetas": [
+        "27 pulgadas",
+        "4k"
+      ],
+      "stock": {
+        "almacen_central": 75,
+        "tiendas": 9
+      }
+    },
+    {
+      "sku": "P005",
+      "nombre": "PORTATIL",
+      "categoria": "Informática",
+      "proveedor": {
+        "nombre": "Lenovo",
+        "pais": "China"
+      },
+      "precios": {
+        "coste": 473.08,
+        "pvp": 863.94
+      },
+      "etiquetas": [
+        "16gb ram",
+        "ssd",
+        "windows"
+      ],
+      "stock": {
+        "almacen_central": 98,
+        "tiendas": 31
+      }
+    },
+    {
+      "sku": "P006",
+      "nombre": "RATON",
+      "categoria": "Informática",
+      "proveedor": {
+        "nombre": "Logitech",
+        "pais": "Suiza"
+      },
+      "precios": {
+        "coste": 14.31,
+        "pvp": 25.47
+      },
+      "etiquetas": [
+        "usb",
+        "inalámbrico"
+      ],
+      "stock": {
+        "almacen_central": 125,
+        "tiendas": 16
+      }
+    },
+    {
+      "sku": "P007",
+      "nombre": "SILLA OFICINA",
+      "categoria": "Oficina",
+      "proveedor": {
+        "nombre": "Actiu",
+        "pais": "España"
+      },
+      "precios": {
+        "coste": 110.62,
+        "pvp": 186.61
+      },
+      "etiquetas": [
+        "ergonómica"
+      ],
+      "stock": {
+        "almacen_central": 115,
+        "tiendas": 50
+      }
+    },
+    {
+      "sku": "P008",
+      "nombre": "SMARTPHONE",
+      "categoria": "Telefonía",
+      "proveedor": {
+        "nombre": "Samsung",
+        "pais": "Corea del Sur"
+      },
+      "precios": {
+        "coste": 348.37,
+        "pvp": 616.45
+      },
+      "etiquetas": [
+        "5g",
+        "android"
+      ],
+      "stock": {
+        "almacen_central": 205,
+        "tiendas": 79
+      }
+    },
+    {
+      "sku": "P009",
+      "nombre": "TABLET",
+      "categoria": "Telefonía",
+      "proveedor": {
+        "nombre": "Lenovo",
+        "pais": "China"
+      },
+      "precios": {
+        "coste": 216.64,
+        "pvp": 356.06
+      },
+      "etiquetas": [
+        "wifi",
+        "android"
+      ],
+      "stock": {
+        "almacen_central": 151,
+        "tiendas": 31
+      }
+    },
+    {
+      "sku": "P010",
+      "nombre": "TECLADO",
+      "categoria": "Informática",
+      "proveedor": {
+        "nombre": "Logitech",
+        "pais": "Suiza"
+      },
+      "precios": {
+        "coste": 30.82,
+        "pvp": 45.77
+      },
+      "etiquetas": [
+        "usb",
+        "mecánico"
+      ],
+      "stock": {
+        "almacen_central": 71,
+        "tiendas": 0
+      }
+    },
+    {
+      "sku": "P011",
+      "nombre": "WEBCAM",
+      "categoria": "Informática",
+      "proveedor": {
+        "nombre": "Logitech",
+        "pais": "Suiza"
+      },
+      "precios": {
+        "coste": 30.87,
+        "pvp": 50.9
+      },
+      "etiquetas": [
+        "usb",
+        "full hd"
+      ],
+      "stock": {
+        "almacen_central": 215,
+        "tiendas": 78
+      }
+    }
+  ]
+}

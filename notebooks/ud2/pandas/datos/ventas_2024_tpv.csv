@@ -1,0 +1,436 @@
+Exportación del TPV · Cadena Tecnoventas
+Generado el 08/01/2025 10:32 por el usuario ADMIN
+
+Nº Ticket;Fecha Venta;Producto;Región;Ciudad;Cód. Postal;Uds;Precio Unit. (€);Dto (%);Importe (€);Canal;Pago
+T24-00001;02/01/2024;Teclado;ANDALUCÍA;Sevilla;41016;15;40,92;0%;613,80 €;Teléfono;Efectivo
+T24-00002;02/01/2024;Altavoz;Comunidad Valenciana;Valencia;46026;10;91,78;10%;826,02 €;Tienda;Transferencia
+T24-00003;03/01/2024;Silla oficina;Galicia;Vigo;36214;1;183,88;0%;183,88 €;Tienda;PayPal
+T24-00004;04/01/2024;Ratón;C.Valenciana;Valencia;46018;15;23,87;0%;358,05 €;Tienda física;Efectivo
+T24-00005;05/01/2024;Smartphone;ANDALUCÍA;Málaga;29015;10;601,44;15%;5.112,24 €;Tienda;Tarjeta
+T24-00006;06/01/2024;Altavoz;Andalucia;Málaga;29018;1;84,38;0%;84,38 €;ONLINE;Tarjeta
+T24-00007;06/01/2024;Portátil;C.Valenciana;Valencia;46013;4;879,11;0%;3.516,44 €;Tienda física;Efectivo
+T24-00008;09/01/2024;Auriculares;Catalunya;Girona;17005;2;55,76;0%;-;Online;Efectivo
+T24-00009;09/01/2024;Ratón;Comunidad Valenciana;Alicante;03015;6;24,27;0%;145,62 €;Teléfono;Bizum
+T24-00010;12/01/2024;Tablet;Andalucia;Sevilla;41015;1;341,23;5%;324,17 €;online;Bizum
+T24-00011;13/01/2024;Auriculares;Cataluña;Girona;17001;5;54,11;5%;257,02 €;Tienda;Efectivo
+T24-00012;14/01/2024;impresora ;Galicia;Vigo;36208;5;136,82;10%;615,69 €;Tienda física;Tarjeta
+T24-00013;16/01/2024;Monitor;Comunidad de Madrid;Madrid;28034;10;232,56;0%;2.325,60 €;Tienda;Transferencia
+T24-00014;20/01/2024;Portátil;Cataluña;Girona;17002;3;853,97;5%;2.433,81 €;tienda;Tarjeta
+T24-00015;20/01/2024;Teclado;ANDALUCÍA;Sevilla;41009;3;42,57;0%;127,71 €;tienda;Efectivo
+T24-00016;21/01/2024;Tablet;CATALUÑA;Girona;17004;5;321,09;10%;1.444,90 €;Tienda;Tarjeta
+T24-00017;22/01/2024;Silla oficina;Comunidad Valenciana;Alicante;03008;2;167,61;0%;335,22 €;ONLINE;Transferencia
+T24-00018;23/01/2024;tablet ;CATALUÑA;Girona;17005;4;349,02;5%;1.326,28 €;online;Bizum
+T24-00019;23/01/2024;Silla oficina; galicia;Vigo;36203;12;171,44;5%;1.954,42 €;Tienda;PayPal
+T24-00020;23/01/2024;Teclado;C. Valenciana;Valencia;46006;4;44,15;0%;176,60 €;Online;Efectivo
+T24-00021;24/01/2024;Portátil;Madrid;Madrid;28010;1;804,50;5%;764,28 €;Telefono;Efectivo
+T24-00022;24/01/2024;Portátil;ANDALUCÍA;Sevilla;41020;1;832,74;10%;749,47 €;ONLINE;PayPal
+T24-00023;24/01/2024;Altavoz;Comunidad Valenciana;Alicante;03014;6;92,89;10%;501,61 €;ONLINE;Bizum
+T24-00024;24/01/2024;Impresora;Andalucía;Sevilla;41008;1;139,66;0%;139,66 €;Teléfono;PayPal
+T24-00025;25/01/2024;Auriculares;C. Valenciana;Alicante;03014;2;58,69;5%;111,51 €;teléfono;PayPal
+T24-00026;25/01/2024;Silla oficina;Galicia ;A Coruña;15006;8;174,97;0%;1.399,76 €;tienda;Tarjeta
+T24-00027;25/01/2024;Teclado;CATALUÑA;Barcelona;08008;12;46,91;10%;506,63 €;Teléfono;Efectivo
+T24-00028;28/01/2024;Auriculares;ANDALUCÍA;Sevilla;41013;6;53,88;0%;323,28 €;Online;Efectivo
+T24-00029;29/01/2024;Impresora;C.Valenciana;Alicante;03003;12;153,61;0%;1.843,32 €;Online;Transferencia
+T24-00030;29/01/2024;Silla oficina; galicia;Vigo;36211;4;187,65;0%;750,60 €;Online;PayPal
+T24-00031;31/01/2024;Silla oficina;Andalucia;Málaga;29007;2;181,54;0%;363,08 €;Tienda;Tarjeta
+T24-00031;31/01/2024;Silla oficina;Andalucia;Málaga;29007;2;181,54;0%;363,08 €;Tienda;Tarjeta
+T24-00032;31/01/2024;Silla oficina;Cataluña;Barcelona;08012;1;170,70;10%;153,63 €;Tienda física;Transferencia
+T24-00033;02/02/2024;Monitor;Andalucia;Sevilla;41011;12;226,03;0%;2.712,36 €;ONLINE;PayPal
+T24-00034;02/02/2024;Tablet;Cataluña;Girona;17003;15;331,37;0%;4.970,55 €;tienda;Bizum
+T24-00035;04/02/2024;Teclado;Madrid;Madrid;28055;8;46,97;0%;375,76 €;Online;Tarjeta
+T24-00036;05/02/2024;portátil ;Catalunya;Barcelona;08038;5;883,44;0%;4.417,20 €;Tienda;Transferencia
+T24-00037;06/02/2024;Impresora;Andalucía;Sevilla;41020;3;144,70;0%;434,10 €;Tienda física;Efectivo
+T24-00038;06/02/2024;Silla oficina;ANDALUCÍA;Sevilla;41017;10;170,35;0%;1.703,50 €;Tienda;Bizum
+T24-00039;07/02/2024;Tablet;ANDALUCÍA;Sevilla;41002;3;331,98;15%;846,55 €;ONLINE;PayPal
+T24-00040;10/02/2024;Teclado;Andalucía;Sevilla;41004;12;41,34;0%;496,08 €;ONLINE;Transferencia
+T24-00041;10/02/2024;Auriculares;Catalunya;Girona;17002;8;56,19;0%;449,52 €;Tienda física;PayPal
+T24-00042;10/02/2024;Ratón;C.Valenciana;Valencia;46017;1;25,84;0%;25,84 €;teléfono;PayPal
+T24-00043;10/02/2024;Smartphone;C. Valenciana;Alicante;03009;10;592,65;0%;5.926,50 €;Tienda física;PayPal
+T24-00044;11/02/2024;Teclado;Galicia ;A Coruña;15011;2;41,34;0%;82,68 €;online;PayPal
+T24-00045;11/02/2024;Impresora;Comunidad Valenciana;Valencia;46026;3;152,47;0%;457,41 €;ONLINE;PayPal
+T24-00046;12/02/2024;Teclado;GALICIA;Vigo;36210;6;43,34;10%;234,04 €;Tienda;Transferencia
+T24-00047;14/02/2024;Silla oficina;C. Valenciana;Valencia;46020;1;172,41;0%;172,41 €;tienda;Transferencia
+T24-00048;14/02/2024;Ratón;Catalunya;Barcelona;08003;8;22,30;5%;169,48 €;Teléfono;Transferencia
+T24-00049;15/02/2024;Portátil;Galicia;Vigo;36208;3;804,32;15%;2.051,02 €;ONLINE;PayPal
+T24-00050;17/02/2024;teclado ;GALICIA;A Coruña;15006;2;41,38;0%;82,76 €;online;Transferencia
+T24-00051;18/02/2024;Silla oficina; galicia;A Coruña;15006;12;180,73;15%;-;tienda;PayPal
+T24-00052;18/02/2024;Auriculares;madrid;Madrid;28047;4;57,12;15%;194,21 €;Online;Transferencia
+T24-00053;19/02/2024;Teclado;ANDALUCÍA;Málaga;29001;2;44,50;10%;80,10 €;Tienda física;Efectivo
+T24-00054;19/02/2024;Portátil;GALICIA;A Coruña;15004;1;773,87;10%;696,48 €;Online;Transferencia
+T24-00055;20/02/2024;Altavoz;Catalunya;Girona;17006;1;95,27;15%;80,98 €;Online;Bizum
+T24-00056;20/02/2024;Smartphone;Madrid;Madrid;28054;10;567,84;0%;5.678,40 €;Online;Tarjeta
+T24-00057;21/02/2024;Monitor;C. Valenciana;Alicante;03016;12;198,89;15%;2.028,68 €;Tienda;Bizum
+T24-00057;21/02/2024;Monitor;C. Valenciana;Alicante;03016;12;198,89;15%;2.028,68 €;Tienda;Bizum
+T24-00058;21/02/2024;Silla oficina;CATALUÑA;Girona;17001;5;169,09;0%;845,45 €;tienda;Tarjeta
+T24-00059;22/02/2024;Teclado;GALICIA;A Coruña;15003;8;43,13;10%;310,54 €;online;PayPal
+T24-00060;22/02/2024;Smartphone;Andalucía;Málaga;29004;4;572,74;0%;2.290,96 €;Tienda;Transferencia
+T24-00061;26/02/2024;Altavoz;GALICIA;A Coruña;15004;2;92,22;0%;184,44 €;Telefono;PayPal
+T24-00062;27/02/2024;Ratón;C.Valenciana;Valencia;46018;3;22,71;0%;68,13 €;tienda;Bizum
+T24-00063;28/02/2024;Altavoz;Madrid;Madrid;28052;5;91,16;5%;433,01 €;Online;Transferencia
+T24-00064;02/03/2024;auriculares ;GALICIA;Vigo;36209;2;57,43;0%;114,86 €;tienda;Tarjeta
+T24-00065;02/03/2024;Teclado;ANDALUCÍA;Málaga;29004;8;44,43;0%;355,44 €;online;Efectivo
+T24-00066;02/03/2024;Portátil;Galicia ;Vigo;36206;15;806,80;15%;10.286,70 €;ONLINE;Bizum
+T24-00067;02/03/2024;Auriculares;Cataluña;Barcelona;08036;1;57,40;0%;57,40 €;Telefono;Efectivo
+T24-00068;03/03/2024;Teclado;CATALUÑA;Barcelona;08020;3;40,72;10%;109,94 €;Online;Efectivo
+T24-00069;07/03/2024;Impresora;C.Valenciana;Valencia;46022;3;136,06;0%;408,18 €;online;Efectivo
+T24-00070;07/03/2024;Monitor;C.Valenciana;Valencia;46025;10;209,16;5%;1.987,02 €;tienda;Efectivo
+T24-00071;08/03/2024;Altavoz;Andalucía;Málaga;29003;10;89,06;0%;890,60 €;tienda;Tarjeta
+T24-00072;09/03/2024;Tablet;Madrid;Alcalá de Henares;28806;1;350,23;10%;315,21 €;Online;Efectivo
+T24-00073;10/03/2024;Auriculares;madrid;Alcalá de Henares;28804;2;57,02;0%;114,04 €;Telefono;Transferencia
+T24-00074;10/03/2024;Teclado;Comunidad de Madrid;Madrid;28031;2;46,65;0%;93,30 €;teléfono;Tarjeta
+T24-00075;10/03/2024;Auriculares;Andalucia;Málaga;29015;4;54,42;0%;217,68 €;online;Bizum
+T24-00076;11/03/2024;Monitor;Galicia;A Coruña;15001;4;224,09;5%;851,54 €;Tienda física;Transferencia
+T24-00077;14/03/2024;Altavoz;Catalunya;Girona;17006;;88,74;0%;1.331,10 €;Teléfono;Tarjeta
+T24-00078;15/03/2024;Silla oficina; galicia;Vigo;36206;6;178,10;0%;1.068,60 €;Tienda física;Transferencia
+T24-00079;16/03/2024;Teclado;CATALUÑA;Girona;17001;8;43,63;15%;296,68 €;ONLINE;Bizum
+T24-00080;16/03/2024;auriculares ;Catalunya;Girona;17001;10;61,33;5%;582,63 €;Tienda física;Transferencia
+T24-00081;16/03/2024;smartphone ;Galicia ;A Coruña;15009;1;549,76;10%;494,78 €;ONLINE;PayPal
+T24-00081;16/03/2024;smartphone ;Galicia ;A Coruña;15009;1;549,76;10%;494,78 €;ONLINE;PayPal
+T24-00082;18/03/2024;Auriculares; galicia;Vigo;36212;1;57,78;0%;57,78 €;Telefono;Transferencia
+T24-00083;18/03/2024;Altavoz;Comunidad Valenciana;Valencia;46016;15;94,35;0%;1.415,25 €;ONLINE;Transferencia
+T24-00084;19/03/2024;Auriculares;Cataluña;Barcelona;08027;4;55,87;10%;201,13 €;Tienda;Bizum
+T24-00085;19/03/2024;Portátil;C.Valenciana;Alicante;03002;1;778,92;0%;778,92 €;online;PayPal
+T24-00086;20/03/2024;auriculares ;ANDALUCÍA;Málaga;29018;12;61,53;15%;627,61 €;tienda;Efectivo
+T24-00087;21/03/2024;Portátil;Andalucía;Sevilla;41011;15;839,35;0%;12.590,25 €;teléfono;PayPal
+T24-00088;21/03/2024;Teclado;Andalucia;Málaga;29009;8;44,09;0%;352,72 €;Tienda física;Tarjeta
+T24-00089;23/03/2024;Auriculares;C.Valenciana;Alicante;03016;15;61,52;0%;922,80 €;Telefono;Efectivo
+T24-00090;24/03/2024;Monitor;GALICIA;Vigo;36207;5;199,89;0%;999,45 €;Tienda;Efectivo
+T24-00091;25/03/2024;Smartphone;Galicia ;A Coruña;15007;10;599,85;10%;5.398,65 €;ONLINE;Transferencia
+T24-00092;26/03/2024;Auriculares;Cataluña;Girona;17001;4;61,32;0%;245,28 €;Tienda;Efectivo
+T24-00093;28/03/2024;Silla oficina; galicia;A Coruña;15003;2;166,89;0%;333,78 €;Tienda;Efectivo
+T24-00094;28/03/2024;Portátil;Galicia ;A Coruña;15002;1;834,50;0%;834,50 €;Telefono;Transferencia
+T24-00095;30/03/2024;Teclado;Comunidad Valenciana;Valencia;46024;5;43,15;0%;215,75 €;ONLINE;Transferencia
+T24-00096;31/03/2024;Auriculares;C.Valenciana;Alicante;03014;3;62,84;5%;179,09 €;teléfono;Tarjeta
+T24-00097;31/03/2024;Portátil;C.Valenciana;Alicante;03015;10;872,03;10%;7.848,27 €;ONLINE;Tarjeta
+T24-00098;31/03/2024;Silla oficina;Comunidad Valenciana;Alicante;03010;12;177,19;15%;1.807,34 €;Tienda;Tarjeta
+T24-00099;02/04/2024;Monitor;Galicia;Vigo;36201;2;230,18;10%;414,32 €;ONLINE;Tarjeta
+T24-00100;02/04/2024;Portátil;Cataluña;Girona;17005;5;815,28;0%;4.076,40 €;Online;Tarjeta
+T24-00101;05/04/2024;Auriculares;CATALUÑA;Barcelona;08009;2;59,65;0%;119,30 €;Teléfono;Efectivo
+T24-00102;05/04/2024;Silla oficina;Cataluña;Girona;17004;2;182,06;0%;364,12 €;Telefono;Transferencia
+T24-00103;06/04/2024;Impresora;Comunidad Valenciana;Valencia;46016;3;139,45;0%;418,35 €;tienda;Bizum
+T24-00104;08/04/2024;Silla oficina;Galicia;A Coruña;15001;15;179,48;10%;2.422,98 €;Telefono;PayPal
+T24-00105;08/04/2024;Smartphone;Andalucia;Sevilla;41005;1;561,96;15%;477,67 €;ONLINE;Bizum
+T24-00106;10/04/2024;Monitor; galicia;A Coruña;15010;10;204,07;15%;1.734,59 €;ONLINE;PayPal
+T24-00107;10/04/2024;Monitor;Comunidad de Madrid;Madrid;28009;1;200,82;5%;190,78 €;Tienda;PayPal
+T24-00108;10/04/2024;monitor ;Galicia ;Vigo;36215;6;231,98;5%;1.322,29 €;online;Efectivo
+T24-00109;11/04/2024;Smartphone;Comunidad de Madrid;Madrid;28004;8;624,43;5%;4.745,67 €;Teléfono;Bizum
+T24-00110;11/04/2024;Tablet;Cataluña;Barcelona;08036;2;352,49;10%;634,48 €;teléfono;PayPal
+T24-00111;11/04/2024;Impresora;Madrid;Madrid;28035;10;151,15;0%;-;Tienda;Bizum
+T24-00112;12/04/2024;Auriculares;Comunidad Valenciana;Valencia;46014;1;57,71;5%;54,82 €;Teléfono;Transferencia
+T24-00113;13/04/2024;Teclado;Catalunya;Girona;17003;1;44,80;0%;44,80 €;Teléfono;Transferencia
+T24-00114;13/04/2024;Smartphone;Catalunya;Girona;17004;10;614,12;0%;6.141,20 €;tienda;Efectivo
+T24-00115;14/04/2024;Silla oficina;Madrid;Madrid;28017;4;188,94;5%;717,97 €;tienda;Bizum
+T24-00116;14/04/2024;Smartphone;madrid;Madrid;28038;8;546,07;5%;4.150,13 €;online;Tarjeta
+T24-00117;15/04/2024;Impresora;Andalucía;Málaga;29016;3;150,32;0%;450,96 €;Telefono;Tarjeta
+T24-00118;15/04/2024;Silla oficina;madrid;Alcalá de Henares;28803;10;191,19;0%;1.911,90 €;Telefono;Bizum
+T24-00119;15/04/2024;Tablet;Andalucía;Málaga;29005;5;329,39;0%;1.646,95 €;Online;PayPal
+T24-00120;16/04/2024;Ratón;Cataluña;Barcelona;08035;15;24,28;15%;309,57 €;Telefono;Tarjeta
+T24-00121;18/04/2024;Portátil;Andalucia;Sevilla;41005;1;762,52;10%;686,27 €;Online;PayPal
+T24-00122;18/04/2024;Portátil;C.Valenciana;Alicante;03007;3;777,92;0%;2.333,76 €;tienda;Bizum
+T24-00123;19/04/2024;Portátil;CATALUÑA;Girona;17006;2;774,47;15%;1.316,60 €;Online;Bizum
+T24-00124;20/04/2024;Teclado;Galicia;Vigo;36207;4;42,31;0%;169,24 €;Tienda física;Bizum
+T24-00125;21/04/2024;Silla oficina;ANDALUCÍA;Sevilla;41015;12;175,92;0%;2.111,04 €;Telefono;Efectivo
+T24-00126;21/04/2024;Altavoz;Andalucia;Málaga;29004;10;90,99;10%;818,91 €;Tienda física;Transferencia
+T24-00127;22/04/2024;Smartphone;Galicia;A Coruña;15006;6;565,09;0%;3.390,54 €;Tienda;Tarjeta
+T24-00128;24/04/2024;Tablet;Catalunya;Girona;17003;12;326,76;10%;3.529,01 €;Telefono;Efectivo
+T24-00129;25/04/2024;Ratón;madrid;Alcalá de Henares;28803;4;24,11;0%;96,44 €;Teléfono;Bizum
+T24-00130;25/04/2024;Impresora;C.Valenciana;Alicante;03012;2;136,89;10%;246,40 €;Teléfono;Tarjeta
+T24-00131;25/04/2024;Auriculares;Galicia ;A Coruña;15010;;55,67;15%;47,32 €;Teléfono;Efectivo
+T24-00132;26/04/2024;Tablet;Madrid;Alcalá de Henares;28805;5;345,17;10%;1.553,26 €;Teléfono;Bizum
+T24-00133;26/04/2024;Teclado;CATALUÑA;Girona;17003;12;40,21;0%;482,52 €;Tienda física;Efectivo
+T24-00133;26/04/2024;Teclado;CATALUÑA;Girona;17003;12;40,21;0%;482,52 €;Tienda física;Efectivo
+T24-00134;26/04/2024;Altavoz;Madrid;Alcalá de Henares;28803;8;85,00;0%;680,00 €;Teléfono;Transferencia
+T24-00135;27/04/2024;Altavoz;Andalucía;Málaga;29010;1;82,54;15%;70,16 €;Online;PayPal
+T24-00136;27/04/2024;Monitor;Cataluña;Barcelona;08006;8;201,26;15%;1.368,57 €;online;Tarjeta
+T24-00137;28/04/2024;Ratón;ANDALUCÍA;Sevilla;41002;10;25,27;15%;214,80 €;Teléfono;PayPal
+T24-00138;29/04/2024;Silla oficina;madrid;Madrid;28002;3;164,37;15%;419,14 €;teléfono;PayPal
+T24-00139;30/04/2024;Monitor;C. Valenciana;Valencia;46011;3;207,04;0%;621,12 €;tienda;Transferencia
+T24-00140;30/04/2024;Teclado;Comunidad de Madrid;Madrid;28053;1;44,62;0%;44,62 €;tienda;Efectivo
+T24-00141;30/04/2024;Teclado; galicia;Vigo;36204;6;44,89;15%;228,94 €;teléfono;Efectivo
+T24-00142;01/05/2024;Monitor;Andalucía;Málaga;29017;5;221,13;15%;939,80 €;tienda;PayPal
+T24-00143;02/05/2024;Impresora; galicia;Vigo;36205;2;152,93;5%;290,57 €;tienda;Transferencia
+T24-00144;04/05/2024;Silla oficina;Andalucia;Málaga;29015;6;170,41;5%;971,34 €;Tienda física;Transferencia
+T24-00145;04/05/2024;monitor ;Galicia;A Coruña;15009;5;218,00;15%;926,50 €;tienda;Transferencia
+T24-00146;06/05/2024;Impresora;ANDALUCÍA;Sevilla;41007;15;136,16;0%;2.042,40 €;ONLINE;Tarjeta
+T24-00147;07/05/2024;Monitor;Comunidad de Madrid;Alcalá de Henares;28801;3;218,76;0%;656,28 €;teléfono;Efectivo
+T24-00148;07/05/2024;tablet ;ANDALUCÍA;Málaga;29017;1;341,81;5%;324,72 €;Tienda;Tarjeta
+T24-00149;08/05/2024;Auriculares;ANDALUCÍA;Málaga;29007;;54,68;10%;246,06 €;Tienda física;Tarjeta
+T24-00150;09/05/2024;Smartphone;Comunidad Valenciana;Valencia;46005;3;592,03;0%;1.776,09 €;online;Efectivo
+T24-00151;09/05/2024;Silla oficina;C. Valenciana;Valencia;46025;1;182,72;0%;182,72 €;tienda;Transferencia
+T24-00152;09/05/2024;Monitor;Andalucía;Málaga;29003;2;201,48;0%;402,96 €;Telefono;Efectivo
+T24-00153;09/05/2024;Teclado;Comunidad de Madrid;Madrid;28049;2;46,55;0%;93,10 €;Teléfono;Tarjeta
+T24-00154;11/05/2024;Portátil;CATALUÑA;Barcelona;08014;12;847,45;5%;9.660,93 €;Telefono;Tarjeta
+T24-00155;12/05/2024;portátil ;Catalunya;Girona;17006;3;843,19;5%;2.403,09 €;online;PayPal
+T24-00156;13/05/2024;Monitor;madrid;Alcalá de Henares;28805;15;212,33;10%;2.866,46 €;Telefono;Transferencia
+T24-00157;14/05/2024;Altavoz;Andalucia;Málaga;29007;5;82,31;0%;411,55 €;Teléfono;PayPal
+T24-00158;15/05/2024;Ratón;ANDALUCÍA;Sevilla;41019;1;24,49;5%;23,27 €;teléfono;Bizum
+T24-00159;15/05/2024;Impresora;Andalucia;Sevilla;41004;15;149,25;5%;2.126,81 €;teléfono;Efectivo
+T24-00160;15/05/2024;Ratón;Comunidad de Madrid;Madrid;28019;10;25,56;10%;230,04 €;Tienda física;PayPal
+T24-00161;17/05/2024;Silla oficina;C.Valenciana;Valencia;46017;6;175,15;15%;893,27 €;teléfono;Efectivo
+T24-00162;19/05/2024;Ratón;Madrid;Madrid;28016;6;24,79;5%;141,30 €;Tienda;Tarjeta
+T24-00163;19/05/2024;Smartphone;C.Valenciana;Valencia;46023;12;586,48;0%;7.037,76 €;Teléfono;Bizum
+T24-00164;19/05/2024;Impresora;madrid;Alcalá de Henares;28803;12;148,88;0%;1.786,56 €;Tienda;Efectivo
+T24-00165;21/05/2024;Smartphone;Madrid;Madrid;28024;1;591,40;5%;561,83 €;Telefono;Efectivo
+T24-00166;21/05/2024;Teclado;Catalunya;Barcelona;08013;4;42,14;5%;160,13 €;Tienda;Efectivo
+T24-00167;21/05/2024;Monitor;madrid;Madrid;28003;12;222,20;0%;2.666,40 €;Tienda;Efectivo
+T24-00168;22/05/2024;Smartphone;Andalucía;Málaga;29014;15;573,27;0%;8.599,05 €;Tienda;PayPal
+T24-00169;23/05/2024;silla oficina ;Andalucía;Málaga;29007;15;172,43;0%;2.586,45 €;Telefono;Tarjeta
+T24-00170;25/05/2024;Ratón;Andalucia;Sevilla;41002;1;24,25;0%;24,25 €;Tienda física;Transferencia
+T24-00171;26/05/2024;Ratón;Madrid;Madrid;28053;4;23,04;5%;87,55 €;online;Tarjeta
+T24-00172;26/05/2024;Smartphone;Galicia ;Vigo;36212;12;549,99;0%;6.599,88 €;Teléfono;Efectivo
+T24-00173;26/05/2024;Portátil; galicia;A Coruña;15002;3;809,62;15%;2.064,53 €;Telefono;Bizum
+T24-00174;28/05/2024;Smartphone;C.Valenciana;Valencia;46014;15;546,19;0%;8.192,85 €;Teléfono;PayPal
+T24-00175;29/05/2024;Monitor;Comunidad de Madrid;Madrid;28041;1;220,63;15%;187,54 €;tienda;PayPal
+T24-00176;30/05/2024;Teclado;Andalucía;Sevilla;41015;5;45,22;10%;203,49 €;Tienda física;Transferencia
+T24-00177;30/05/2024;Monitor;Comunidad de Madrid;Alcalá de Henares;28801;10;212,64;0%;2.126,40 €;ONLINE;Tarjeta
+T24-00178;31/05/2024;Portátil;C. Valenciana;Alicante;03014;3;835,80;0%;2.507,40 €;Tienda;Efectivo
+T24-00179;04/06/2024;teclado ;C.Valenciana;Valencia;46013;3;46,48;10%;125,50 €;Tienda;Bizum
+T24-00180;04/06/2024;Ratón;Comunidad Valenciana;Valencia;46007;5;23,99;15%;101,96 €;tienda;PayPal
+T24-00181;06/06/2024;Auriculares;CATALUÑA;Girona;17004;15;62,07;0%;931,05 €;Online;Tarjeta
+T24-00182;06/06/2024;Portátil;ANDALUCÍA;Málaga;29013;15;856,63;0%;12.849,45 €;Tienda física;Transferencia
+T24-00183;09/06/2024;Ratón; galicia;Vigo;36210;1;25,52;0%;25,52 €;Telefono;Transferencia
+T24-00184;10/06/2024;tablet ;Andalucía;Sevilla;41018;1;359,87;0%;359,87 €;tienda;PayPal
+T24-00185;12/06/2024;Altavoz;GALICIA;Vigo;36206;12;94,06;0%;1.128,72 €;Teléfono;Transferencia
+T24-00186;12/06/2024;Ratón;Cataluña;Girona;17001;8;25,71;5%;195,40 €;Telefono;Bizum
+T24-00187;12/06/2024;Auriculares;Galicia;Vigo;36203;15;62,31;10%;841,18 €;Telefono;Efectivo
+T24-00188;13/06/2024;Teclado;CATALUÑA;Barcelona;08004;10;44,59;15%;379,02 €;ONLINE;Tarjeta
+T24-00189;13/06/2024;Tablet;madrid;Madrid;28027;15;333,26;15%;4.249,06 €;online;PayPal
+T24-00190;14/06/2024;Tablet;GALICIA;Vigo;36212;3;357,25;15%;910,99 €;Tienda;Tarjeta
+T24-00191;14/06/2024;Ratón;Cataluña;Girona;17002;5;24,12;0%;120,60 €;teléfono;Efectivo
+T24-00192;15/06/2024;Portátil;Comunidad de Madrid;Alcalá de Henares;28804;15;836,51;0%;12.547,65 €;online;PayPal
+T24-00193;15/06/2024;Smartphone;Comunidad Valenciana;Valencia;46006;2;604,94;0%;1.209,88 €;Teléfono;PayPal
+T24-00194;16/06/2024;teclado ;C. Valenciana;Alicante;03006;4;43,63;10%;157,07 €;Online;Tarjeta
+T24-00195;16/06/2024;Monitor;C. Valenciana;Alicante;03007;3;217,05;15%;553,48 €;Online;Efectivo
+T24-00196;16/06/2024;Portátil;Catalunya;Girona;17002;8;800,79;5%;6.086,00 €;teléfono;Efectivo
+T24-00197;17/06/2024;Altavoz;madrid;Madrid;28050;12;86,82;15%;885,56 €;tienda;Bizum
+T24-00198;17/06/2024;Auriculares;C.Valenciana;Alicante;03013;12;59,28;10%;640,22 €;Teléfono;Tarjeta
+T24-00199;17/06/2024;Auriculares;Comunidad Valenciana;Alicante;03003;12;58,19;15%;593,54 €;Tienda física;Tarjeta
+T24-00200;18/06/2024;Portátil;Comunidad de Madrid;Madrid;28021;15;885,03;5%;12.611,68 €;Tienda física;Transferencia
+T24-00201;18/06/2024;Silla oficina;Andalucía;Málaga;29008;6;173,60;15%;885,36 €;Teléfono;PayPal
+T24-00202;19/06/2024;Monitor;C.Valenciana;Valencia;46007;4;218,79;15%;743,89 €;teléfono;Transferencia
+T24-00203;19/06/2024;altavoz ;madrid;Alcalá de Henares;28805;12;95,37;10%;1.030,00 €;Telefono;Efectivo
+T24-00204;21/06/2024;Portátil;CATALUÑA;Girona;17006;6;756,38;10%;4.084,45 €;Teléfono;Efectivo
+T24-00205;22/06/2024;Smartphone;GALICIA;A Coruña;15004;2;577,59;0%;1.155,18 €;tienda;PayPal
+T24-00206;23/06/2024;Portátil;Comunidad Valenciana;Valencia;46012;2;877,61;0%;1.755,22 €;Telefono;Efectivo
+T24-00207;24/06/2024;Smartphone;Andalucía;Málaga;29003;1;594,55;0%;594,55 €;ONLINE;Efectivo
+T24-00208;24/06/2024;portátil ;Comunidad de Madrid;Madrid;28043;2;865,23;0%;1.730,46 €;tienda;Bizum
+T24-00208;24/06/2024;portátil ;Comunidad de Madrid;Madrid;28043;2;865,23;0%;1.730,46 €;tienda;Bizum
+T24-00209;25/06/2024;Monitor;C. Valenciana;Valencia;46011;1;203,75;0%;203,75 €;Teléfono;Transferencia
+T24-00210;25/06/2024;silla oficina ;GALICIA;A Coruña;15011;6;174,96;5%;997,27 €;Telefono;Bizum
+T24-00211;25/06/2024;Monitor;Comunidad Valenciana;Valencia;46003;3;225,43;5%;-;Teléfono;Bizum
+T24-00212;26/06/2024;Teclado;C.Valenciana;Alicante;03010;5;41,15;0%;205,75 €;Telefono;Transferencia
+T24-00213;27/06/2024;Impresora;Cataluña;Barcelona;08036;5;157,23;0%;786,15 €;Tienda física;PayPal
+T24-00214;28/06/2024;Smartphone;Galicia ;A Coruña;15006;3;564,27;0%;1.692,81 €;Online;Efectivo
+T24-00215;28/06/2024;Portátil;Galicia;Vigo;36215;15;759,07;10%;10.247,45 €;tienda;Tarjeta
+T24-00216;29/06/2024;Monitor;C. Valenciana;Alicante;03008;4;232,02;15%;788,87 €;tienda;PayPal
+T24-00217;29/06/2024;Portátil; galicia;A Coruña;15008;3;826,82;0%;2.480,46 €;Teléfono;Efectivo
+T24-00218;29/06/2024;Teclado;C.Valenciana;Valencia;46023;10;46,18;5%;438,71 €;Telefono;Tarjeta
+T24-00219;29/06/2024;Teclado;Andalucia;Sevilla;41007;10;43,94;10%;395,46 €;teléfono;Efectivo
+T24-00220;30/06/2024;Portátil;Galicia;Vigo;36212;6;771,45;0%;4.628,70 €;Telefono;Tarjeta
+T24-00221;30/06/2024;Altavoz;C. Valenciana;Alicante;03006;6;85,18;5%;485,53 €;ONLINE;Transferencia
+T24-00222;30/06/2024;Tablet;Comunidad de Madrid;Alcalá de Henares;28806;10;332,32;15%;-;online;PayPal
+T24-00223;04/07/2024;Teclado;Madrid;Madrid;28028;3;44,79;0%;134,37 €;Tienda;Bizum
+T24-00224;07/07/2024;Smartphone;Madrid;Alcalá de Henares;28806;1;594,17;5%;564,46 €;Telefono;Bizum
+T24-00225;07/07/2024;Teclado;Madrid;Alcalá de Henares;28804;4;41,31;0%;165,24 €;ONLINE;Bizum
+T24-00226;07/07/2024;Tablet;Madrid;Alcalá de Henares;28806;4;323,47;10%;1.164,49 €;Online;Bizum
+T24-00227;08/07/2024;Silla oficina;Comunidad de Madrid;Madrid;28004;2;179,16;15%;304,57 €;teléfono;Transferencia
+T24-00228;12/07/2024;Ratón;Comunidad Valenciana;Alicante;03006;12;24,31;15%;247,96 €;Online;PayPal
+T24-00229;12/07/2024;Portátil;Cataluña;Girona;17002;2;885,86;5%;1.683,13 €;Teléfono;Bizum
+T24-00230;14/07/2024;Impresora;CATALUÑA;Barcelona;08042;1;155,78;0%;155,78 €;Online;Tarjeta
+T24-00231;15/07/2024;Impresora;Catalunya;Barcelona;08016;2;144,06;15%;244,90 €;Telefono;Transferencia
+T24-00232;16/07/2024;Smartphone;madrid;Madrid;28020;10;582,54;0%;5.825,40 €;Teléfono;Transferencia
+T24-00233;17/07/2024;Monitor;CATALUÑA;Girona;17007;2;222,19;0%;444,38 €;ONLINE;Bizum
+T24-00234;18/07/2024;Monitor;Comunidad de Madrid;Alcalá de Henares;28803;2;231,86;0%;463,72 €;Tienda;PayPal
+T24-00235;19/07/2024;Monitor;Madrid;Madrid;28021;1;214,65;10%;193,18 €;Teléfono;Efectivo
+T24-00236;19/07/2024;Tablet;Andalucia;Sevilla;41005;15;331,96;0%;4.979,40 €;Tienda;PayPal
+T24-00237;19/07/2024;Ratón;Andalucia;Sevilla;41013;4;22,69;0%;90,76 €;teléfono;PayPal
+T24-00238;20/07/2024;Portátil;madrid;Madrid;28026;5;863,11;15%;3.668,22 €;Tienda;Transferencia
+T24-00239;21/07/2024;Impresora;madrid;Madrid;28036;3;141,67;10%;382,51 €;Tienda física;Tarjeta
+T24-00240;21/07/2024;Teclado;Madrid;Madrid;28013;4;44,46;5%;168,95 €;online;Tarjeta
+T24-00241;21/07/2024;Tablet;Comunidad Valenciana;Alicante;03015;2;312,11;5%;593,01 €;Telefono;Transferencia
+T24-00242;22/07/2024;Auriculares;Galicia ;A Coruña;15002;1;60,74;10%;54,67 €;Tienda;Transferencia
+T24-00243;22/07/2024;Teclado;CATALUÑA;Girona;17007;6;43,58;10%;235,33 €;Tienda física;Efectivo
+T24-00244;22/07/2024;Ratón;C. Valenciana;Alicante;03011;6;24,45;10%;132,03 €;Online;Bizum
+T24-00245;22/07/2024;Portátil;Comunidad de Madrid;Alcalá de Henares;28804;2;879,30;0%;1.758,60 €;online;PayPal
+T24-00246;23/07/2024;Teclado;ANDALUCÍA;Sevilla;41020;8;45,43;5%;345,27 €;Online;PayPal
+T24-00247;23/07/2024;Monitor;Galicia;Vigo;36210;5;221,19;15%;940,06 €;Teléfono;Efectivo
+T24-00248;24/07/2024;auriculares ;GALICIA;A Coruña;15009;1;59,27;5%;56,31 €;Tienda física;PayPal
+T24-00249;25/07/2024;Teclado;Cataluña;Girona;17001;10;44,91;10%;404,19 €;Tienda;Tarjeta
+T24-00250;25/07/2024;Ratón;Galicia;Vigo;36202;1;24,58;0%;24,58 €;online;Tarjeta
+T24-00251;25/07/2024;Smartphone;Catalunya;Girona;17001;;605,85;0%;9.087,75 €;Telefono;Transferencia
+T24-00252;27/07/2024;Silla oficina;GALICIA;Vigo;36208;8;186,84;10%;1.345,25 €;Telefono;Bizum
+T24-00253;28/07/2024;Smartphone;Andalucía;Sevilla;41015;12;614,97;0%;7.379,64 €;ONLINE;PayPal
+T24-00254;28/07/2024;Auriculares;Comunidad Valenciana;Alicante;03009;1;57,64;0%;57,64 €;online;Transferencia
+T24-00255;30/07/2024;Impresora;GALICIA;Vigo;36214;5;147,85;0%;739,25 €;ONLINE;Bizum
+T24-00256;30/07/2024;Monitor;madrid;Alcalá de Henares;28807;2;201,61;15%;342,74 €;tienda;Transferencia
+T24-00257;01/08/2024;Teclado;Cataluña;Girona;17004;2;43,16;0%;86,32 €;Teléfono;Efectivo
+T24-00258;03/08/2024;Portátil;Catalunya;Barcelona;08031;4;815,07;0%;3.260,28 €;Tienda física;PayPal
+T24-00259;03/08/2024;Portátil;C.Valenciana;Valencia;46014;1;847,29;0%;847,29 €;online;Bizum
+T24-00260;03/08/2024;Teclado;madrid;Madrid;28049;4;40,99;5%;155,76 €;Tienda física;Transferencia
+T24-00261;04/08/2024;Tablet;Andalucía;Málaga;29008;6;324,62;0%;1.947,72 €;Teléfono;Transferencia
+T24-00262;08/08/2024;Ratón;ANDALUCÍA;Sevilla;41001;4;23,22;15%;78,95 €;teléfono;Transferencia
+T24-00263;09/08/2024;Impresora;Andalucía;Málaga;29012;15;143,11;0%;2.146,65 €;tienda;Transferencia
+T24-00264;09/08/2024;Silla oficina;Galicia;Vigo;36207;5;187,11;0%;935,55 €;Online;Transferencia
+T24-00265;10/08/2024;Silla oficina;Galicia;A Coruña;15001;5;164,07;0%;820,35 €;online;PayPal
+T24-00266;11/08/2024;Teclado;Andalucía;Málaga;29015;2;45,05;5%;85,59 €;Teléfono;PayPal
+T24-00267;13/08/2024;Monitor;C. Valenciana;Alicante;03001;1;223,95;5%;212,75 €;Tienda física;Bizum
+T24-00268;14/08/2024;Altavoz;Madrid;Madrid;28010;4;85,44;5%;324,67 €;teléfono;Transferencia
+T24-00269;14/08/2024;Smartphone;CATALUÑA;Barcelona;08007;1;543,35;0%;543,35 €;Telefono;Transferencia
+T24-00270;14/08/2024;portátil ;ANDALUCÍA;Sevilla;41009;4;771,44;0%;3.085,76 €;ONLINE;PayPal
+T24-00270;14/08/2024;portátil ;ANDALUCÍA;Sevilla;41009;4;771,44;0%;3.085,76 €;ONLINE;PayPal
+T24-00271;15/08/2024;Altavoz;Galicia ;A Coruña;15009;12;92,16;0%;1.105,92 €;Teléfono;Bizum
+T24-00272;16/08/2024;Altavoz;Madrid;Alcalá de Henares;28802;2;91,26;0%;182,52 €;ONLINE;PayPal
+T24-00272;16/08/2024;Altavoz;Madrid;Alcalá de Henares;28802;2;91,26;0%;182,52 €;ONLINE;PayPal
+T24-00273;17/08/2024;Altavoz;Comunidad Valenciana;Alicante;03004;8;94,40;0%;755,20 €;online;Bizum
+T24-00274;17/08/2024;Impresora;GALICIA;Vigo;36211;12;135,96;5%;1.549,94 €;Tienda física;Transferencia
+T24-00275;18/08/2024;Altavoz;C.Valenciana;Alicante;03009;4;83,21;5%;316,20 €;Teléfono;Transferencia
+T24-00276;19/08/2024;Smartphone;Andalucia;Sevilla;41011;1;605,84;0%;605,84 €;tienda;PayPal
+T24-00277;20/08/2024;Altavoz;GALICIA;A Coruña;15007;1;82,24;5%;78,13 €;online;Tarjeta
+T24-00278;21/08/2024;Smartphone;GALICIA;Vigo;36216;15;547,47;0%;8.212,05 €;online;Tarjeta
+T24-00279;21/08/2024;monitor ;Comunidad de Madrid;Alcalá de Henares;28804;3;231,03;10%;623,78 €;Online;Tarjeta
+T24-00279;21/08/2024;monitor ;Comunidad de Madrid;Alcalá de Henares;28804;3;231,03;10%;623,78 €;Online;Tarjeta
+T24-00280;22/08/2024;Tablet;C.Valenciana;Valencia;46018;12;354,64;5%;4.042,90 €;tienda;Bizum
+T24-00281;22/08/2024;Ratón;Comunidad de Madrid;Madrid;28018;3;25,91;15%;66,07 €;tienda;Transferencia
+T24-00282;22/08/2024;Smartphone; galicia;A Coruña;15010;8;539,57;10%;3.884,90 €;Teléfono;Efectivo
+T24-00283;24/08/2024;Ratón;Andalucia;Málaga;29004;5;25,90;5%;123,02 €;teléfono;Bizum
+T24-00284;25/08/2024;ratón ;Galicia;Vigo;36215;4;26,12;0%;104,48 €;online;Transferencia
+T24-00285;27/08/2024;Tablet;Cataluña;Barcelona;08006;5;365,51;10%;1.644,80 €;Tienda física;Bizum
+T24-00286;27/08/2024;Portátil;Andalucia;Sevilla;41007;12;847,32;0%;10.167,84 €;Online;Bizum
+T24-00287;27/08/2024;Silla oficina; galicia;Vigo;36213;6;165,71;0%;994,26 €;Tienda física;Bizum
+T24-00288;28/08/2024;Auriculares;ANDALUCÍA;Sevilla;41011;1;62,26;0%;-;tienda;Bizum
+T24-00289;28/08/2024;Portátil;Andalucía;Málaga;29017;8;832,16;0%;6.657,28 €;Online;Bizum
+T24-00290;28/08/2024;Silla oficina;Catalunya;Girona;17004;4;172,79;0%;691,16 €;Online;Bizum
+T24-00291;29/08/2024;Teclado;CATALUÑA;Barcelona;08041;5;43,72;0%;218,60 €;ONLINE;Tarjeta
+T24-00292;30/08/2024;Portátil;CATALUÑA;Girona;17004;8;852,56;0%;6.820,48 €;Teléfono;Efectivo
+T24-00293;31/08/2024;altavoz ;Andalucía;Sevilla;41012;2;91,26;5%;173,39 €;Tienda física;Tarjeta
+T24-00294;01/09/2024;Altavoz;C.Valenciana;Valencia;46016;2;90,00;0%;180,00 €;teléfono;PayPal
+T24-00295;02/09/2024;Ratón;GALICIA;Vigo;36205;6;23,16;15%;118,12 €;Tienda;Transferencia
+T24-00296;03/09/2024;Impresora;Comunidad Valenciana;Alicante;03013;12;158,02;5%;1.801,43 €;Telefono;Efectivo
+T24-00297;03/09/2024;Ratón;Cataluña;Barcelona;08027;4;24,56;10%;88,42 €;ONLINE;Bizum
+T24-00298;04/09/2024;Impresora;Catalunya;Girona;17005;5;155,66;10%;700,47 €;Tienda física;Transferencia
+T24-00299;05/09/2024;Tablet;ANDALUCÍA;Málaga;29011;8;321,83;0%;2.574,64 €;Tienda;Transferencia
+T24-00300;05/09/2024;Ratón;Cataluña;Girona;17006;2;26,02;10%;46,84 €;Online;Bizum
+T24-00301;07/09/2024;Impresora;Madrid;Alcalá de Henares;28803;1;136,88;0%;136,88 €;tienda;Transferencia
+T24-00302;07/09/2024;altavoz ;Andalucia;Sevilla;41003;1;87,67;10%;78,90 €;Teléfono;Efectivo
+T24-00303;07/09/2024;silla oficina ;madrid;Madrid;28006;4;177,69;15%;604,15 €;Teléfono;Tarjeta
+T24-00304;09/09/2024;Teclado;Andalucia;Sevilla;41015;1;44,36;15%;37,71 €;Online;Bizum
+T24-00305;09/09/2024;Altavoz;Madrid;Madrid;28031;2;88,90;0%;177,80 €;Tienda física;Bizum
+T24-00306;10/09/2024;Silla oficina;C.Valenciana;Alicante;03009;6;165,73;0%;994,38 €;Teléfono;Tarjeta
+T24-00307;10/09/2024;Tablet;C.Valenciana;Alicante;03016;1;345,90;5%;328,60 €;online;Transferencia
+T24-00308;13/09/2024;Ratón;madrid;Madrid;28012;6;22,80;10%;123,12 €;Tienda;PayPal
+T24-00308;13/09/2024;Ratón;madrid;Madrid;28012;6;22,80;10%;123,12 €;Tienda;PayPal
+T24-00309;13/09/2024;Ratón;Andalucia;Málaga;29013;12;24,49;0%;293,88 €;Teléfono;Bizum
+T24-00310;13/09/2024;Impresora;Comunidad Valenciana;Valencia;46001;1;157,45;5%;149,58 €;ONLINE;Bizum
+T24-00311;15/09/2024;Monitor;C. Valenciana;Alicante;03001;2;215,02;10%;387,04 €;teléfono;Bizum
+T24-00312;17/09/2024;Altavoz;C. Valenciana;Alicante;03010;12;90,07;0%;1.080,84 €;Telefono;Bizum
+T24-00313;18/09/2024;Ratón;Catalunya;Girona;17004;5;25,87;5%;122,88 €;Tienda;Tarjeta
+T24-00314;19/09/2024;Impresora;Andalucia;Málaga;29018;12;155,29;0%;1.863,48 €;Tienda;Tarjeta
+T24-00315;21/09/2024;Ratón;Madrid;Alcalá de Henares;28806;;24,24;0%;72,72 €;ONLINE;PayPal
+T24-00316;22/09/2024;Impresora;Catalunya;Barcelona;08018;6;144,66;10%;781,16 €;Tienda física;Efectivo
+T24-00317;23/09/2024;Monitor;Andalucia;Málaga;29016;15;200,24;15%;2.553,06 €;Tienda;Efectivo
+T24-00318;24/09/2024;Silla oficina;Cataluña;Girona;17006;3;189,59;0%;568,77 €;Telefono;PayPal
+T24-00319;29/09/2024;Impresora;GALICIA;A Coruña;15007;5;143,90;0%;719,50 €;online;Transferencia
+T24-00320;30/09/2024;portátil ;Comunidad de Madrid;Alcalá de Henares;28806;2;794,69;15%;1.350,97 €;teléfono;Efectivo
+T24-00321;02/10/2024;Smartphone;GALICIA;Vigo;36210;5;559,06;0%;2.795,30 €;teléfono;Tarjeta
+T24-00322;04/10/2024;Monitor;ANDALUCÍA;Málaga;29010;15;204,72;15%;2.610,18 €;teléfono;Bizum
+T24-00323;04/10/2024;Teclado;ANDALUCÍA;Málaga;29007;10;45,22;5%;429,59 €;teléfono;Efectivo
+T24-00324;05/10/2024;Smartphone;GALICIA;A Coruña;15009;8;562,33;15%;3.823,84 €;Teléfono;Transferencia
+T24-00325;07/10/2024;Portátil;Galicia;A Coruña;15001;1;884,77;10%;796,29 €;Online;Efectivo
+T24-00326;07/10/2024;Silla oficina;Galicia ;A Coruña;15003;3;181,16;15%;461,96 €;tienda;PayPal
+T24-00327;07/10/2024;Portátil;Comunidad de Madrid;Alcalá de Henares;28802;10;809,48;0%;8.094,80 €;Tienda física;Tarjeta
+T24-00328;10/10/2024;Altavoz;GALICIA;A Coruña;15007;1;88,45;0%;88,45 €;Tienda física;Bizum
+T24-00329;13/10/2024;Silla oficina;Comunidad de Madrid;Madrid;28045;2;175,76;10%;316,37 €;teléfono;PayPal
+T24-00330;13/10/2024;Tablet;Andalucía;Sevilla;41008;1;335,50;10%;301,95 €;ONLINE;Transferencia
+T24-00331;16/10/2024;Portátil;Cataluña;Girona;17001;4;812,26;0%;3.249,04 €;Tienda;Efectivo
+T24-00332;17/10/2024;Silla oficina;C. Valenciana;Valencia;46004;4;178,63;5%;678,79 €;teléfono;Transferencia
+T24-00333;18/10/2024;Monitor;Catalunya;Girona;17007;15;222,74;15%;2.839,94 €;Teléfono;Bizum
+T24-00334;18/10/2024;Portátil;madrid;Alcalá de Henares;28803;8;815,51;5%;6.197,88 €;Teléfono;Efectivo
+T24-00335;21/10/2024;Impresora;C. Valenciana;Valencia;46013;3;145,74;10%;393,50 €;online;Transferencia
+T24-00336;21/10/2024;Tablet;ANDALUCÍA;Málaga;29013;15;328,06;10%;4.428,81 €;teléfono;Bizum
+T24-00337;22/10/2024;Portátil;Galicia ;A Coruña;15008;12;759,81;15%;7.750,06 €;teléfono;Bizum
+T24-00338;23/10/2024;Impresora;Andalucia;Málaga;29011;5;152,78;0%;763,90 €;Tienda física;PayPal
+T24-00339;23/10/2024;Smartphone;Cataluña;Girona;17007;5;563,69;10%;2.536,61 €;ONLINE;PayPal
+T24-00340;23/10/2024;Ratón;CATALUÑA;Girona;17004;3;25,49;0%;76,47 €;ONLINE;Tarjeta
+T24-00341;23/10/2024;Auriculares;C.Valenciana;Alicante;03012;8;61,70;15%;419,56 €;Tienda física;Efectivo
+T24-00342;28/10/2024;Impresora;ANDALUCÍA;Málaga;29011;1;155,78;15%;132,41 €;Tienda;Bizum
+T24-00343;28/10/2024;Ratón;Cataluña;Barcelona;08036;15;26,04;0%;390,60 €;ONLINE;Efectivo
+T24-00344;29/10/2024;Silla oficina;ANDALUCÍA;Sevilla;41011;8;179,03;5%;1.360,63 €;online;Efectivo
+T24-00345;29/10/2024;Portátil;CATALUÑA;Barcelona;08007;1;770,72;15%;655,11 €;teléfono;Efectivo
+T24-00346;29/10/2024;Portátil;Madrid;Madrid;28045;2;805,19;10%;1.449,34 €;Tienda;Efectivo
+T24-00347;02/11/2024;Impresora;ANDALUCÍA;Málaga;29018;2;147,41;10%;265,34 €;Online;Efectivo
+T24-00348;02/11/2024;altavoz ;C. Valenciana;Alicante;03007;3;87,46;10%;236,14 €;Online;PayPal
+T24-00349;04/11/2024;teclado ;Cataluña;Girona;17003;10;40,73;5%;386,93 €;Tienda física;Efectivo
+T24-00350;05/11/2024;Monitor;Cataluña;Girona;17005;5;224,58;10%;1.010,61 €;tienda;PayPal
+T24-00351;07/11/2024;Portátil;ANDALUCÍA;Sevilla;41005;4;806,40;15%;2.741,76 €;Tienda;Tarjeta
+T24-00352;07/11/2024;Smartphone;C.Valenciana;Valencia;46015;8;542,27;0%;4.338,16 €;ONLINE;Transferencia
+T24-00353;08/11/2024;monitor ;GALICIA;A Coruña;15004;8;204,30;0%;1.634,40 €;tienda;Efectivo
+T24-00354;11/11/2024;Monitor;Madrid;Madrid;28013;10;216,41;0%;2.164,10 €;tienda;Efectivo
+T24-00355;11/11/2024;Portátil;madrid;Alcalá de Henares;28803;12;790,42;0%;9.485,04 €;Teléfono;Tarjeta
+T24-00356;12/11/2024;Monitor;Andalucía;Málaga;29018;1;216,61;10%;194,95 €;Telefono;Tarjeta
+T24-00357;13/11/2024;Portátil;madrid;Alcalá de Henares;28806;1;818,59;5%;777,66 €;tienda;Efectivo
+T24-00358;14/11/2024;Tablet;Andalucia;Málaga;29008;2;362,10;0%;724,20 €;ONLINE;Efectivo
+T24-00359;16/11/2024;Monitor;Andalucía;Málaga;29017;15;215,28;10%;2.906,28 €;online;Bizum
+T24-00360;17/11/2024;teclado ;Catalunya;Girona;17005;8;44,50;10%;320,40 €;ONLINE;PayPal
+T24-00361;18/11/2024;Tablet;Andalucía;Málaga;29012;5;339,42;5%;1.612,24 €;tienda;Transferencia
+T24-00362;21/11/2024;Impresora;ANDALUCÍA;Málaga;29007;12;154,04;0%;1.848,48 €;teléfono;Bizum
+T24-00363;21/11/2024;Tablet;Madrid;Madrid;28048;4;315,15;10%;1.134,54 €;tienda;Bizum
+T24-00364;22/11/2024;Tablet;Andalucia;Sevilla;41020;6;343,93;0%;2.063,58 €;Tienda;Efectivo
+T24-00365;24/11/2024;Altavoz;ANDALUCÍA;Sevilla;41018;5;94,98;0%;474,90 €;tienda;Bizum
+T24-00366;25/11/2024;Tablet;ANDALUCÍA;Sevilla;41009;2;352,62;15%;599,45 €;Teléfono;Transferencia
+T24-00367;25/11/2024;Monitor;GALICIA;Vigo;36201;2;221,56;0%;443,12 €;online;Transferencia
+T24-00368;25/11/2024;Auriculares;ANDALUCÍA;Málaga;29003;2;61,06;5%;116,01 €;ONLINE;Tarjeta
+T24-00369;26/11/2024;Tablet;Galicia;A Coruña;15002;8;347,55;0%;2.780,40 €;Online;Bizum
+T24-00370;26/11/2024;Altavoz;Catalunya;Barcelona;08023;5;85,00;0%;425,00 €;Telefono;Transferencia
+T24-00371;26/11/2024;Smartphone;C.Valenciana;Alicante;03004;12;625,04;0%;7.500,48 €;teléfono;Transferencia
+T24-00372;27/11/2024;Ratón;Andalucía;Málaga;29011;2;23,32;0%;46,64 €;Teléfono;Transferencia
+T24-00373;02/12/2024;Smartphone;Andalucia;Sevilla;41018;2;591,55;0%;1.183,10 €;tienda;Transferencia
+T24-00374;02/12/2024;Smartphone;Galicia ;A Coruña;15007;2;618,98;0%;1.237,96 €;tienda;Efectivo
+T24-00375;03/12/2024;Ratón;madrid;Alcalá de Henares;28803;1;23,95;0%;23,95 €;online;Efectivo
+T24-00376;04/12/2024;Smartphone;Galicia;Vigo;36204;8;616,89;0%;4.935,12 €;online;Bizum
+T24-00377;05/12/2024;Teclado;GALICIA;Vigo;36208;15;46,63;5%;664,48 €;tienda;PayPal
+T24-00378;05/12/2024;Impresora;Comunidad de Madrid;Alcalá de Henares;28806;1;140,07;10%;126,06 €;teléfono;Efectivo
+T24-00379;06/12/2024;Altavoz;Madrid;Madrid;28010;1;94,05;10%;84,64 €;Tienda física;Bizum
+T24-00380;07/12/2024;Tablet;Madrid;Madrid;28045;2;347,53;0%;695,06 €;Tienda física;Tarjeta
+T24-00381;08/12/2024;Teclado;Galicia;Vigo;36210;1;45,93;10%;41,34 €;teléfono;Tarjeta
+T24-00382;10/12/2024;Silla oficina;Galicia ;Vigo;36211;1;190,63;0%;190,63 €;Telefono;PayPal
+T24-00383;10/12/2024;Silla oficina;Galicia;A Coruña;15009;3;167,55;0%;502,65 €;teléfono;Transferencia
+T24-00384;10/12/2024;Silla oficina;Andalucía;Málaga;29003;1;178,07;0%;178,07 €;Telefono;Transferencia
+T24-00385;11/12/2024;Teclado;ANDALUCÍA;Málaga;29002;1;42,25;15%;35,91 €;Telefono;PayPal
+T24-00385;11/12/2024;Teclado;ANDALUCÍA;Málaga;29002;1;42,25;15%;35,91 €;Telefono;PayPal
+T24-00386;11/12/2024;Portátil;madrid;Madrid;28027;1;810,93;5%;770,38 €;Tienda;Efectivo
+T24-00387;11/12/2024;Teclado;Galicia ;Vigo;36210;10;45,46;0%;454,60 €;online;Efectivo
+T24-00388;12/12/2024;Ratón;Galicia ;Vigo;36203;10;22,86;0%;228,60 €;Teléfono;PayPal
+T24-00389;12/12/2024;Teclado;Comunidad Valenciana;Valencia;46003;2;41,88;0%;83,76 €;tienda;Transferencia
+T24-00390;13/12/2024;Auriculares;Andalucia;Málaga;29008;5;59,61;0%;298,05 €;Tienda física;PayPal
+T24-00391;13/12/2024;Portátil;CATALUÑA;Girona;17004;8;858,58;0%;6.868,64 €;Teléfono;Bizum
+T24-00392;15/12/2024;Auriculares;Andalucia;Málaga;29015;4;62,15;0%;248,60 €;tienda;Transferencia
+T24-00393;15/12/2024;Tablet;ANDALUCÍA;Málaga;29012;5;361,70;5%;1.718,07 €;ONLINE;Tarjeta
+T24-00394;15/12/2024;Ratón; galicia;A Coruña;15002;1;24,90;0%;24,90 €;Tienda física;PayPal
+T24-00395;16/12/2024;Tablet;Madrid;Alcalá de Henares;28805;6;315,45;0%;1.892,70 €;ONLINE;Tarjeta
+T24-00396;16/12/2024;Auriculares;madrid;Madrid;28037;1;59,81;0%;59,81 €;Telefono;Bizum
+T24-00397;16/12/2024;Monitor;GALICIA;Vigo;36209;2;202,00;0%;404,00 €;teléfono;Tarjeta
+T24-00398;18/12/2024;Portátil;Comunidad Valenciana;Alicante;03003;4;786,63;10%;2.831,87 €;Tienda;Transferencia
+T24-00399;19/12/2024;Silla oficina;GALICIA;Vigo;36205;5;177,11;10%;797,00 €;ONLINE;Tarjeta
+T24-00400;20/12/2024;Ratón;ANDALUCÍA;Málaga;29015;4;25,83;15%;87,82 €;Tienda física;Efectivo
+T24-00401;20/12/2024;Teclado;madrid;Alcalá de Henares;28804;1;42,23;5%;40,12 €;teléfono;Tarjeta
+T24-00402;20/12/2024;teclado ;C.Valenciana;Valencia;46003;1;45,53;0%;45,53 €;online;Bizum
+T24-00403;20/12/2024;Altavoz;Comunidad Valenciana;Valencia;46024;8;81,92;15%;557,06 €;tienda;PayPal
+T24-00404;20/12/2024;Smartphone;GALICIA;Vigo;36203;4;576,02;0%;2.304,08 €;Telefono;Bizum
+T24-00405;21/12/2024;teclado ;C.Valenciana;Valencia;46004;10;44,25;5%;420,38 €;Online;Tarjeta
+T24-00406;22/12/2024;impresora ;Galicia;Vigo;36216;1;149,15;0%;149,15 €;Online;Transferencia
+T24-00407;23/12/2024;silla oficina ;GALICIA;Vigo;36201;3;175,64;0%;526,92 €;ONLINE;Transferencia
+T24-00408;25/12/2024;Altavoz;C.Valenciana;Valencia;46016;1;92,99;0%;92,99 €;online;Transferencia
+T24-00409;25/12/2024;Silla oficina;C.Valenciana;Valencia;46004;15;178,58;15%;2.276,90 €;online;Efectivo
+T24-00410;27/12/2024;Altavoz;C.Valenciana;Valencia;46024;6;87,56;15%;446,56 €;tienda;Tarjeta
+T24-00411;27/12/2024;Smartphone;Madrid;Madrid;28040;2;629,98;10%;1.133,96 €;Online;Efectivo
+T24-00412;27/12/2024;Ratón;Andalucia;Sevilla;41006;1;25,42;10%;22,88 €;online;Tarjeta
+T24-00413;28/12/2024;Altavoz;C.Valenciana;Valencia;46020;6;85,49;0%;512,94 €;Telefono;PayPal
+T24-00414;28/12/2024;Impresora;Andalucia;Málaga;29013;15;146,30;0%;2.194,50 €;Online;PayPal
+T24-00415;29/12/2024;Impresora;Comunidad Valenciana;Alicante;03008;5;154,09;5%;731,93 €;ONLINE;Tarjeta
+T24-00416;29/12/2024;Monitor;Comunidad de Madrid;Alcalá de Henares;28801;1;228,77;0%;228,77 €;Tienda;Tarjeta
+T24-00417;30/12/2024;Altavoz;GALICIA;A Coruña;15007;2;86,85;15%;147,64 €;Tienda;Tarjeta
+T24-00418;30/12/2024;Smartphone;Andalucia;Málaga;29001;15;630,15;0%;9.452,25 €;teléfono;PayPal
+T24-00419;30/12/2024;Smartphone;Madrid;Madrid;28020;4;589,59;10%;2.122,52 €;Online;Tarjeta
+T24-00420;30/12/2024;Tablet;C. Valenciana;Valencia;46003;8;319,57;5%;2.428,73 €;ONLINE;Tarjeta
+TOTAL;;;;;;2423;;;628.053,96 €;;
+* Importes con IVA incluido
